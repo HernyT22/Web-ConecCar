@@ -11,3 +11,12 @@ export interface Car {
   badge?: string;
   img?: string;
 }
+
+export interface Destination {
+  id: string;
+  name: string;
+  tag: string;
+  distance: string;
+  description: string;
+  img: string;
+}
