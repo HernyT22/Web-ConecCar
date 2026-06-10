@@ -1,6 +1,36 @@
 // ConecCar.rent — Footer
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import logoConeccar from "@/imports/coneccar-logo.png";
+import { CATEGORIES, CAT_TO_SLUG } from "./fleetCategories";
+
+type NavItem = { label: string; href: string };
+type NavSection = { h: string; l: NavItem[] };
+
+const sections: NavSection[] = [
+  {
+    h: "Empresa",
+    l: [
+      { label: "Nosotros", href: "#" },
+      { label: "Trabajá con nosotros", href: "#" },
+    ],
+  },
+  {
+    h: "Flota",
+    l: CATEGORIES.map((cat) => ({
+      label: cat,
+      href: "#fleet?cat=" + CAT_TO_SLUG[cat],
+    })),
+  },
+  {
+    h: "Ayuda",
+    l: [
+      { label: "Seguro", href: "#" },
+      { label: "Política de cancelación", href: "#" },
+      { label: "Manejar en Argentina", href: "#" },
+      { label: "Preguntas frecuentes", href: "#" },
+    ],
+  },
+];
 
 const Footer = () => (
   <footer className="bg-navy-950 text-white/70">
@@ -25,42 +55,19 @@ const Footer = () => (
           © 2026 ConecCar.rent
         </div>
       </div>
-      {[
-        {
-          h: "Empresa",
-          l: ["Nosotros", "Trabajá con nosotros"],
-        },
-        {
-          h: "Flota",
-          l: [
-            "SUV Coupé",
-            "SUV Compacta",
-            "Sedanes",
-            "Hatchback",
-          ],
-        },
-        {
-          h: "Ayuda",
-          l: [
-            "Seguro",
-            "Política de cancelación",
-            "Manejar en Argentina",
-            "Preguntas frecuentes",
-          ],
-        },
-      ].map((c, i) => (
-        <div key={i}>
+      {sections.map((c) => (
+        <div key={c.h}>
           <div className="text-white font-medium mb-4">
             {c.h}
           </div>
           <ul className="space-y-2.5 text-sm">
             {c.l.map((li) => (
-              <li key={li}>
+              <li key={li.label}>
                 <a
-                  href="#"
+                  href={li.href}
                   className="hover:text-white transition"
                 >
-                  {li}
+                  {li.label}
                 </a>
               </li>
             ))}

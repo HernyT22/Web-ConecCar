@@ -1,11 +1,12 @@
 // ConecCar.rent — Flota
-import { useState, } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/app/components/ui/utils";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import Section from "@/app/components/ConecCar/Section";
 import PlaceholderImg from "@/app/components/ConecCar/PlaceholderImg";
 import { I } from "@/app/components/ConecCar/Icons";
 import type { Car } from "./types";
+import { CATEGORIES, parseCatFromHash } from "./fleetCategories";
 import citroenBasaltAzul from "@/imports/citroen-azul-lateral.jpeg";
 import citroenBasaltBlanco from "@/imports/citroen-blanco-lateral.jpeg";
 import citroenDark from "@/imports/citroen-dark-lateral.jpeg";
@@ -17,7 +18,26 @@ import vwFox from "@/imports/fox-lateral.jpg";
 const Fleet = () => {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("Todos");
-  const cats = ["Todos", "SUV Coupé", "SUV Compacta", "Sedán", "Hatchback Compacto"];
+  const cats = ["Todos", ...CATEGORIES];
+
+  useEffect(() => {
+    const apply = (smooth: boolean) => {
+      const cat = parseCatFromHash(window.location.hash);
+      if (cat) {
+        setCat(cat);
+        document.getElementById("fleet")?.scrollIntoView({
+          behavior: smooth ? "smooth" : "instant",
+          block: "start",
+        });
+      }
+    };
+
+    apply(false);
+
+    const onHashChange = () => apply(true);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   const cars: Car[] = [
     {
