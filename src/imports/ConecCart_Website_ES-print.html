@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ConecCar.rent — Alquiler de vehículos · Mendoza, Argentina</title>
+<link rel="icon" type="image/png" href="images/coneccar-logo-transparent.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui'],
+          display: ['"Libre Baskerville"', 'ui-serif', 'Georgia'],
+        },
+        colors: {
+          navy: {
+            50:  '#eef2f8',
+            100: '#d6dfee',
+            200: '#a9bcd9',
+            300: '#7798c3',
+            400: '#4a76ad',
+            500: '#2d5993',
+            600: '#1f4374',
+            700: '#173258',
+            800: '#0f223d',
+            900: '#091628',
+            950: '#050d1a',
+          },
+          amber: {
+            300: '#e6c585',
+            400: '#d9b25e',
+            500: '#c9a14a',
+            600: '#a8842f',
+            700: '#866821',
+          },
+        },
+        boxShadow: {
+          card: '0 1px 2px rgba(9,22,40,0.04), 0 8px 24px -12px rgba(9,22,40,0.18)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; color: #091628; background: #fff; }
+  .font-display { font-family: 'Libre Baskerville', serif; font-weight: 700; letter-spacing: -0.01em; }
+  /* Subtle striped placeholder pattern, navy-tinted */
+  .placeholder-img {
+    background-image:
+      linear-gradient(135deg, rgba(9,22,40,0.06) 25%, transparent 25%, transparent 50%, rgba(9,22,40,0.06) 50%, rgba(9,22,40,0.06) 75%, transparent 75%, transparent);
+    background-size: 16px 16px;
+    background-color: #eef2f8;
+  }
+  .placeholder-dark {
+    background-image:
+      linear-gradient(135deg, rgba(255,255,255,0.07) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.07) 75%, transparent 75%, transparent);
+    background-size: 18px 18px;
+    background-color: #0f223d;
+  }
+  .placeholder-warm {
+    background-image:
+      linear-gradient(135deg, rgba(232,154,60,0.18) 25%, transparent 25%, transparent 50%, rgba(232,154,60,0.18) 50%, rgba(232,154,60,0.18) 75%, transparent 75%, transparent);
+    background-size: 16px 16px;
+    background-color: #fbf3e6;
+  }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: 0.04em; }
+
+  /* Hide scrollbar on horizontal scrolls */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+
+  /* Subtle hover lift */
+  .lift { transition: transform .25s ease, box-shadow .25s ease; }
+  .lift:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -16px rgba(9,22,40,0.25); }
+
+  /* ---------- PRINT ---------- */
+  @page { size: A4; margin: 10mm; }
+  @media print {
+    html, body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background: #fff !important;
+    }
+    /* Avoid breaking key blocks across pages */
+    header, section, footer { break-inside: avoid; }
+    article, .lift, .rounded-2xl, .rounded-3xl { break-inside: avoid; }
+    /* Drop interactive niceties */
+    .sticky { position: static !important; }
+    .backdrop-blur, [class*="backdrop-blur"] { backdrop-filter: none !important; }
+    .animate-pulse { animation: none !important; }
+    a { color: inherit !important; text-decoration: none !important; }
+    /* Force the hero placeholder/gradients to render */
+    .placeholder-img, .placeholder-dark, .placeholder-warm {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* Tighten page padding for print */
+    section { padding-top: 28px !important; padding-bottom: 28px !important; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="app-es.jsx"></script>
+<script type="text/babel" data-presets="env">
+  // Auto-print: wait for React mount + fonts, then print.
+  (async () => {
+    const waitForMount = () => new Promise(res => {
+      const tick = () => {
+        const root = document.getElementById('root');
+        if (root && root.childElementCount > 0) return res();
+        requestAnimationFrame(tick);
+      };
+      tick();
+    });
+    await waitForMount();
+    if (document.fonts && document.fonts.ready) {
+      try { await document.fonts.ready; } catch (e) {}
+    }
+    await new Promise(r => setTimeout(r, 600));
+    window.print();
+  })();
+</script>
+</body>
+</html>
