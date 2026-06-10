@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { I } from "@/app/components/ConecCar/Icons";
-import logoConeccar from "@/imports/coneccar-logo-1.png";
+import logoConeccar from "@/imports/coneccar-logo.png";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);

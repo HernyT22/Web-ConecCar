@@ -1,57 +1,91 @@
 // ConecCar.rent — Flota
-import { useState } from "react";
+import { useState, } from "react";
+import { cn } from "@/app/components/ui/utils";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import Section from "@/app/components/ConecCar/Section";
 import PlaceholderImg from "@/app/components/ConecCar/PlaceholderImg";
 import { I } from "@/app/components/ConecCar/Icons";
-import citroenBasaltBlanco from "@/imports/citroen-basalt-blanco-1.jpeg";
-import cheryTiggo2 from "@/imports/chery-tiggo2-rojo-1.jpeg";
-import vwFox from "@/imports/vw-fox-blanco-1.jpeg";
-import kiaRio from "@/imports/kia-rio-gris.jpeg";
+import type { Car } from "./types";
+import citroenBasaltAzul from "@/imports/citroen-azul-lateral.jpeg";
+import citroenBasaltBlanco from "@/imports/citroen-blanco-lateral.jpeg";
+import citroenDark from "@/imports/citroen-dark-lateral.jpeg";
+import cheryTiggo2Blanco from "@/imports/cheri-blanco-lateral.jpeg";
+import cheryTiggo2Rojo from "@/imports/cheri-rojo-lateral.jpeg";
+import kiaRio from "@/imports/kia-rio-lateral.jpeg";
+import vwFox from "@/imports/fox-lateral.jpg";
 
 const Fleet = () => {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("Todos");
-  const cats = ["Todos", "SUV", "Sedanes", "Hatchback"];
-
-  interface Car {
-    name: string;
-    cat: string;
-    seats: number;
-    bags: number;
-    trans: string;
-    ac: boolean;
-    price: number;
-    badge?: string;
-    img?: string;
-  }
+  const cats = ["Todos", "SUV Coupé", "SUV Compacta", "Sedán", "Hatchback Compacto"];
 
   const cars: Car[] = [
     {
+      id: "citroen-basalt-azul",
       name: "Citroën Basalt Shine 2026",
-      cat: "SUV",
+      subtitle: "Azul Cosmo",
+      cat: "SUV Coupé",
       seats: 5,
       bags: 3,
       trans: "Automático",
       ac: true,
       price: 90,
-      badge: "Más reservado",
+      img: citroenBasaltAzul,
+    },
+    {
+      id: "citroen-basalt-blanco",
+      name: "Citroën Basalt Shine 2026",
+      subtitle: "Blanco Nacarado",
+      cat: "SUV Coupé",
+      seats: 5,
+      bags: 3,
+      trans: "Automático",
+      ac: true,
+      price: 90,
       img: citroenBasaltBlanco,
     },
     {
-      name: "Chery Tiggo 2 (2026)",
-      cat: "SUV",
+      id: "citroen-dark-edition",
+      name: "Citroën Basalt Dark Edition 2026",
+      subtitle: "Sting Grey",
+      cat: "SUV Coupé",
+      seats: 5,
+      bags: 3,
+      trans: "Automático",
+      ac: true,
+      price: 90,
+      badge: "Edición especial",
+      img: citroenDark,
+    },
+    {
+      id: "chery-tiggo2-blanco",
+      name: "Chery Tiggo 2 2026",
+      subtitle: "Blanco",
+      cat: "SUV Compacta",
       seats: 5,
       bags: 3,
       trans: "Automático",
       ac: true,
       price: 95,
-      badge: "Nuevo",
-      img: cheryTiggo2,
+      img: cheryTiggo2Blanco,
     },
     {
-      name: "Kia Rio (2022)",
-      cat: "Sedanes",
+      id: "chery-tiggo2-rojo",
+      name: "Chery Tiggo 2 2026",
+      subtitle: "Rojo",
+      cat: "SUV Compacta",
+      seats: 5,
+      bags: 3,
+      trans: "Automático",
+      ac: true,
+      price: 95,
+      img: cheryTiggo2Rojo,
+    },
+    {
+      id: "kia-rio",
+      name: "Kia Rio 2022",
+      subtitle: "Clear Silver",
+      cat: "Sedán",
       seats: 5,
       bags: 2,
       trans: "Automático",
@@ -60,13 +94,27 @@ const Fleet = () => {
       img: kiaRio,
     },
     {
-      name: "Volkswagen Fox (2022)",
-      cat: "Hatchback",
+      id: "honda-accord",
+      name: "Honda Accord 2022",
+      cat: "Sedán",
+      seats: 5,
+      bags: 3,
+      trans: "Automático",
+      ac: true,
+      price: 250,
+      badge: "Corporativo",
+    },
+    {
+      id: "vw-fox",
+      name: "Volkswagen Fox 2022",
+      subtitle: "Blanco Cristal",
+      cat: "Hatchback Compacto",
       seats: 5,
       bags: 2,
       trans: "Manual",
       ac: true,
       price: 70,
+      badge: "Económico",
       img: vwFox,
     },
   ];
@@ -113,11 +161,12 @@ const Fleet = () => {
             <button
               key={c}
               onClick={() => setCat(c)}
-              className={`whitespace-nowrap px-4 py-2 rounded-full text-sm border transition ${
+              className={cn(
+                "whitespace-nowrap px-4 py-2 rounded-full text-sm border transition",
                 cat === c
                   ? "bg-navy-900 text-white border-navy-900"
                   : "bg-white text-navy-700 border-navy-200 hover:border-navy-400"
-              }`}
+              )}
             >
               {c}
             </button>
@@ -127,9 +176,9 @@ const Fleet = () => {
 
       {/* grilla de tarjetas */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {list.map((c, i) => (
+        {list.map((c) => (
           <article
-            key={i}
+            key={c.id}
             className="bg-white rounded-2xl border border-navy-100 overflow-hidden flex flex-col lift"
           >
             <div className="relative aspect-[4/3] bg-navy-50">
@@ -160,6 +209,11 @@ const Fleet = () => {
                   {c.name}
                 </h3>
               </div>
+              {c.subtitle && (
+                <span className="block text-xs text-navy-500 mt-0.5">
+                  {c.subtitle}
+                </span>
+              )}
               <div className="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-navy-700/80 mt-4">
                 <span className="inline-flex items-center gap-2">
                   <span className="text-navy-400">

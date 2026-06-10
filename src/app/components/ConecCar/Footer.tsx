@@ -1,6 +1,6 @@
 // ConecCar.rent — Footer
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import logoConeccar from "@/imports/coneccar-logo-1.png";
+import logoConeccar from "@/imports/coneccar-logo.png";
 
 const Footer = () => (
   <footer className="bg-navy-950 text-white/70">
