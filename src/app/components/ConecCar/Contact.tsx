@@ -81,30 +81,33 @@ const Contact = () => (
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
           {[
-            ["Nombre completo", "Sofía Méndez"],
-            ["Email", "vos@ejemplo.com"],
+            ["Nombre completo", "Sofía Méndez", "contact-name"],
+            ["Email", "vos@ejemplo.com", "contact-email"],
             [
               "Teléfono (con código de país)",
               "+1 415 555 0199",
+              "contact-phone",
             ],
-            ["Fecha de retiro", "22 de mayo de 2026"],
-          ].map(([l, ph], i) => (
-            <label key={i} className="block">
+            ["Fecha de retiro", "22 de mayo de 2026", "contact-pickup-date"],
+          ].map(([l, ph, id], i) => (
+            <label key={i} htmlFor={id} className="block">
               <span className="mono uppercase text-white/50 tracking-widest text-[10px]">
                 {l}
               </span>
               <input
+                id={id}
                 className="mt-1.5 w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 placeholder:text-white/30 focus:outline-none focus:border-amber-500 text-white"
                 placeholder={ph}
               />
             </label>
           ))}
         </div>
-        <label className="block mt-3">
+        <label htmlFor="contact-notes" className="block mt-3">
           <span className="mono uppercase text-white/50 tracking-widest text-[10px]">
             Notas
           </span>
           <textarea
+            id="contact-notes"
             rows={3}
             className="mt-1.5 w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 placeholder:text-white/30 focus:outline-none focus:border-amber-500 text-white"
             placeholder="Algo que tengamos que saber sobre tu viaje…"

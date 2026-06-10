@@ -1,4 +1,5 @@
 // ConecCar.rent — Contenedor de sección reutilizable
+import { cn } from "@/app/components/ui/utils";
 
 interface SectionProps {
   id?: string;
@@ -19,7 +20,7 @@ const Section = ({
 }: SectionProps) => (
   <section
     id={id}
-    className={`py-20 md:py-28 ${className} bg-[#ffffff]`}
+    className={cn("py-20 md:py-28 bg-white", className)}
   >
     <div className="mx-auto max-w-7xl px-5 md:px-8">
       {(eyebrow || title) && (
