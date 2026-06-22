@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
 import LanguageSwitcher from '@/app/components/ConecCar/LanguageSwitcher';
-import logoConeccar from '@/imports/coneccar-logo.png';
+import logoConeccar from '@/imports/coneccar-logo.webp';
 import { WHATSAPP_URL } from '@/data/contact';
 import { useActiveSection } from '@/app/hooks/useActiveSection';
 

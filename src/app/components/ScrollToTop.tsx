@@ -6,7 +6,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (hash) {
-      const element = document.getElementById(hash.replace('#', ''));
+      const element = document.getElementById(hash.replace('#', '').split('?')[0]);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;

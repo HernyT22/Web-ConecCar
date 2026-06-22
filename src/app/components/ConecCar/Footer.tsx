@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
-import logoConeccar from '@/imports/coneccar-logo.png';
+import logoConeccar from '@/imports/coneccar-logo.webp';
 import { CATEGORY_IDS } from './fleetCategories';
 
 const NAV_LINKS = [
@@ -66,9 +66,9 @@ const Footer = () => {
           <ul className="space-y-2.5 text-sm">
             {CATEGORY_IDS.map((id) => (
               <li key={id}>
-                <a href={`#fleet?cat=${id}`} className="hover:text-white transition">
+                <Link to={`/#fleet?cat=${id}`} className="hover:text-white transition">
                   {tFleet(`enums.category.${id}`)}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,26 +1,40 @@
 // ConecCar.rent — Destinos
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/app/components/ui/utils";
-import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import Section from "@/app/components/ConecCar/Section";
 import { I } from "@/app/components/ConecCar/Icons";
 import type { Destination } from "./types";
 import { buildWhatsAppUrl } from "./whatsapp";
-import valleDeUco from "@/imports/valle-de-uco-vinedos.jpg";
-import sanRafael from "@/imports/san-rafael-lago.jpg";
-import malargue from "@/imports/malargue-castillos.jpg";
-import granMendoza from "@/imports/gran-mendoza-portones.jpg";
-import potrerillos from "@/imports/potrerillos-lago.jpg";
-import atuel from "@/imports/atuel-lago.jpg";
+import { staggerContainer, slideDownItem, VIEWPORT_CONFIG } from "@/animations/variants";
+
+import valleDeUcoSm from "@/imports/valle-de-uco-vinedos-sm.webp";
+import valleDeUcoMd from "@/imports/valle-de-uco-vinedos-md.webp";
+import valleDeUcoLg from "@/imports/valle-de-uco-vinedos-lg.webp";
+import sanRafaelSm from "@/imports/san-rafael-lago-sm.webp";
+import sanRafaelMd from "@/imports/san-rafael-lago-md.webp";
+import sanRafaelLg from "@/imports/san-rafael-lago-lg.webp";
+import malargueSmImg from "@/imports/malargue-castillos-sm.webp";
+import alargueMdImg from "@/imports/malargue-castillos-md.webp";
+import alargueLgImg from "@/imports/malargue-castillos-lg.webp";
+import granMendozaSm from "@/imports/gran-mendoza-portones-sm.webp";
+import granMendozaMd from "@/imports/gran-mendoza-portones-md.webp";
+import granMendozaLg from "@/imports/gran-mendoza-portones-lg.webp";
+import potrerillosSm from "@/imports/potrerillos-lago-sm.webp";
+import potrerillosMd from "@/imports/potrerillos-lago-md.webp";
+import potrerillosLg from "@/imports/potrerillos-lago-lg.webp";
+import atuelSm from "@/imports/atuel-lago-sm.webp";
+import atuelMd from "@/imports/atuel-lago-md.webp";
+import atuelLg from "@/imports/atuel-lago-lg.webp";
 
 const destinations: Destination[] = [
-  { id: "valle-de-uco",    img: valleDeUco },
-  { id: "san-rafael",      img: sanRafael },
-  { id: "malargue",        img: malargue },
-  { id: "gran-mendoza",    img: granMendoza },
-  { id: "potrerillos",     img: potrerillos },
-  { id: "canon-del-atuel", img: atuel },
+  { id: "valle-de-uco",    img: { sm: valleDeUcoSm,  md: valleDeUcoMd,  lg: valleDeUcoLg  } },
+  { id: "san-rafael",      img: { sm: sanRafaelSm,   md: sanRafaelMd,   lg: sanRafaelLg   } },
+  { id: "malargue",        img: { sm: malargueSmImg,  md: alargueMdImg,  lg: alargueLgImg  } },
+  { id: "gran-mendoza",    img: { sm: granMendozaSm, md: granMendozaMd, lg: granMendozaLg } },
+  { id: "potrerillos",     img: { sm: potrerillosSm, md: potrerillosMd, lg: potrerillosLg } },
+  { id: "canon-del-atuel", img: { sm: atuelSm,       md: atuelMd,       lg: atuelLg       } },
 ];
 
 const Destinations = () => {
@@ -54,12 +68,19 @@ const Destinations = () => {
       kicker={t('section.kicker')}
       className="bg-white"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT_CONFIG}
+        variants={staggerContainer}
+      >
         {destinations.map((d) => {
           const isOpen = openId === d.id;
           return (
-            <button
+            <motion.button
               key={d.id}
+              variants={slideDownItem}
               type="button"
               onClick={() => handleCardClick(d.id)}
               aria-expanded={isOpen}
@@ -67,12 +88,19 @@ const Destinations = () => {
               className={cn(
                 "relative aspect-[4/3] rounded-2xl overflow-hidden",
                 "border border-navy-100 text-left cursor-pointer",
-                "focus:outline-none focus:ring-2 focus:ring-amber-500"
+                "focus:outline-none focus:ring-2 focus:ring-amber-500",
+                "[contain:layout_paint]"
               )}
             >
-              <ImageWithFallback
-                src={d.img}
+              <img
+                src={d.img.md}
+                srcSet={`${d.img.sm} 480w, ${d.img.md} 800w, ${d.img.lg} 1200w`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 alt={t(`items.${d.id}.name`)}
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
                 className={cn(
                   "absolute inset-0 w-full h-full object-cover transition-all duration-300",
                   isOpen ? "brightness-[0.35]" : "brightness-100"
@@ -156,10 +184,10 @@ const Destinations = () => {
                   {t('card.ctaMore')}
                 </span>
               </div>
-            </button>
+            </motion.button>
           );
         })}
-      </div>
+      </motion.div>
     </Section>
   );
 };

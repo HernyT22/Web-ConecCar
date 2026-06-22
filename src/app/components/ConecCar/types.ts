@@ -12,7 +12,13 @@ export interface Car {
   img?: string;
 }
 
+export interface DestinationImg {
+  sm: string;
+  md: string;
+  lg: string;
+}
+
 export interface Destination {
   id: string;
-  img: string;
+  img: DestinationImg;
 }

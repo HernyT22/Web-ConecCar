@@ -1,4 +1,6 @@
 // ConecCar.rent — Medios de pago
+import { motion } from 'framer-motion';
+import { staggerContainerFast, scaleInItem, VIEWPORT_CONFIG } from '@/animations/variants';
 import logoMP from "@/imports/logos/logomp.png";
 import logoVisa from "@/imports/logos/visa.png";
 import logoAmex from "@/imports/logos/amex.svg";
@@ -14,6 +16,8 @@ const Payments = () => {
         <img
           src={logoVisa}
           alt="Visa"
+          loading="lazy"
+          decoding="async"
           className="h-7 object-contain p-1"
         />
       ),
@@ -44,6 +48,8 @@ const Payments = () => {
         <img
           src={logoAmex}
           alt="American Express"
+          loading="lazy"
+          decoding="async"
           className="h-7 object-contain p-1"
         />
       ),
@@ -54,6 +60,8 @@ const Payments = () => {
         <img
           src={logoMP}
           alt="Mercado Pago"
+          loading="lazy"
+          decoding="async"
           className="h-6 object-contain p-1"
         />
       ),
@@ -64,6 +72,8 @@ const Payments = () => {
         <img
           src={iconTransferencia}
           alt="Transferencia bancaria"
+          loading="lazy"
+          decoding="async"
           className="w-8 h-8 object-contain p-1"
         />
       ),
@@ -74,6 +84,8 @@ const Payments = () => {
         <img
           src={iconEfectivoARS}
           alt="Efectivo ARS"
+          loading="lazy"
+          decoding="async"
           className="w-8 h-8 object-contain p-1"
         />
       ),
@@ -84,6 +96,8 @@ const Payments = () => {
         <img
           src={iconEfectivoUSD}
           alt="Efectivo USD"
+          loading="lazy"
+          decoding="async"
           className="w-8 h-8 object-contain p-1"
         />
       ),
@@ -106,10 +120,17 @@ const Payments = () => {
               y USD.
             </div>
           </div>
-          <div className="md:w-3/4 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          <motion.div
+            className="md:w-3/4 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT_CONFIG}
+            variants={staggerContainerFast}
+          >
             {methods.map((m) => (
-              <div
+              <motion.div
                 key={m.name}
+                variants={scaleInItem}
                 className="bg-white rounded-xl border-2 border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 hover:shadow-[0_4px_16px_-6px_rgba(201,161,74,0.4)] h-14 flex flex-col items-center justify-center text-navy-700 transition gap-1"
               >
                 <div className="flex items-center justify-center">
@@ -118,9 +139,9 @@ const Payments = () => {
                 <span className="mono uppercase tracking-widest text-center px-2 text-[9px]">
                   {m.name}
                 </span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

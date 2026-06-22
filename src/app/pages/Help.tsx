@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
+import * as Accordion from '@radix-ui/react-accordion';
+import { Plus } from 'lucide-react';
 import Nav from '@/app/components/ConecCar/Nav';
 import Footer from '@/app/components/ConecCar/Footer';
 import { HELP_SECTIONS, FAQ_IDS } from '@/data/helpContent';
 import { buildWhatsAppUrl } from '@/app/components/ConecCar/whatsapp';
-import heroCordillera from '@/imports/hero-cordillera-mendoza.jpg';
+import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
 import whatsappIcon from '@/imports/whatsapp.png';
 
 const Help = () => {
@@ -90,15 +92,29 @@ const Help = () => {
           <h2 className="font-display text-3xl text-navy-950 pb-3 mb-6 border-b-2 border-amber-400">
             {t('faqs.title')}
           </h2>
-          {FAQ_IDS.map((id) => (
-            <details key={id} className="group border-b border-gray-200 py-5">
-              <summary className="cursor-pointer list-none flex justify-between items-center font-semibold text-navy-900">
-                <span>{t(`faqs.items.${id}.q`)}</span>
-                <span className="ml-4 text-amber-500 transition-transform group-open:rotate-45 text-2xl leading-none select-none">+</span>
-              </summary>
-              <p className="mt-3 text-gray-700 leading-relaxed">{t(`faqs.items.${id}.a`)}</p>
-            </details>
-          ))}
+          <Accordion.Root type="single" collapsible className="w-full">
+            {FAQ_IDS.map((id) => (
+              <Accordion.Item
+                key={id}
+                value={id}
+                className="border-b border-gray-200"
+              >
+                <Accordion.Header>
+                  <Accordion.Trigger className="group flex w-full items-center justify-between py-5 text-left font-semibold text-navy-900 hover:text-amber-500 transition-colors">
+                    <span>{t(`faqs.items.${id}.q`)}</span>
+                    <Plus
+                      className="ml-4 h-5 w-5 shrink-0 text-amber-500 transition-transform duration-200 group-data-[state=open]:rotate-45"
+                    />
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content
+                  className="overflow-hidden text-gray-700 leading-relaxed data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up"
+                >
+                  <p className="pb-5">{t(`faqs.items.${id}.a`)}</p>
+                </Accordion.Content>
+              </Accordion.Item>
+            ))}
+          </Accordion.Root>
         </section>
 
         {/* CTA WhatsApp */}

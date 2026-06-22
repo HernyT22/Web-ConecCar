@@ -1,6 +1,8 @@
 // ConecCar.rent — Opiniones
+import { motion } from 'framer-motion';
 import Section from "@/app/components/ConecCar/Section";
 import { I } from "@/app/components/ConecCar/Icons";
+import { staggerContainer, slideUpItem, VIEWPORT_CONFIG } from '@/animations/variants';
 
 const Reviews = () => {
   interface Review {
@@ -48,10 +50,17 @@ const Reviews = () => {
       kicker="Miles de kilómetros recorridos. Estas son sus experiencias."
       className="bg-white"
     >
-      <div className="grid md:grid-cols-3 gap-5">
+      <motion.div
+        className="grid md:grid-cols-3 gap-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT_CONFIG}
+        variants={staggerContainer}
+      >
         {items.map((r, i) => (
-          <article
+          <motion.article
             key={i}
+            variants={slideUpItem}
             className="relative rounded-2xl border border-navy-100 bg-white p-6 md:p-7 lift flex flex-col hover:border-amber-500/50 hover:shadow-[0_10px_30px_-12px_rgba(201,161,74,0.35)] transition"
           >
             <div className="flex items-center justify-between gap-3 mb-4 relative">
@@ -96,9 +105,9 @@ const Reviews = () => {
                 </div>
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 };

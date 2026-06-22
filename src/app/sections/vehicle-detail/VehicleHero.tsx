@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { WHATSAPP_URL } from '@/data/contact';
 import type { Vehicle } from '@/data/vehicles';
-import heroCordillera from '@/imports/hero-cordillera-mendoza.jpg';
+import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
 import whatsappIcon from '@/imports/whatsapp.png';
+import { fadeIn } from '@/animations/variants';
 
 interface Props {
   vehicle: Vehicle;
@@ -55,7 +57,12 @@ const VehicleHero = ({ vehicle }: Props) => {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-16 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
 
         {/* columna texto */}
-        <div className="order-2 lg:order-1">
+        <motion.div
+          className="order-2 lg:order-1"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+        >
           <div className="flex items-center gap-2.5">
             {badge && (
               <span className="inline-flex items-center gap-1.5 bg-amber-500 text-navy-950 text-[11px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">
@@ -125,7 +132,7 @@ const VehicleHero = ({ vehicle }: Props) => {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* columna galería */}
         <div className="order-1 lg:order-2">
@@ -135,11 +142,11 @@ const VehicleHero = ({ vehicle }: Props) => {
               : <PlaceholderImg label={imageLabels[active] ?? imageLabels[0]} tone="dark" className="aspect-[4/3] w-full" />
             }
             <span className="absolute top-4 left-4 bg-navy-950/70 text-white mono uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur">
-              {active + 1} / {imageLabels.length}
+              {active + 1} / {images.length}
             </span>
           </div>
           <div className="grid grid-cols-4 gap-3 mt-3">
-            {imageLabels.map((label, i) => (
+            {images.map((src, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
@@ -149,10 +156,13 @@ const VehicleHero = ({ vehicle }: Props) => {
                     : 'border-white/10 hover:border-white/30'
                 }`}
               >
-                {images[i]
-                  ? <img src={images[i]} alt={label} className="aspect-[4/3] w-full object-contain" />
-                  : <PlaceholderImg label={`0${i + 1}`} tone="dark" className="aspect-[4/3] w-full" />
-                }
+                <img
+                  src={src}
+                  alt={imageLabels[i] ?? `${brand} ${model}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] w-full object-contain"
+                />
               </button>
             ))}
           </div>

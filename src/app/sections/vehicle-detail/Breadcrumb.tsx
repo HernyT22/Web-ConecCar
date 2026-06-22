@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
+import { fadeIn } from '@/animations/variants';
 import type { Vehicle } from '@/data/vehicles';
 
 interface Props {
@@ -10,7 +12,12 @@ const Breadcrumb = ({ vehicle }: Props) => {
   const { t } = useTranslation('vehicle');
 
   return (
-    <div className="bg-white border-b border-navy-100">
+    <motion.div
+      className="bg-white border-b border-navy-100"
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+    >
       <div className="mx-auto max-w-7xl px-5 md:px-8 h-14 flex items-center justify-between gap-4">
         <a href="/#fleet" className="inline-flex items-center gap-2 text-navy-700 hover:text-navy-900 text-sm transition">
           <span className="w-4 h-4">{I.arrowLeft}</span>
@@ -26,7 +33,7 @@ const Breadcrumb = ({ vehicle }: Props) => {
           </span>
         </nav>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
