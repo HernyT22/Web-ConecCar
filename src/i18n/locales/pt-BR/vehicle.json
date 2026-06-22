@@ -1,0 +1,88 @@
+{
+  "breadcrumb": {
+    "back": "Voltar à frota",
+    "home": "Início",
+    "fleet": "Frota"
+  },
+  "hero": {
+    "dailyRate": "Diária",
+    "perDay": "/ dia",
+    "book": "Reservar agora",
+    "consult": "Consultar"
+  },
+  "specs": {
+    "eyebrow": "Ficha técnica",
+    "title": "Especificações do veículo.",
+    "labels": {
+      "category": "Categoria",
+      "year": "Ano",
+      "seats": "Capacidade",
+      "bags": "Bagagem",
+      "transmission": "Transmissão",
+      "fuel": "Combustível",
+      "climate": "Climatização",
+      "body": "Carroceria"
+    },
+    "passenger_one": "{{count}} passageiro",
+    "passenger_other": "{{count}} passageiros",
+    "suitcase_one": "{{count}} mala",
+    "suitcase_other": "{{count}} malas"
+  },
+  "included": {
+    "eyebrow": "Incluído na sua locação",
+    "title": "Tudo resolvido antes de entrar no carro.",
+    "subtitle": "O preço diário já contempla o essencial para que você só precise pensar no caminho.",
+    "requirements": "Requisitos: carteira de habilitação válida, cartão de crédito em nome do condutor e idade mínima de 21 anos.",
+    "items": [
+      { "t": "Seguro incluído", "s": "Cobertura total com franquia clara, sem surpresas." },
+      { "t": "Assistência 24/7", "s": "Uma pessoa de verdade no telefone a qualquer hora da viagem." },
+      { "t": "Quilometragem livre", "s": "Explore Mendoza sem limite de quilômetros dentro da província." },
+      { "t": "Entrega flexível", "s": "Aeroporto (MDZ), hotéis ou nossa sede na cidade." },
+      { "t": "Veículo higienizado", "s": "Limpeza profunda e revisão mecânica antes de cada entrega." },
+      { "t": "Atendimento trilíngue", "s": "Atendemos em espanhol, inglês e português." }
+    ]
+  },
+  "similar": {
+    "eyebrow": "Você também pode gostar",
+    "title": "Outros veículos da frota.",
+    "viewAll": "Ver toda a frota",
+    "from": "A partir de",
+    "inquire": "Consultar",
+    "perDay": "/ dia",
+    "view": "Ver"
+  },
+  "vehicleDescriptions": {
+    "honda-accord-2022": {
+      "short": "Sedã executivo",
+      "long": "Conforto e distinção para reuniões, traslados executivos e percursos longos com a Cordilheira dos Andes ao fundo. Direção silenciosa, bancos espaçosos e porta-malas generoso."
+    },
+    "kia-rio-2022": {
+      "short": "Sedã urbano",
+      "long": "Ágil, moderno e eficiente. Ideal para explorar a cidade ou embarcar em escapadas por Mendoza com o equilíbrio certo entre conforto, economia e tecnologia."
+    },
+    "vw-fox-2022": {
+      "short": "Hatchback compacto",
+      "long": "Prático, confiável e confortável para o dia a dia. Um companheiro ideal para se mover com facilidade pela cidade e aproveitar cada trajeto sem complicações."
+    },
+    "citroen-basalt-shine-2026-a": {
+      "short": "SUV Coupé — Azul Cosmo",
+      "long": "Design inovador, amplo espaço interior e uma condução pensada para o conforto. Perfeito para quem quer viajar com estilo, seja a trabalho ou para descobrir novas paisagens."
+    },
+    "citroen-basalt-shine-2026-b": {
+      "short": "SUV Coupé — Branco Nacarado",
+      "long": "Design inovador, amplo espaço interior e uma condução pensada para o conforto. Perfeito para quem quer viajar com estilo, seja a trabalho ou para descobrir novas paisagens."
+    },
+    "citroen-basalt-shine-2026-c": {
+      "short": "SUV Coupé — Sting Grey",
+      "long": "Design inovador, amplo espaço interior e uma condução pensada para o conforto. Perfeito para quem quer viajar com estilo, seja a trabalho ou para descobrir novas paisagens."
+    },
+    "chery-tiggo-2-2026-a": {
+      "short": "SUV Compacto — Branco",
+      "long": "Versátil e aventureiro, com uma posição de condução elevada que garante segurança e conforto em cada percurso. Ideal para explorar Mendoza com mais espaço e uma visão privilegiada da estrada."
+    },
+    "chery-tiggo-2-2026-b": {
+      "short": "SUV Compacto — Vermelho",
+      "long": "Versátil e aventureiro, com uma posição de condução elevada que garante segurança e conforto em cada percurso. Ideal para explorar Mendoza com mais espaço e uma visão privilegiada da estrada."
+    }
+  }
+}

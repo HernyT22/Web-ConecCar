@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "Ayuda e información",
+    "title": "¿En qué te podemos ayudar?",
+    "subtitle": "Todo lo que necesitás saber antes y durante tu alquiler."
+  },
+  "sections": {
+    "seguro": {
+      "title": "Seguro",
+      "paragraphs": [
+        "Todos nuestros vehículos cuentan con cobertura vigente que incluye responsabilidad civil frente a terceros y protección ante diversos imprevistos durante el período de alquiler.",
+        "Al momento de la entrega del vehículo se informarán las condiciones de cobertura, franquicias y responsabilidades del conductor.",
+        "Es importante tener en cuenta que el seguro no cubre daños ocasionados por conducción bajo los efectos del alcohol o drogas, uso indebido o negligente del vehículo, participación en actividades no autorizadas, conductores no declarados en el contrato o la salida del país sin autorización previa de la empresa.",
+        "En caso de accidente, robo o avería, el conductor deberá comunicarse de inmediato con nuestro equipo, realizar la denuncia policial cuando corresponda y seguir las instrucciones indicadas por la empresa y la aseguradora."
+      ]
+    },
+    "cancelacion": {
+      "title": "Política de cancelación",
+      "paragraphs": [
+        "Entendemos que los planes pueden cambiar. Por ello, las reservas pueden ser modificadas o reprogramadas comunicándose previamente con nuestro equipo.",
+        "Las señas abonadas para confirmar una reserva no son reembolsables. Sin embargo, el importe podrá utilizarse como crédito para una futura reserva dentro de los 12 meses posteriores a la fecha de cancelación, sujeto a disponibilidad.",
+        "Las solicitudes de modificación o reprogramación deberán realizarse con la mayor antelación posible para garantizar la disponibilidad del vehículo requerido.",
+        "En caso de no presentarse a retirar el vehículo en la fecha y horario acordados sin previo aviso, la reserva podrá considerarse cancelada y el crédito quedará sujeto a evaluación por parte de la empresa.",
+        "Para cualquier cambio o consulta sobre su reserva, nuestro equipo estará disponible para asistirlo."
+      ]
+    },
+    "manejar-en-argentina": {
+      "title": "Manejar en Argentina",
+      "intro": "Si estás planeando recorrer Argentina en automóvil, es importante conocer algunos requisitos y normas básicas para viajar de forma segura y disfrutar al máximo tu experiencia.",
+      "subsections": {
+        "documentacion": {
+          "title": "Documentación necesaria",
+          "intro": "Los visitantes extranjeros deberán contar con:",
+          "items": [
+            "Licencia de conducir vigente emitida por su país de origen.",
+            "Pasaporte o documento de identidad válido."
+          ]
+        },
+        "requisitos": {
+          "title": "Requisitos para alquilar un vehículo",
+          "paragraph": "Para alquilar un vehículo con ConecCar, el conductor deberá cumplir con la edad mínima de 21 años y presentar la documentación correspondiente al momento del retiro."
+        },
+        "normas": {
+          "title": "Normas de tránsito importantes",
+          "items": [
+            "En Argentina se conduce por la derecha.",
+            "El uso del cinturón de seguridad es obligatorio para todos los ocupantes.",
+            "Las luces bajas deben permanecer encendidas en rutas y carreteras.",
+            "Está prohibido utilizar el teléfono celular mientras se conduce.",
+            "Los límites de velocidad varían según la zona y se encuentran señalizados.",
+            "Varias provincias aplican tolerancia cero al consumo de alcohol al volante."
+          ]
+        },
+        "peajes": {
+          "title": "Peajes",
+          "paragraph": "Las principales rutas argentinas cuentan con estaciones de peaje. Algunas aceptan efectivo, tarjetas de débito o crédito y sistemas electrónicos de pago."
+        },
+        "combustible": {
+          "title": "Combustible y estaciones de servicio",
+          "paragraph": "Las estaciones de servicio están disponibles en ciudades y rutas principales. Sin embargo, en trayectos de montaña o zonas poco pobladas recomendamos cargar combustible con anticipación."
+        },
+        "chile": {
+          "title": "Viajes a Chile",
+          "paragraph": "Si desea cruzar la frontera hacia Chile con un vehículo alquilado, deberá solicitar autorización previa y la documentación correspondiente con suficiente anticipación. Consulte con nuestro equipo antes de planificar su viaje."
+        },
+        "seguridad": {
+          "title": "Consejos de seguridad",
+          "items": [
+            "Respete siempre las velocidades máximas permitidas.",
+            "En invierno, consulte el estado de rutas de montaña antes de viajar.",
+            "No deje objetos de valor a la vista dentro del vehículo.",
+            "Lleve siempre consigo su documentación personal y la del vehículo."
+          ]
+        },
+        "telefonos": {
+          "title": "Teléfonos útiles",
+          "paragraph": "Emergencias: 911. Para asistencia relacionada con su alquiler, comuníquese directamente con nuestro equipo, disponible para acompañarlo durante todo su viaje."
+        }
+      }
+    }
+  },
+  "faqs": {
+    "title": "Preguntas frecuentes",
+    "items": {
+      "faq1":  { "q": "¿Cómo puedo reservar un vehículo?",                       "a": "Puede solicitar su reserva por WhatsApp, teléfono o a través de nuestro sitio web. Una vez confirmada la disponibilidad, le indicaremos los pasos para completar la reserva." },
+      "faq2":  { "q": "¿Es necesario pagar una seña?",                            "a": "Sí. Para confirmar la reserva solicitamos una seña. El saldo restante deberá abonarse al momento de retirar el vehículo." },
+      "faq3":  { "q": "¿Qué documentación necesito para alquilar un vehículo?",   "a": "Deberá presentar licencia de conducir vigente, documento de identidad o pasaporte y cumplir con los requisitos establecidos por la empresa." },
+      "faq4":  { "q": "¿Dónde puedo retirar y devolver el vehículo?",             "a": "Podemos coordinar la entrega y devolución en nuestras oficinas o en puntos previamente acordados según las necesidades del cliente." },
+      "faq5":  { "q": "¿Realizan entregas en el aeropuerto u hoteles?",           "a": "Sí. Ofrecemos entregas y devoluciones en aeropuerto, hoteles y otros puntos de la ciudad previamente coordinados." },
+      "faq6":  { "q": "¿El alquiler incluye kilometraje libre?",                  "a": "Sí. Todos nuestros alquileres incluyen kilometraje libre para que pueda disfrutar su viaje sin preocuparse por límites de distancia." },
+      "faq7":  { "q": "¿Existen costos ocultos o cargos adicionales?",            "a": "No. Trabajamos con una política de transparencia. Al momento de la reserva conocerá claramente el valor total del alquiler y los servicios incluidos." },
+      "faq8":  { "q": "¿Puedo agregar un conductor adicional?",                   "a": "Sí. Puede incorporarse un conductor adicional sin costo extra, siempre que presente la documentación requerida y sea autorizado por la empresa." },
+      "faq9":  { "q": "¿Los vehículos cuentan con seguro?",                        "a": "Sí. Todos nuestros vehículos cuentan con cobertura vigente durante el período de alquiler. Los detalles y condiciones serán informados al momento de la contratación." },
+      "faq10": { "q": "¿Se admiten mascotas?",                                    "a": "Sí. Las mascotas son bienvenidas. Solicitamos que viajen de manera segura y utilizando los sistemas de sujeción adecuados para garantizar la comodidad y seguridad de todos los ocupantes." },
+      "faq11": { "q": "¿Disponen de sillitas para niños?",                        "a": "Sí. Podemos proporcionar sillitas infantiles sujetas a disponibilidad. Recomendamos solicitarlas al momento de realizar la reserva." },
+      "faq12": { "q": "¿Qué debo hacer en caso de accidente, robo o avería?",     "a": "Deberá comunicarse inmediatamente con nuestro equipo, quien le indicará los pasos a seguir y le brindará asistencia durante todo el proceso." }
+    }
+  },
+  "cta": {
+    "text": "¿Te quedó alguna duda? Hablanos por WhatsApp y te respondemos en menos de 10 minutos en horario comercial.",
+    "button": "Consultar por WhatsApp"
+  },
+  "whatsappTemplate": "Hola, tengo una consulta sobre el alquiler de vehículos en Mendoza."
+}

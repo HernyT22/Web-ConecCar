@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "Help & information",
+    "title": "How can we help you?",
+    "subtitle": "Everything you need to know before and during your rental."
+  },
+  "sections": {
+    "seguro": {
+      "title": "Insurance",
+      "paragraphs": [
+        "All our vehicles include active coverage with third-party liability and protection against various incidents during the rental period.",
+        "At vehicle pickup we'll walk you through coverage conditions, deductibles, and driver responsibilities.",
+        "Please note that the insurance does not cover damage caused by driving under the influence of alcohol or drugs, improper or negligent use of the vehicle, participation in unauthorized activities, undeclared drivers, or crossing the border without prior authorization from the company.",
+        "In case of accident, theft, or breakdown, the driver must contact our team immediately, file a police report when applicable, and follow the instructions provided by the company and the insurer."
+      ]
+    },
+    "cancelacion": {
+      "title": "Cancellation policy",
+      "paragraphs": [
+        "We understand that plans can change. Reservations can be modified or rescheduled by contacting our team in advance.",
+        "Deposits paid to confirm a reservation are non-refundable. However, the amount can be used as credit for a future booking within 12 months from the cancellation date, subject to availability.",
+        "Modification or rescheduling requests should be made as far in advance as possible to guarantee availability of the requested vehicle.",
+        "If the customer fails to pick up the vehicle on the agreed date and time without prior notice, the reservation may be considered cancelled and the credit subject to evaluation by the company.",
+        "For any change or inquiry about your reservation, our team is available to assist you."
+      ]
+    },
+    "manejar-en-argentina": {
+      "title": "Driving in Argentina",
+      "intro": "If you're planning to explore Argentina by car, it's important to know some basic requirements and rules to travel safely and make the most of your experience.",
+      "subsections": {
+        "documentacion": {
+          "title": "Required documentation",
+          "intro": "International visitors must carry:",
+          "items": [
+            "A valid driver's license issued in your country of origin.",
+            "Passport or valid ID."
+          ]
+        },
+        "requisitos": {
+          "title": "Requirements to rent a vehicle",
+          "paragraph": "To rent a vehicle with ConecCar, the driver must be at least 21 years old and present the required documentation at pickup."
+        },
+        "normas": {
+          "title": "Important traffic rules",
+          "items": [
+            "In Argentina, you drive on the right.",
+            "Seatbelts are mandatory for all occupants.",
+            "Low-beam headlights must remain on at all times on highways and main roads.",
+            "Using a cell phone while driving is prohibited.",
+            "Speed limits vary by zone and are clearly signposted.",
+            "Several provinces enforce a zero-tolerance policy for drinking and driving."
+          ]
+        },
+        "peajes": {
+          "title": "Tolls",
+          "paragraph": "Main Argentine highways have toll stations. Some accept cash, debit or credit cards, and electronic payment systems."
+        },
+        "combustible": {
+          "title": "Fuel & gas stations",
+          "paragraph": "Gas stations are available in cities and along main routes. However, on mountain roads or sparsely populated areas, we recommend filling up in advance."
+        },
+        "chile": {
+          "title": "Trips to Chile",
+          "paragraph": "If you'd like to cross the border into Chile with a rental vehicle, you'll need to request prior authorization and the required documentation well in advance. Check with our team before planning your trip."
+        },
+        "seguridad": {
+          "title": "Safety tips",
+          "items": [
+            "Always respect posted speed limits.",
+            "In winter, check the status of mountain roads before traveling.",
+            "Don't leave valuables in plain sight inside the vehicle.",
+            "Always carry your personal documentation and the vehicle's papers with you."
+          ]
+        },
+        "telefonos": {
+          "title": "Useful phone numbers",
+          "paragraph": "Emergencies: 911. For rental-related assistance, contact our team directly — we're available throughout your trip."
+        }
+      }
+    }
+  },
+  "faqs": {
+    "title": "Frequently asked questions",
+    "items": {
+      "faq1":  { "q": "How can I book a vehicle?",                                "a": "You can request your booking via WhatsApp, phone, or our website. Once availability is confirmed, we'll guide you through the steps to complete the reservation." },
+      "faq2":  { "q": "Is a deposit required?",                                   "a": "Yes. We require a deposit to confirm the booking. The remaining balance is due at vehicle pickup." },
+      "faq3":  { "q": "What documents do I need to rent a vehicle?",              "a": "You'll need a valid driver's license, an ID or passport, and to meet the requirements set by the company." },
+      "faq4":  { "q": "Where can I pick up and return the vehicle?",              "a": "We can coordinate pickup and drop-off at our offices or at previously agreed locations, depending on your needs." },
+      "faq5":  { "q": "Do you deliver to airports or hotels?",                    "a": "Yes. We offer delivery and pickup at the airport, hotels, and other agreed-upon locations in the city." },
+      "faq6":  { "q": "Does the rental include unlimited mileage?",               "a": "Yes. All our rentals include unlimited mileage so you can enjoy your trip without worrying about distance limits." },
+      "faq7":  { "q": "Are there hidden costs or additional charges?",            "a": "No. We work with a transparency policy. At booking time you'll know exactly the total cost and what's included." },
+      "faq8":  { "q": "Can I add an additional driver?",                          "a": "Yes. An additional driver can be added at no extra cost, as long as they present the required documentation and are authorized by the company." },
+      "faq9":  { "q": "Do the vehicles come with insurance?",                     "a": "Yes. All our vehicles have active coverage during the rental period. Details and conditions are provided at the time of booking." },
+      "faq10": { "q": "Are pets allowed?",                                        "a": "Yes. Pets are welcome. We ask that they travel safely with appropriate restraint systems to ensure comfort and safety for all passengers." },
+      "faq11": { "q": "Do you provide child seats?",                              "a": "Yes. Child seats are available subject to availability. We recommend requesting them when you make your reservation." },
+      "faq12": { "q": "What should I do in case of accident, theft, or breakdown?", "a": "Contact our team immediately. We'll guide you through the next steps and provide assistance throughout the process." }
+    }
+  },
+  "cta": {
+    "text": "Still have questions? Reach us on WhatsApp and we'll reply in under 10 minutes during business hours.",
+    "button": "Chat with us on WhatsApp"
+  },
+  "whatsappTemplate": "Hi, I have a question about renting a vehicle in Mendoza."
+}

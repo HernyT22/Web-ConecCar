@@ -1,0 +1,63 @@
+{
+  "section": {
+    "eyebrow": "Fleet",
+    "title": "A car for every Mendoza you have in mind.",
+    "kicker": "City cars, sedans, and SUVs ready to move you through Mendoza with comfort and confidence."
+  },
+  "search": {
+    "placeholder": "Search by model, type, or feature…"
+  },
+  "sort": {
+    "label": "Sort",
+    "recommended": "Recommended",
+    "priceAsc": "Price: low to high",
+    "priceDesc": "Price: high to low"
+  },
+  "tabs": {
+    "all": "All"
+  },
+  "noResults": "No vehicles match those filters.",
+  "card": {
+    "seats": "seats",
+    "bags": "bags",
+    "ac": "A/C",
+    "from": "From",
+    "perDay": "day",
+    "consult": "Inquire",
+    "viewDetails": "View"
+  },
+  "enums": {
+    "category": {
+      "suv-coupe": "Coupe SUV",
+      "suv-compacta": "Compact SUV",
+      "sedan": "Sedan",
+      "hatchback-compacto": "Compact Hatchback"
+    },
+    "bodyType": {
+      "sedan-4d": "Sedan · 4 doors",
+      "hatchback-5d": "Hatchback · 5 doors",
+      "suv-5d": "SUV · 5 doors"
+    },
+    "transmission": {
+      "automatic": "Automatic",
+      "manual": "Manual"
+    },
+    "fuel": {
+      "gasoline": "Gasoline",
+      "diesel": "Diesel",
+      "electric": "Electric",
+      "hybrid": "Hybrid"
+    },
+    "climate": {
+      "ac": "Air conditioning",
+      "dualClimate": "Dual-zone climate",
+      "none": "No climate control"
+    },
+    "badge": {
+      "new": "New",
+      "corporate": "Corporate",
+      "mostBooked": "Most booked",
+      "family": "Family"
+    }
+  }
+}

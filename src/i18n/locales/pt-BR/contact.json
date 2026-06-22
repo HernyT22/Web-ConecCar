@@ -1,0 +1,51 @@
+{
+  "section": {
+    "eyebrow": "Contato",
+    "title": "A uma mensagem da estrada aberta.",
+    "kicker": "Pergunte o que precisar — rotas, roteiros personalizados, disponibilidade para uma data específica. Em horário comercial respondemos em menos de 10 minutos."
+  },
+  "whatsapp": {
+    "primaryLabel": "Fale conosco pelo WhatsApp",
+    "secondaryLabel": "Linha alternativa",
+    "secondaryHint": "Caso não respondamos no principal"
+  },
+  "channels": {
+    "emailLabel": "Email",
+    "phoneLabel": "Telefone",
+    "addressLabel": "Endereço"
+  },
+  "social": {
+    "label": "Siga a gente",
+    "instagramAria": "Siga a gente no Instagram",
+    "facebookAria": "Siga a gente no Facebook",
+    "linkedinAria": "Siga a gente no LinkedIn"
+  },
+  "form": {
+    "title": "Peça para te ligarmos",
+    "subtitle": "Entramos em contato na próxima hora.",
+    "fields": {
+      "name": {
+        "label": "Nome completo",
+        "placeholder": "Sofia Mendes"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "voce@exemplo.com"
+      },
+      "phone": {
+        "label": "Telefone (com código do país)",
+        "placeholder": "+55 11 91234-5678"
+      },
+      "pickupDate": {
+        "label": "Data de retirada",
+        "placeholder": "22 de maio de 2026"
+      },
+      "notes": {
+        "label": "Observações",
+        "placeholder": "Algo que devemos saber sobre sua viagem…"
+      }
+    },
+    "submit": "Enviar solicitação"
+  },
+  "whatsappTemplate": "Olá, gostaria de consultar sobre o aluguel de veículos em Mendoza."
+}

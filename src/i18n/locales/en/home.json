@@ -1,0 +1,106 @@
+{
+  "hero": {
+    "badge": "Premium mobility in Mendoza",
+    "titleLine1": "Connected",
+    "titleLine2": "to your destination.",
+    "subtitle": "Smart mobility for every destination",
+    "ctaPrimary": "Book Now",
+    "ctaSecondary": "Talk to an advisor",
+    "clockBadge": "24/7 Support",
+    "deliveryText": "Delivery at airport, hotels and our own office."
+  },
+  "about": {
+    "eyebrow": "ABOUT CONECCAR",
+    "title": "A Mendoza-based rental company, built for how you actually travel.",
+    "paragraph1": "We started ConecCar in 2014 with two pickup trucks and a simple promise: treat every guest like a local friend with a spare key. A decade later, the fleet ranges from urban compacts to expedition-ready 4×4s — but the promise hasn't changed.",
+    "paragraph2": "Our team lives and drives these roads. We'll tell you which mountain pass is closed before you ask, which winery has the best Malbec under fifty dollars, and which gas station to skip on the way to San Rafael.",
+    "chips": {
+      "localFounded": "Locally founded",
+      "familyOwned": "Family-owned",
+      "bCorp": "B Corp in progress",
+      "carbonOffset": "Carbon-offset fleet"
+    },
+    "benefitsEyebrow": "Benefits",
+    "benefitsTitle": "Everything your rental includes.",
+    "benefits": {
+      "noHiddenCosts": "No hidden costs",
+      "airportDelivery": "Airport delivery",
+      "unlimitedMileage": "Unlimited mileage",
+      "onlineBooking": "Online booking in minutes"
+    }
+  },
+  "destinations": {
+    "eyebrow": "Destinos",
+    "title": "Los destinos que nuestros clientes eligen.",
+    "kicker": "Rutas paisajes y recomendaciones para disfrutar Mendoza de verdad.",
+    "province": "Provincia de Mendoza",
+    "ctaCard": "Saber más",
+    "whatsappMsg": "Hola, me interesa saber más sobre {{name}} y los vehículos disponibles para visitarlo.",
+    "items": [
+      { "id": "valle-de-uco", "name": "Valle de Uco", "tag": "Zona de bodegas", "distance": "80 km · 1h", "description": "Entre viñedos y montañas, el Valle de Uco reúne las bodegas más exclusivas de Mendoza, vinos de altura y una gastronomía que enamora a viajeros de todo el mundo." },
+      { "id": "san-rafael", "name": "San Rafael", "tag": "Paisajes, espejos de agua, bodegas", "distance": "250 km · 3h", "description": "Naturaleza, bodegas y espejos de agua. San Rafael combina aventura y relax en uno de los destinos más visitados del sur mendocino." },
+      { "id": "malargue", "name": "Malargüe", "tag": "Aire libre y centro de ski", "distance": "330 km · 4h", "description": "Volcanes, cavernas y nieve. Malargüe ofrece algunos de los paisajes más sorprendentes de Mendoza y experiencias únicas para los amantes de la aventura." },
+      { "id": "gran-mendoza", "name": "Gran Mendoza", "tag": "Bodegas, hoteles, paisajes", "distance": "Radio 20 km", "description": "La esencia de Mendoza comienza aquí: plazas históricas, gastronomía local, vida nocturna y acceso rápido a las mejores bodegas de la provincia." },
+      { "id": "potrerillos", "name": "Potrerillos", "tag": "Lago y montaña", "distance": "60 km · 1h", "description": "Montañas, aire puro y un dique de color turquesa. El refugio perfecto para disfrutar de la naturaleza y los deportes de aventura cerca de la ciudad." },
+      { "id": "canon-del-atuel", "name": "Cañón del Atuel", "tag": "Rafting y cañadones", "distance": "300 km · 3h 30m", "description": "Un escenario natural único donde el agua y el viento moldearon paisajes espectaculares. Ideal para rafting, kayak y recorridos panorámicos inolvidables." }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Opiniones de clientes",
+    "title": "Lo que dicen nuestros clientes cuando devuelven las llaves.",
+    "kicker": "Miles de kilómetros recorridos. Estas son sus experiencias.",
+    "verified": "Opinión verificada",
+    "translated": "Traducido",
+    "items": [
+      { "name": "Agustín Laiseca", "role": "Argentina", "text": "La atención es un 10/10, siempre con buena energía y muy bien organizado todo. Los autos espaciosos, en todas las ocasiones están impecables y listos para recorrer Mendoza. Las facilidades de pago y la buena atención destacan principalmente a la empresa. Volvería a elegirlos una y otra vez." },
+      { "name": "Andrea Colamedici", "role": "De visita desde Italia", "lang": "IT → ES", "text": "Una experiencia hermosa. El auto estaba impecable, muy cómodo para recorrer Mendoza y con un consumo excelente. Se nota el cuidado y la dedicación en cada detalle. Lo recomiendo mucho." },
+      { "name": "Natalia Mamani", "role": "Mendoza, Argentina", "text": "Necesitaba resolver movilidad rápido porque tenía eventos y mi auto estaba en el taller. Fue súper práctico. Tener la posibilidad de alquilar un vehículo te salva muchísimo cuando no podés frenar tu rutina. Súper recomendado." },
+      { "name": "Bastiaan Willers", "role": "De visita desde Alemania", "lang": "DE → ES", "text": "El auto perfecto, amplio y cómodo. Todo súper limpio y en perfecto estado. La atención, los detalles y el precio son lo mejor. Lo recomiendo." },
+      { "name": "Magdalena Romero", "role": "De visita desde España", "text": "Me encantó la experiencia. El coche estaba super limpio, cómodo y andando de maravilla. Ideal para recorrer Mendoza tranquila y disfrutar cada paisaje. Además la atención fue de diez, muy cercana y amable. Sin dudas repetiría." }
+    ]
+  },
+  "payments": {
+    "eyebrow": "Medios de pago",
+    "title": "Pagá como prefieras.",
+    "subtitle": "Locales e internacionales. Aceptamos pagos en ARS y USD."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Tu vehículo en Mendoza está a un mensaje de distancia",
+    "subtitle": "Consultanos disponibilidad, tarifas y opciones de entrega. Respondemos en menos de una hora.",
+    "whatsappPrimary": "WhatsApp",
+    "whatsappAlt": "WhatsApp alternativo",
+    "follow": "Seguinos",
+    "form": {
+      "title": "Pedinos que te llamemos",
+      "subtitle": "Te contactamos dentro de la próxima hora.",
+      "fields": [
+        { "label": "Nombre completo", "placeholder": "Sofía Méndez" },
+        { "label": "Email", "placeholder": "vos@ejemplo.com" },
+        { "label": "Teléfono (con código de país)", "placeholder": "+1 415 555 0199" },
+        { "label": "Fecha de retiro", "placeholder": "22 de mayo de 2026" }
+      ],
+      "notesLabel": "Notas",
+      "notesPlaceholder": "Algo que tengamos que saber sobre tu viaje…",
+      "submit": "Enviar solicitud"
+    }
+  },
+  "features": {
+    "totallyInsured": {
+      "title": "Fully insured",
+      "description": "All-inclusive coverage on every rental, with clear, straightforward policies."
+    },
+    "bilingual": {
+      "title": "Bilingual team",
+      "description": "Support in ES / EN / PT before, during, and after your trip."
+    },
+    "support": {
+      "title": "24/7 assistance",
+      "description": "Talk to a real person in under 90 seconds, any time of day."
+    },
+    "concierge": {
+      "title": "Concierge desk",
+      "description": "Tours, reservations, and winery introductions on request."
+    }
+  }
+}

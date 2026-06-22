@@ -244,4 +244,56 @@ export const I = {
     />
   ),
   check: <Icon d={<path d="M5 12.5l4 4 10-10" />} />,
+  arrowLeft: (
+    <Icon
+      d={
+        <>
+          <path d="M19 12H5" />
+          <path d="M11 5l-7 7 7 7" />
+        </>
+      }
+    />
+  ),
+  chevronR: <Icon d={<path d="M9 6l6 6-6 6" />} />,
+  road: (
+    <Icon
+      d={
+        <path d="M4 21l3-18M20 21L17 3M12 4v2M12 10v2M12 16v2" />
+      }
+    />
+  ),
+  door: (
+    <Icon
+      d={
+        <>
+          <path d="M14 3v18H6V5a2 2 0 0 1 2-2z" />
+          <path d="M14 3l4 2v16h-4" />
+          <circle cx="11" cy="12" r="0.6" fill="currentColor" />
+        </>
+      }
+    />
+  ),
+  calendar: (
+    <Icon
+      d={
+        <>
+          <rect x="3" y="4.5" width="18" height="16" rx="2" />
+          <path d="M3 9h18M8 3v3M16 3v3" />
+        </>
+      }
+    />
+  ),
+  sparkle: (
+    <Icon d={<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />} />
+  ),
+  info: (
+    <Icon
+      d={
+        <>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11v5M12 7.5v.01" />
+        </>
+      }
+    />
+  ),
 };

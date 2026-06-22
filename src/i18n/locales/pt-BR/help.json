@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "Ajuda e informações",
+    "title": "Como podemos te ajudar?",
+    "subtitle": "Tudo o que você precisa saber antes e durante o seu aluguel."
+  },
+  "sections": {
+    "seguro": {
+      "title": "Seguro",
+      "paragraphs": [
+        "Todos os nossos veículos contam com cobertura vigente que inclui responsabilidade civil contra terceiros e proteção contra diversos imprevistos durante o período de aluguel.",
+        "No momento da entrega do veículo, informamos as condições de cobertura, franquias e responsabilidades do condutor.",
+        "É importante saber que o seguro não cobre danos causados por direção sob efeito de álcool ou drogas, uso indevido ou negligente do veículo, participação em atividades não autorizadas, condutores não declarados no contrato ou a saída do país sem autorização prévia da empresa.",
+        "Em caso de acidente, roubo ou avaria, o condutor deverá entrar em contato imediatamente com nossa equipe, fazer o boletim de ocorrência quando aplicável e seguir as instruções da empresa e da seguradora."
+      ]
+    },
+    "cancelacion": {
+      "title": "Política de cancelamento",
+      "paragraphs": [
+        "Entendemos que os planos podem mudar. Por isso, as reservas podem ser modificadas ou remarcadas entrando em contato com nossa equipe com antecedência.",
+        "Os sinais pagos para confirmar uma reserva não são reembolsáveis. No entanto, o valor pode ser utilizado como crédito para uma futura reserva dentro de 12 meses a partir da data do cancelamento, sujeito à disponibilidade.",
+        "As solicitações de alteração ou remarcação devem ser feitas com a maior antecedência possível para garantir a disponibilidade do veículo desejado.",
+        "Em caso de não comparecimento para retirar o veículo na data e horário acordados sem aviso prévio, a reserva poderá ser considerada cancelada e o crédito ficará sujeito à avaliação da empresa.",
+        "Para qualquer alteração ou consulta sobre sua reserva, nossa equipe está disponível para te ajudar."
+      ]
+    },
+    "manejar-en-argentina": {
+      "title": "Dirigir na Argentina",
+      "intro": "Se você está planejando percorrer a Argentina de carro, é importante conhecer alguns requisitos e normas básicas para viajar com segurança e curtir ao máximo sua experiência.",
+      "subsections": {
+        "documentacion": {
+          "title": "Documentação necessária",
+          "intro": "Visitantes estrangeiros devem ter em mãos:",
+          "items": [
+            "Habilitação válida emitida no país de origem.",
+            "Passaporte ou documento de identidade válido."
+          ]
+        },
+        "requisitos": {
+          "title": "Requisitos para alugar um veículo",
+          "paragraph": "Para alugar um veículo com a ConecCar, o condutor deve ter no mínimo 21 anos e apresentar a documentação correspondente no momento da retirada."
+        },
+        "normas": {
+          "title": "Normas de trânsito importantes",
+          "items": [
+            "Na Argentina, dirige-se pela direita.",
+            "O uso do cinto de segurança é obrigatório para todos os ocupantes.",
+            "Os faróis baixos devem permanecer acesos em rodovias e estradas.",
+            "É proibido usar o celular enquanto dirige.",
+            "Os limites de velocidade variam por região e estão devidamente sinalizados.",
+            "Várias províncias aplicam tolerância zero ao consumo de álcool ao volante."
+          ]
+        },
+        "peajes": {
+          "title": "Pedágios",
+          "paragraph": "As principais rodovias argentinas têm estações de pedágio. Algumas aceitam dinheiro, cartões de débito ou crédito e sistemas eletrônicos de pagamento."
+        },
+        "combustible": {
+          "title": "Combustível e postos de gasolina",
+          "paragraph": "Os postos de gasolina estão disponíveis nas cidades e nas principais rotas. No entanto, em trechos de montanha ou áreas pouco povoadas, recomendamos abastecer com antecedência."
+        },
+        "chile": {
+          "title": "Viagens ao Chile",
+          "paragraph": "Se você quer cruzar a fronteira com o Chile em um veículo alugado, precisará solicitar autorização prévia e a documentação correspondente com bastante antecedência. Consulte nossa equipe antes de planejar sua viagem."
+        },
+        "seguridad": {
+          "title": "Dicas de segurança",
+          "items": [
+            "Respeite sempre os limites de velocidade.",
+            "No inverno, consulte o estado das estradas de montanha antes de viajar.",
+            "Não deixe objetos de valor à vista dentro do veículo.",
+            "Leve sempre com você sua documentação pessoal e a do veículo."
+          ]
+        },
+        "telefonos": {
+          "title": "Telefones úteis",
+          "paragraph": "Emergências: 911. Para assistência relacionada ao seu aluguel, entre em contato diretamente com nossa equipe, disponível durante toda a sua viagem."
+        }
+      }
+    }
+  },
+  "faqs": {
+    "title": "Perguntas frequentes",
+    "items": {
+      "faq1":  { "q": "Como posso reservar um veículo?",                            "a": "Você pode solicitar sua reserva por WhatsApp, telefone ou através do nosso site. Uma vez confirmada a disponibilidade, te indicaremos os próximos passos." },
+      "faq2":  { "q": "É necessário pagar um sinal?",                                "a": "Sim. Para confirmar a reserva pedimos um sinal. O valor restante deverá ser pago no momento da retirada do veículo." },
+      "faq3":  { "q": "Que documentação preciso para alugar um veículo?",            "a": "Você deve apresentar habilitação válida, documento de identidade ou passaporte e cumprir os requisitos estabelecidos pela empresa." },
+      "faq4":  { "q": "Onde posso retirar e devolver o veículo?",                    "a": "Podemos coordenar a entrega e devolução em nossos escritórios ou em pontos previamente combinados de acordo com sua necessidade." },
+      "faq5":  { "q": "Vocês fazem entregas no aeroporto ou hotéis?",                "a": "Sim. Oferecemos entrega e devolução no aeroporto, hotéis e outros pontos da cidade previamente combinados." },
+      "faq6":  { "q": "O aluguel inclui quilometragem livre?",                       "a": "Sim. Todos os nossos aluguéis incluem quilometragem livre para você curtir sua viagem sem se preocupar com limites de distância." },
+      "faq7":  { "q": "Existem custos ocultos ou taxas adicionais?",                 "a": "Não. Trabalhamos com uma política de transparência. No momento da reserva você saberá exatamente o valor total e os serviços incluídos." },
+      "faq8":  { "q": "Posso adicionar um condutor adicional?",                      "a": "Sim. Um condutor adicional pode ser incluído sem custo extra, desde que apresente a documentação necessária e seja autorizado pela empresa." },
+      "faq9":  { "q": "Os veículos contam com seguro?",                              "a": "Sim. Todos os nossos veículos têm cobertura vigente durante o período de aluguel. Os detalhes e condições serão informados no momento da contratação." },
+      "faq10": { "q": "Pets são permitidos?",                                        "a": "Sim. Pets são bem-vindos. Pedimos que viajem com segurança e com os sistemas de contenção adequados para garantir o conforto e a segurança de todos." },
+      "faq11": { "q": "Vocês têm cadeirinhas para crianças?",                        "a": "Sim. Podemos fornecer cadeirinhas infantis sujeitas à disponibilidade. Recomendamos solicitá-las no momento da reserva." },
+      "faq12": { "q": "O que devo fazer em caso de acidente, roubo ou avaria?",     "a": "Entre em contato imediatamente com nossa equipe, que te indicará os passos a seguir e te dará assistência durante todo o processo." }
+    }
+  },
+  "cta": {
+    "text": "Ficou com alguma dúvida? Fale com a gente pelo WhatsApp e respondemos em menos de 10 minutos em horário comercial.",
+    "button": "Falar pelo WhatsApp"
+  },
+  "whatsappTemplate": "Olá, tenho uma dúvida sobre o aluguel de veículos em Mendoza."
+}

@@ -1,8 +1,10 @@
-// ConecCar.rent — WhatsApp helpers
-// Punto único de configuración para todos los deep links a WhatsApp.
+import { WHATSAPP_NUMBERS, type WhatsAppLine } from '@/data/contact';
 
-export const WHATSAPP_PHONE = "5492615346953";
-
-export function buildWhatsAppUrl(message: string): string {
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+/**
+ * Construye una URL de wa.me para un número específico.
+ * @param message Mensaje pre-rellenado (sin encodear; la función lo encodea).
+ * @param line Cuál línea usar. Default: 'primary'.
+ */
+export function buildWhatsAppUrl(message: string, line: WhatsAppLine = 'primary'): string {
+  return `https://wa.me/${WHATSAPP_NUMBERS[line]}?text=${encodeURIComponent(message)}`;
 }

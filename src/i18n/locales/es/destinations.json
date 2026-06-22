@@ -1,0 +1,51 @@
+{
+  "section": {
+    "eyebrow": "Destinos",
+    "title": "Los destinos que nuestros clientes eligen.",
+    "kicker": "Rutas, paisajes y recomendaciones para disfrutar Mendoza de verdad."
+  },
+  "card": {
+    "subregion": "Provincia de Mendoza",
+    "closeAriaLabel": "Cerrar",
+    "ctaMore": "Saber más"
+  },
+  "whatsappTemplate": "Hola, me interesa saber más sobre {{name}} y los vehículos disponibles para visitarlo.",
+  "items": {
+    "valle-de-uco": {
+      "name": "Valle de Uco",
+      "tag": "Zona de bodegas",
+      "distance": "80 km · 1h",
+      "description": "Una de las regiones vitivinícolas más prestigiosas del país, con bodegas de arquitectura impactante, viñedos a los pies de la cordillera y cocina de autor. Plan de día perfecto desde Mendoza ciudad."
+    },
+    "san-rafael": {
+      "name": "San Rafael",
+      "tag": "Paisajes, espejos de agua, bodegas",
+      "distance": "250 km · 3h",
+      "description": "Cañón del Atuel, embalses, bodegas históricas y una ciudad tranquila para hacer base. Ideal para escapadas de fin de semana largo o viajes de varios días."
+    },
+    "malargue": {
+      "name": "Malargüe",
+      "tag": "Aire libre y centro de ski",
+      "distance": "330 km · 4h",
+      "description": "Sur profundo de la provincia: Las Leñas para esquiar en invierno, Payunia y Caverna de las Brujas el resto del año. Naturaleza imponente y rutas escénicas hasta llegar."
+    },
+    "gran-mendoza": {
+      "name": "Gran Mendoza",
+      "tag": "Bodegas, hoteles, paisajes",
+      "distance": "Radio 20 km",
+      "description": "La capital y sus alrededores: Maipú, Luján de Cuyo, Chacras de Coria. Bodegas de primera línea, hotelería boutique y los mejores restaurantes de la provincia, todo a pocos minutos del centro."
+    },
+    "potrerillos": {
+      "name": "Potrerillos",
+      "tag": "Lago y montaña",
+      "distance": "60 km · 1h",
+      "description": "Dique de aguas turquesas rodeado de cerros, con deportes náuticos, cabalgatas y excelentes opciones gastronómicas. Una escapada de medio día camino a la alta cordillera."
+    },
+    "canon-del-atuel": {
+      "name": "Cañón del Atuel",
+      "tag": "Rafting y cañadones",
+      "distance": "300 km · 3h 30m",
+      "description": "Formaciones rocosas esculpidas por el río Atuel a lo largo de millones de años. Rafting, kayak y caminatas por uno de los paisajes más fotogénicos del sur mendocino."
+    }
+  }
+}

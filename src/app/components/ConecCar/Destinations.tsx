@@ -1,5 +1,6 @@
 // ConecCar.rent — Destinos
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/app/components/ui/utils";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import Section from "@/app/components/ConecCar/Section";
@@ -14,63 +15,16 @@ import potrerillos from "@/imports/potrerillos-lago.jpg";
 import atuel from "@/imports/atuel-lago.jpg";
 
 const destinations: Destination[] = [
-  {
-    id: "valle-de-uco",
-    name: "Valle de Uco",
-    tag: "Zona de bodegas",
-    distance: "80 km · 1h",
-    description:
-      "Terroir de altura con bodegas boutique, vistas a la cordillera y cocina de autor entre viñedos.",
-    img: valleDeUco,
-  },
-  {
-    id: "san-rafael",
-    name: "San Rafael",
-    tag: "Paisajes, espejos de agua, bodegas",
-    distance: "250 km · 3h",
-    description:
-      "Lagos, embalses y bodegas familiares. Base ideal para combinar relax y aventura en el sur mendocino.",
-    img: sanRafael,
-  },
-  {
-    id: "malargue",
-    name: "Malargüe",
-    tag: "Aire libre y centro de ski",
-    distance: "330 km · 4h",
-    description:
-      "Las Leñas en invierno, caverna de las Brujas y la Payunia volcánica el resto del año.",
-    img: malargue,
-  },
-  {
-    id: "gran-mendoza",
-    name: "Gran Mendoza",
-    tag: "Bodegas, hoteles, paisajes",
-    distance: "Radio 20 km",
-    description:
-      "Capital arbolada, calle Arístides, Parque San Martín y las primeras bodegas a 20 minutos del centro.",
-    img: granMendoza,
-  },
-  {
-    id: "potrerillos",
-    name: "Potrerillos",
-    tag: "Lago y montaña",
-    distance: "60 km · 1h",
-    description:
-      "Dique turquesa rodeado de precordillera. Cabañas, rafting suave y trekking accesible.",
-    img: potrerillos,
-  },
-  {
-    id: "canon-del-atuel",
-    name: "Cañón del Atuel",
-    tag: "Rafting y cañadones",
-    distance: "300 km · 3h 30m",
-    description:
-      "Formaciones rocosas espectaculares cerca de San Rafael. Rafting nivel 2-3 y kayak entre miradores.",
-    img: atuel,
-  },
+  { id: "valle-de-uco",    img: valleDeUco },
+  { id: "san-rafael",      img: sanRafael },
+  { id: "malargue",        img: malargue },
+  { id: "gran-mendoza",    img: granMendoza },
+  { id: "potrerillos",     img: potrerillos },
+  { id: "canon-del-atuel", img: atuel },
 ];
 
 const Destinations = () => {
+  const { t } = useTranslation('destinations');
   const [openId, setOpenId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -86,17 +40,18 @@ const Destinations = () => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
-  const handleWhatsAppClick = (name: string) => {
-    const msg = `Hola, me interesa saber más sobre ${name} y los vehículos disponibles para visitarlo.`;
+  const handleWhatsAppClick = (destId: string) => {
+    const name = t(`items.${destId}.name`);
+    const msg = t('whatsappTemplate', { name });
     window.open(buildWhatsAppUrl(msg), "_blank");
   };
 
   return (
     <Section
       id="destinations"
-      eyebrow="Destinos"
-      title="Los destinos que nuestros clientes eligen."
-      kicker="Rutas paisajes y recomendaciones para disfrutar Mendoza de verdad."
+      eyebrow={t('section.eyebrow')}
+      title={t('section.title')}
+      kicker={t('section.kicker')}
       className="bg-white"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -108,7 +63,7 @@ const Destinations = () => {
               type="button"
               onClick={() => handleCardClick(d.id)}
               aria-expanded={isOpen}
-              aria-label={d.name + ", " + d.tag}
+              aria-label={t(`items.${d.id}.name`) + ", " + t(`items.${d.id}.tag`)}
               className={cn(
                 "relative aspect-[4/3] rounded-2xl overflow-hidden",
                 "border border-navy-100 text-left cursor-pointer",
@@ -117,7 +72,7 @@ const Destinations = () => {
             >
               <ImageWithFallback
                 src={d.img}
-                alt={d.name}
+                alt={t(`items.${d.id}.name`)}
                 className={cn(
                   "absolute inset-0 w-full h-full object-cover transition-all duration-300",
                   isOpen ? "brightness-[0.35]" : "brightness-100"
@@ -125,11 +80,11 @@ const Destinations = () => {
               />
 
               <span className="absolute top-3 left-3 bg-white/95 text-navy-900 text-[10px] uppercase tracking-wider font-medium px-2.5 py-1 rounded-full max-w-[60%]">
-                {d.tag}
+                {t(`items.${d.id}.tag`)}
               </span>
 
               <span className="absolute top-3 right-3 bg-navy-950/85 text-white text-[10px] tracking-wide font-medium px-2.5 py-1 rounded-full">
-                {d.distance}
+                {t(`items.${d.id}.distance`)}
               </span>
 
               <div
@@ -139,11 +94,11 @@ const Destinations = () => {
                 )}
               >
                 <h3 className="font-display text-xl leading-tight mb-1">
-                  {d.name}
+                  {t(`items.${d.id}.name`)}
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-white/80">
                   {I.pin}
-                  Provincia de Mendoza
+                  {t('card.subregion')}
                 </span>
               </div>
 
@@ -157,7 +112,7 @@ const Destinations = () => {
               >
                 <span
                   role="button"
-                  aria-label="Cerrar"
+                  aria-label={t('card.closeAriaLabel')}
                   tabIndex={0}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -172,13 +127,13 @@ const Destinations = () => {
                   }}
                   className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer transition-colors"
                 >
-                  ×
+                  {I.close}
                 </span>
 
                 <div>
-                  <h3 className="font-display text-lg mb-2">{d.name}</h3>
+                  <h3 className="font-display text-lg mb-2">{t(`items.${d.id}.name`)}</h3>
                   <p className="text-sm leading-relaxed text-white/85">
-                    {d.description}
+                    {t(`items.${d.id}.description`)}
                   </p>
                 </div>
 
@@ -187,18 +142,18 @@ const Destinations = () => {
                   tabIndex={0}
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleWhatsAppClick(d.name);
+                    handleWhatsAppClick(d.id);
                   }}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
                       e.stopPropagation();
-                      handleWhatsAppClick(d.name);
+                      handleWhatsAppClick(d.id);
                     }
                   }}
-                  className="self-start inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5a] text-[#052e16] text-sm font-medium px-4 py-2 rounded-full mt-4 cursor-pointer transition-colors"
+                  className="self-start inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 text-sm font-medium px-4 py-2 rounded-full mt-4 cursor-pointer transition-colors"
                 >
-                  Saber más
+                  {t('card.ctaMore')}
                 </span>
               </div>
             </button>

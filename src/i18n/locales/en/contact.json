@@ -1,0 +1,51 @@
+{
+  "section": {
+    "eyebrow": "Contact",
+    "title": "One message away from the open road.",
+    "kicker": "Ask us anything — routes, custom itineraries, availability for a specific date. During business hours we reply in under 10 minutes."
+  },
+  "whatsapp": {
+    "primaryLabel": "Chat with us on WhatsApp",
+    "secondaryLabel": "Alternate line",
+    "secondaryHint": "If we don't answer on the main number"
+  },
+  "channels": {
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address"
+  },
+  "social": {
+    "label": "Follow us",
+    "instagramAria": "Follow us on Instagram",
+    "facebookAria": "Follow us on Facebook",
+    "linkedinAria": "Follow us on LinkedIn"
+  },
+  "form": {
+    "title": "Request a callback",
+    "subtitle": "We'll reach out within the next hour.",
+    "fields": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "Sofia Mendez"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "phone": {
+        "label": "Phone (with country code)",
+        "placeholder": "+1 415 555 0199"
+      },
+      "pickupDate": {
+        "label": "Pickup date",
+        "placeholder": "May 22, 2026"
+      },
+      "notes": {
+        "label": "Notes",
+        "placeholder": "Anything we should know about your trip…"
+      }
+    },
+    "submit": "Send request"
+  },
+  "whatsappTemplate": "Hi, I'd like to ask about renting a vehicle in Mendoza."
+}

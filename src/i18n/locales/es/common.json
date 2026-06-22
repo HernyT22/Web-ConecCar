@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "about": "Nosotros",
+    "fleet": "Flota",
+    "destinations": "Destinos",
+    "reviews": "Opiniones",
+    "contact": "Contacto",
+    "help": "Ayuda",
+    "bookCta": "Reservar vehículo"
+  },
+  "buttons": {
+    "viewFleet": "Ver la flota",
+    "talkToAdvisor": "Hablar con un asesor",
+    "book": "Reservar",
+    "whatsapp": "Hablar por WhatsApp",
+    "viewDetails": "Ver detalles",
+    "sendRequest": "Enviar solicitud",
+    "backToTop": "Volver arriba"
+  },
+  "footer": {
+    "tagline": "Alquiler de vehículos en Mendoza,",
+    "taglineAccent": "operado por gente que vive acá.",
+    "navigation": "Navegación",
+    "fleet": "Flota",
+    "help": "Ayuda",
+    "links": {
+      "about": "Nosotros",
+      "destinations": "Destinos",
+      "reviews": "Opiniones",
+      "contact": "Contacto",
+      "insurance": "Seguro",
+      "cancellation": "Política de cancelación",
+      "driving": "Manejar en Argentina",
+      "faqs": "Preguntas frecuentes"
+    },
+    "legal": {
+      "terms": "Términos",
+      "privacy": "Privacidad",
+      "cookies": "Cookies"
+    },
+    "madeIn": "Hecho en Mendoza · AR",
+    "copyright": "© {{year}} ConecCar.rent"
+  },
+  "language": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English",
+    "pt-BR": "Português"
+  }
+}

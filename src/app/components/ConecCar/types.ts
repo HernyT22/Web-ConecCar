@@ -14,9 +14,5 @@ export interface Car {
 
 export interface Destination {
   id: string;
-  name: string;
-  tag: string;
-  distance: string;
-  description: string;
   img: string;
 }

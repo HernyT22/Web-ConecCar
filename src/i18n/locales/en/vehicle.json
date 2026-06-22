@@ -1,0 +1,88 @@
+{
+  "breadcrumb": {
+    "back": "Back to fleet",
+    "home": "Home",
+    "fleet": "Fleet"
+  },
+  "hero": {
+    "dailyRate": "Daily rate",
+    "perDay": "/ day",
+    "book": "Book now",
+    "consult": "Inquire"
+  },
+  "specs": {
+    "eyebrow": "Specs",
+    "title": "Vehicle specifications.",
+    "labels": {
+      "category": "Category",
+      "year": "Year",
+      "seats": "Capacity",
+      "bags": "Luggage",
+      "transmission": "Transmission",
+      "fuel": "Fuel",
+      "climate": "Climate",
+      "body": "Body type"
+    },
+    "passenger_one": "{{count}} passenger",
+    "passenger_other": "{{count}} passengers",
+    "suitcase_one": "{{count}} suitcase",
+    "suitcase_other": "{{count}} suitcases"
+  },
+  "included": {
+    "eyebrow": "Included in your rental",
+    "title": "Everything sorted before you get in the car.",
+    "subtitle": "The daily rate already covers what matters so you only have to think about the road.",
+    "requirements": "Requirements: valid driver's licence, credit card in the driver's name, and a minimum age of 21.",
+    "items": [
+      { "t": "Insurance included", "s": "Comprehensive cover with a clear excess — no surprises." },
+      { "t": "24/7 assistance", "s": "A real person on the phone at any time during your trip." },
+      { "t": "Unlimited mileage", "s": "Explore Mendoza with no kilometre limit within the province." },
+      { "t": "Flexible delivery", "s": "Airport (MDZ), hotels, or our own office in the city." },
+      { "t": "Sanitised vehicle", "s": "Deep-cleaned and mechanically checked before every handover." },
+      { "t": "Trilingual support", "s": "We assist you in Spanish, English, and Portuguese." }
+    ]
+  },
+  "similar": {
+    "eyebrow": "You might also like",
+    "title": "Other vehicles in the fleet.",
+    "viewAll": "View all vehicles",
+    "from": "From",
+    "inquire": "Inquire",
+    "perDay": "/ day",
+    "view": "View"
+  },
+  "vehicleDescriptions": {
+    "honda-accord-2022": {
+      "short": "Executive sedan",
+      "long": "Comfort and distinction for meetings, executive transfers, and long drives with the Andes as your backdrop. Quiet ride, spacious seats, and a generous boot."
+    },
+    "kia-rio-2022": {
+      "short": "Urban sedan",
+      "long": "Agile, modern, and efficient. Perfect for exploring the city or heading out on Mendoza escapes with the right balance of comfort, economy, and technology."
+    },
+    "vw-fox-2022": {
+      "short": "Compact hatchback",
+      "long": "Practical, reliable, and comfortable for everyday use. An ideal companion for getting around the city with ease and making every journey a pleasure."
+    },
+    "citroen-basalt-shine-2026-a": {
+      "short": "Coupe SUV — Cosmo Blue",
+      "long": "Innovative design, generous interior space, and ride comfort built in. Perfect for those who want to travel in style, whether for business or to discover new landscapes."
+    },
+    "citroen-basalt-shine-2026-b": {
+      "short": "Coupe SUV — Pearlescent White",
+      "long": "Innovative design, generous interior space, and ride comfort built in. Perfect for those who want to travel in style, whether for business or to discover new landscapes."
+    },
+    "citroen-basalt-shine-2026-c": {
+      "short": "Coupe SUV — Sting Grey",
+      "long": "Innovative design, generous interior space, and ride comfort built in. Perfect for those who want to travel in style, whether for business or to discover new landscapes."
+    },
+    "chery-tiggo-2-2026-a": {
+      "short": "Compact SUV — White",
+      "long": "Versatile and adventurous, with a raised driving position for safety and comfort on every journey. Ideal for exploring Mendoza with extra space and a commanding view of the road."
+    },
+    "chery-tiggo-2-2026-b": {
+      "short": "Compact SUV — Red",
+      "long": "Versatile and adventurous, with a raised driving position for safety and comfort on every journey. Ideal for exploring Mendoza with extra space and a commanding view of the road."
+    }
+  }
+}

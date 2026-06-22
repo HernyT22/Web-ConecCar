@@ -1,0 +1,63 @@
+{
+  "section": {
+    "eyebrow": "Flota",
+    "title": "Vehículos para cada Mendoza posible.",
+    "kicker": "City cars, sedans y SUVs preparados para moverte por Mendoza con comodidad y confianza."
+  },
+  "search": {
+    "placeholder": "Buscar por modelo, tipo o característica…"
+  },
+  "sort": {
+    "label": "Ordenar",
+    "recommended": "Recomendado",
+    "priceAsc": "Precio: menor a mayor",
+    "priceDesc": "Precio: mayor a menor"
+  },
+  "tabs": {
+    "all": "Todos"
+  },
+  "noResults": "No hay vehículos que coincidan con esos filtros.",
+  "card": {
+    "seats": "asientos",
+    "bags": "valijas",
+    "ac": "A/C",
+    "from": "Desde",
+    "perDay": "día",
+    "consult": "Consultar",
+    "viewDetails": "Ver"
+  },
+  "enums": {
+    "category": {
+      "suv-coupe": "SUV Coupé",
+      "suv-compacta": "SUV Compacta",
+      "sedan": "Sedán",
+      "hatchback-compacto": "Hatchback Compacto"
+    },
+    "bodyType": {
+      "sedan-4d": "Sedán · 4 puertas",
+      "hatchback-5d": "Hatchback · 5 puertas",
+      "suv-5d": "SUV · 5 puertas"
+    },
+    "transmission": {
+      "automatic": "Automática",
+      "manual": "Manual"
+    },
+    "fuel": {
+      "gasoline": "Nafta",
+      "diesel": "Diésel",
+      "electric": "Eléctrico",
+      "hybrid": "Híbrido"
+    },
+    "climate": {
+      "ac": "Aire acondicionado",
+      "dualClimate": "Climatizador dual",
+      "none": "Sin climatización"
+    },
+    "badge": {
+      "new": "Nuevo",
+      "corporate": "Corporativo",
+      "mostBooked": "Más reservado",
+      "family": "Para familia"
+    }
+  }
+}

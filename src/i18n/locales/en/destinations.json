@@ -1,0 +1,51 @@
+{
+  "section": {
+    "eyebrow": "Destinations",
+    "title": "The places our guests actually go.",
+    "kicker": "Routes, landscapes, and recommendations to experience Mendoza for real."
+  },
+  "card": {
+    "subregion": "Mendoza Province",
+    "closeAriaLabel": "Close",
+    "ctaMore": "Learn more"
+  },
+  "whatsappTemplate": "Hi, I'd like to know more about {{name}} and the vehicles available to get there.",
+  "items": {
+    "valle-de-uco": {
+      "name": "Uco Valley",
+      "tag": "Wine country",
+      "distance": "80 km · 1h",
+      "description": "One of the country's most prestigious wine regions, with striking architectural wineries, vineyards at the foot of the Andes, and exceptional cuisine. A perfect day trip from Mendoza city."
+    },
+    "san-rafael": {
+      "name": "San Rafael",
+      "tag": "Landscapes, reservoirs, wineries",
+      "distance": "250 km · 3h",
+      "description": "Atuel Canyon, reservoirs, historic wineries, and a quiet town to use as a base. Ideal for long-weekend getaways or multi-day trips."
+    },
+    "malargue": {
+      "name": "Malargüe",
+      "tag": "Outdoors and ski resort",
+      "distance": "330 km · 4h",
+      "description": "The province's deep south: Las Leñas for winter skiing, Payunia and Caverna de las Brujas the rest of the year. Striking nature and scenic routes all the way in."
+    },
+    "gran-mendoza": {
+      "name": "Greater Mendoza",
+      "tag": "Wineries, hotels, landscapes",
+      "distance": "20 km radius",
+      "description": "The capital and its surroundings: Maipú, Luján de Cuyo, Chacras de Coria. Top-tier wineries, boutique hotels, and the province's best restaurants, all minutes from downtown."
+    },
+    "potrerillos": {
+      "name": "Potrerillos",
+      "tag": "Lake and mountains",
+      "distance": "60 km · 1h",
+      "description": "A turquoise reservoir surrounded by mountains, with water sports, horseback rides, and excellent dining options. A half-day escape on the way to the high Andes."
+    },
+    "canon-del-atuel": {
+      "name": "Atuel Canyon",
+      "tag": "Rafting and canyons",
+      "distance": "300 km · 3h 30m",
+      "description": "Rock formations sculpted by the Atuel river over millions of years. Rafting, kayaking, and hiking through one of southern Mendoza's most photogenic landscapes."
+    }
+  }
+}

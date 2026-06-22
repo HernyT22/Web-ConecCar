@@ -1,0 +1,51 @@
+{
+  "section": {
+    "eyebrow": "Contacto",
+    "title": "A un mensaje de la ruta abierta.",
+    "kicker": "Preguntanos lo que necesites — rutas, itinerarios a medida, disponibilidad para una fecha puntual. En horario comercial respondemos en menos de 10 minutos."
+  },
+  "whatsapp": {
+    "primaryLabel": "Escribinos por WhatsApp",
+    "secondaryLabel": "Línea alternativa",
+    "secondaryHint": "Si no contestamos en la principal"
+  },
+  "channels": {
+    "emailLabel": "Email",
+    "phoneLabel": "Teléfono",
+    "addressLabel": "Dirección"
+  },
+  "social": {
+    "label": "Seguinos",
+    "instagramAria": "Seguinos en Instagram",
+    "facebookAria": "Seguinos en Facebook",
+    "linkedinAria": "Seguinos en LinkedIn"
+  },
+  "form": {
+    "title": "Pedinos que te llamemos",
+    "subtitle": "Te contactamos dentro de la próxima hora.",
+    "fields": {
+      "name": {
+        "label": "Nombre completo",
+        "placeholder": "Sofía Méndez"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "vos@ejemplo.com"
+      },
+      "phone": {
+        "label": "Teléfono (con código de país)",
+        "placeholder": "+1 415 555 0199"
+      },
+      "pickupDate": {
+        "label": "Fecha de retiro",
+        "placeholder": "22 de mayo de 2026"
+      },
+      "notes": {
+        "label": "Notas",
+        "placeholder": "Algo que tengamos que saber sobre tu viaje…"
+      }
+    },
+    "submit": "Enviar solicitud"
+  },
+  "whatsappTemplate": "Hola, quería consultar sobre alquiler de vehículos en Mendoza."
+}

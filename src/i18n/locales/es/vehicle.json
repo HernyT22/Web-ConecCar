@@ -1,0 +1,88 @@
+{
+  "breadcrumb": {
+    "back": "Volver a la flota",
+    "home": "Inicio",
+    "fleet": "Flota"
+  },
+  "hero": {
+    "dailyRate": "Tarifa diaria",
+    "perDay": "/ día",
+    "book": "Reservar ahora",
+    "consult": "Consultar"
+  },
+  "specs": {
+    "eyebrow": "Ficha técnica",
+    "title": "Especificaciones del vehículo.",
+    "labels": {
+      "category": "Categoría",
+      "year": "Año",
+      "seats": "Capacidad",
+      "bags": "Equipaje",
+      "transmission": "Transmisión",
+      "fuel": "Combustible",
+      "climate": "Climatización",
+      "body": "Carrocería"
+    },
+    "passenger_one": "{{count}} pasajero",
+    "passenger_other": "{{count}} pasajeros",
+    "suitcase_one": "{{count}} valija",
+    "suitcase_other": "{{count}} valijas"
+  },
+  "included": {
+    "eyebrow": "Incluido en tu alquiler",
+    "title": "Todo resuelto antes de subir al auto.",
+    "subtitle": "El precio por día ya contempla lo esencial para que solo te preocupes por el camino.",
+    "requirements": "Requisitos: licencia vigente, tarjeta de crédito a nombre del conductor y edad mínima de 21 años.",
+    "items": [
+      { "t": "Seguro incluido", "s": "Cobertura todo riesgo con franquicia clara, sin sorpresas." },
+      { "t": "Asistencia 24/7", "s": "Una persona real al teléfono a cualquier hora del viaje." },
+      { "t": "Kilometraje libre", "s": "Recorré Mendoza sin límite de kilómetros dentro de la provincia." },
+      { "t": "Entrega flexible", "s": "Aeropuerto (MDZ), hoteles u oficina propia en Ciudad." },
+      { "t": "Vehículo higienizado", "s": "Limpieza profunda y revisión mecánica antes de cada entrega." },
+      { "t": "Atención trilingüe", "s": "Te acompañamos en español, inglés y portugués." }
+    ]
+  },
+  "similar": {
+    "eyebrow": "También podría interesarte",
+    "title": "Otros vehículos de la flota.",
+    "viewAll": "Ver toda la flota",
+    "from": "Desde",
+    "inquire": "Consultar",
+    "perDay": "/ día",
+    "view": "Ver"
+  },
+  "vehicleDescriptions": {
+    "honda-accord-2022": {
+      "short": "Sedán ejecutivo",
+      "long": "Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso."
+    },
+    "kia-rio-2022": {
+      "short": "Sedán urbano",
+      "long": "Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología."
+    },
+    "vw-fox-2022": {
+      "short": "Hatchback compacto",
+      "long": "Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones."
+    },
+    "citroen-basalt-shine-2026-a": {
+      "short": "SUV Coupé — Azul Cosmo",
+      "long": "Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes."
+    },
+    "citroen-basalt-shine-2026-b": {
+      "short": "SUV Coupé — Blanco Nacarado",
+      "long": "Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes."
+    },
+    "citroen-basalt-shine-2026-c": {
+      "short": "SUV Coupé — Sting Grey",
+      "long": "Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes."
+    },
+    "chery-tiggo-2-2026-a": {
+      "short": "SUV Compacta — Blanco",
+      "long": "Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino."
+    },
+    "chery-tiggo-2-2026-b": {
+      "short": "SUV Compacta — Rojo",
+      "long": "Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino."
+    }
+  }
+}
