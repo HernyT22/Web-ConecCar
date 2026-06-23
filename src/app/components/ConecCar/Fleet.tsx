@@ -1,7 +1,7 @@
 // ConecCar.rent — Flota
 import { useState, useEffect, useMemo, memo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/app/components/ui/utils";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
@@ -9,6 +9,7 @@ import Section from "@/app/components/ConecCar/Section";
 import PlaceholderImg from "@/app/components/ConecCar/PlaceholderImg";
 import { I } from "@/app/components/ConecCar/Icons";
 import { CATEGORY_IDS, parseCatFromHash } from "./fleetCategories";
+import { ANIM_DURATION, ANIM_EASE } from "@/animations/variants";
 import { vehicles } from "@/data/vehicles";
 import type { CategoryId, Vehicle } from "@/data/vehicles";
 
@@ -212,20 +213,25 @@ const Fleet = () => {
 
       {/* grilla de tarjetas */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {list.map((v, i) => (
-          <motion.div
-            key={v.slug}
-            initial={{ opacity: 0, x: -32 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.5,
-              ease: [0.22, 1, 0.36, 1],
-              delay: Math.min(i * 0.05, 0.3),
-            }}
-          >
-            <VehicleCard vehicle={v} />
-          </motion.div>
-        ))}
+        <AnimatePresence mode="popLayout">
+          {list.map((v, i) => (
+            <motion.div
+              key={v.slug}
+              layout
+              initial={{ opacity: 0, x: -32 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 16, transition: { duration: 0.2, ease: ANIM_EASE } }}
+              transition={{
+                duration: ANIM_DURATION,
+                ease: ANIM_EASE,
+                delay: Math.min(i * 0.05, 0.4),
+                layout: { duration: 0.3, ease: ANIM_EASE },
+              }}
+            >
+              <VehicleCard vehicle={v} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
 
       {list.length === 0 && (

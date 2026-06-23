@@ -37,15 +37,23 @@
         "placeholder": "+1 415 555 0199"
       },
       "pickupDate": {
-        "label": "Pickup date",
-        "placeholder": "May 22, 2026"
+        "label": "Pickup date"
       },
       "notes": {
         "label": "Notes",
         "placeholder": "Anything we should know about your trip…"
       }
     },
-    "submit": "Send request"
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email"
+    },
+    "feedback": {
+      "success": "Message sent! We'll reach out within the next hour.",
+      "error": "Something went wrong. Please try again or message us on WhatsApp."
+    }
   },
   "whatsappTemplate": "Hi, I'd like to ask about renting a vehicle in Mendoza."
 }

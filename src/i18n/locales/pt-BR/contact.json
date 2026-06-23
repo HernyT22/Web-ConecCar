@@ -37,15 +37,23 @@
         "placeholder": "+55 11 91234-5678"
       },
       "pickupDate": {
-        "label": "Data de retirada",
-        "placeholder": "22 de maio de 2026"
+        "label": "Data de retirada"
       },
       "notes": {
         "label": "Observações",
         "placeholder": "Algo que devemos saber sobre sua viagem…"
       }
     },
-    "submit": "Enviar solicitação"
+    "submit": "Enviar solicitação",
+    "submitting": "Enviando…",
+    "validation": {
+      "required": "Este campo é obrigatório",
+      "invalidEmail": "Informe um email válido"
+    },
+    "feedback": {
+      "success": "Mensagem enviada! Entramos em contato na próxima hora.",
+      "error": "Algo deu errado. Tente novamente ou nos envie uma mensagem pelo WhatsApp."
+    }
   },
   "whatsappTemplate": "Olá, gostaria de consultar sobre o aluguel de veículos em Mendoza."
 }
