@@ -164,7 +164,7 @@ export const vehicles: Vehicle[] = [
     model: 'Tiggo 2',
     year: 2026,
     category: 'suv-compacta',
-    badge: 'new',
+    badge: null,
     bodyType: 'suv-5d',
     pricePerDay: 95, // TODO: confirmar con cliente
     currency: 'USD',
