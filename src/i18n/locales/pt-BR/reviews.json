@@ -1,0 +1,38 @@
+{
+  "section": {
+    "eyebrow": "Avaliações de clientes",
+    "title": "O que nossos clientes dizem quando devolvem as chaves.",
+    "kicker": "Milhares de quilômetros percorridos. Estas são as experiências deles."
+  },
+  "badges": {
+    "verified": "Avaliação verificada",
+    "translated": "Traduzido"
+  },
+  "items": {
+    "review1": {
+      "name": "Agustín Laiseca",
+      "role": "Argentina",
+      "text": "O atendimento é nota 10/10, sempre com energia boa e tudo muito bem organizado. Os carros são espaçosos, em todas as ocasiões estão impecáveis e prontos para percorrer Mendoza. As facilidades de pagamento e o bom atendimento se destacam principalmente na empresa. Escolheria de novo e de novo."
+    },
+    "review2": {
+      "name": "Andrea Colamedici",
+      "role": "Em visita desde a Itália",
+      "text": "Uma experiência linda. O carro estava impecável, muito confortável para percorrer Mendoza e com um consumo excelente. Dá pra notar o cuidado e a dedicação em cada detalhe. Recomendo muito."
+    },
+    "review3": {
+      "name": "Natalia Mamani",
+      "role": "Mendoza, Argentina",
+      "text": "Eu precisava resolver mobilidade rápido porque tinha eventos e meu carro estava na oficina. Foi super prático. Ter a possibilidade de alugar um veículo te salva muito quando você não pode parar sua rotina. Super recomendado."
+    },
+    "review4": {
+      "name": "Bastiaan Willers",
+      "role": "Em visita desde a Alemanha",
+      "text": "O carro perfeito, espaçoso e confortável. Tudo super limpo e em perfeito estado. O atendimento, os detalhes e o preço são o melhor. Recomendo."
+    },
+    "review5": {
+      "name": "Magdalena Romero",
+      "role": "Em visita desde a Espanha",
+      "text": "Adorei a experiência. O carro estava super limpo, confortável e andando muito bem. Ideal para percorrer Mendoza com tranquilidade e curtir cada paisagem. Além disso o atendimento foi nota dez, muito próximo e simpático. Com certeza repetiria."
+    }
+  }
+}

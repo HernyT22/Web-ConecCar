@@ -1,4 +1,4 @@
-import citroenBasaltAzul from '@/imports/citroen-azul-lateral.webp';
+import citroenBasaltAzul from '@/imports/citroen-azul-lateral.jpg';
 import citroenAzulDetras from '@/imports/citroen-azul-detras.webp';
 import citroenAzulInterior from '@/imports/citroen-azul-interior.webp';
 import citroenBasaltBlanco from '@/imports/citroen-blanco-lateral.webp';
@@ -9,7 +9,7 @@ import citroenDark from '@/imports/citroen-dark-lateral.webp';
 import citroenDarkDetras from '@/imports/citroen-dark-detras.jpg';
 import citroenDarkInterior from '@/imports/citroen-dark-interior.jpg';
 import citroenDarkBaul from '@/imports/citroen-dark-baul.jpg';
-import cheryBlancoLateral from '@/imports/cheri-blanco-lateral.webp';
+import cheryBlancoLateral from '@/imports/cheri-blanco-lateral.jpg';
 import cheryBlancoDetras from '@/imports/cheri-blanco-detras.jpg';
 import cheryBlancoInterior from '@/imports/cheri-blanco-interior.jpg';
 import cheryBlancoBaul from '@/imports/cheri-blanco-baul.jpg';
@@ -21,9 +21,9 @@ import kiaRioLateral from '@/imports/kia-rio-lateral.webp';
 import kiaRioDetras from '@/imports/kia-rio-detras.webp';
 import kiaRioInterior from '@/imports/kia-rio-interior.webp';
 import kiaRioBaul from '@/imports/kia-rio-baul.jpg';
-import vwFoxLateral from '@/imports/fox-lateral.webp';
+import vwFoxLateral from '@/imports/fox-lateral.jpg';
 import vwFoxDetras from '@/imports/fox-detras.webp';
-import accordLateral from '@/imports/accord-lateral.webp';
+import accordLateral from '@/imports/accord-lateral.jpg';
 import accordFrontal from '@/imports/accord-frontal.webp';
 import accordDetras from '@/imports/accord-detras.webp';
 import accordBaul from '@/imports/accord-baul.webp';
@@ -33,7 +33,7 @@ export type FuelId = 'gasoline' | 'diesel' | 'electric' | 'hybrid';
 export type ClimateId = 'ac' | 'dualClimate' | 'none';
 export type CategoryId = 'suv-coupe' | 'suv-compacta' | 'sedan' | 'hatchback-compacto';
 export type BodyTypeId = 'sedan-4d' | 'hatchback-5d' | 'suv-5d';
-export type BadgeId = 'new' | 'corporate' | 'mostBooked' | 'family' | null;
+export type BadgeId = 'new' | 'corporate' | 'mostBooked' | 'family' | 'MostRentedCar' | null;
 export type CurrencyId = 'USD' | 'ARS';
 
 export interface Vehicle {
@@ -59,87 +59,12 @@ export interface Vehicle {
 
 export const vehicles: Vehicle[] = [
   {
-    slug: 'honda-accord-2022',
-    brand: 'Honda',
-    model: 'Accord',
-    year: 2022,
-    category: 'sedan',
-    badge: 'corporate',
-    bodyType: 'sedan-4d',
-    pricePerDay: 142,
-    currency: 'USD',
-    seats: 4,
-    bags: 3,
-    transmission: 'automatic',
-    fuel: 'gasoline',
-    climate: 'dualClimate',
-    description: 'Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso.',
-    shortDescription: 'Sedán ejecutivo',
-    images: [accordLateral, accordFrontal, accordDetras, accordBaul],
-    imageLabels: [
-      'honda accord · 3/4 frontal',
-      'honda accord · perfil lateral',
-      'honda accord · trasera',
-      'honda accord · tablero',
-    ],
-  },
-  {
-    slug: 'kia-rio-2022',
-    brand: 'Kia',
-    model: 'Rio',
-    year: 2022,
-    category: 'sedan',
-    badge: null,
-    bodyType: 'sedan-4d',
-    pricePerDay: 85, // TODO: confirmar con cliente
-    currency: 'USD',
-    seats: 5,
-    bags: 2,
-    transmission: 'automatic',
-    fuel: 'gasoline',
-    climate: 'ac',
-    description: 'Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología.', // TODO: confirmar con cliente
-    shortDescription: 'Sedán urbano',
-    images: [kiaRioLateral, kiaRioDetras, kiaRioInterior, kiaRioBaul],
-    imageLabels: [
-      'kia rio · 3/4 frontal',
-      'kia rio · trasera',
-      'kia rio · interior',
-      'kia rio · baúl',
-    ],
-  },
-  {
-    slug: 'vw-fox-2022',
-    brand: 'Volkswagen',
-    model: 'Fox',
-    year: 2022,
-    category: 'hatchback-compacto',
-    badge: null,
-    bodyType: 'hatchback-5d',
-    pricePerDay: 70, // TODO: confirmar con cliente
-    currency: 'USD',
-    seats: 5,
-    bags: 2,
-    transmission: 'manual',
-    fuel: 'gasoline',
-    climate: 'ac',
-    description: 'Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones.', 
-    shortDescription: 'Hatchback compacto',
-    images: [vwFoxLateral, vwFoxDetras],
-    imageLabels: [
-      'vw fox · 3/4 frontal',
-      'vw fox · trasera',
-      'vw fox · interior',
-      'vw fox · tablero',
-    ],
-  },
-  {
     slug: 'citroen-basalt-shine-2026-a',
     brand: 'Citroën',
     model: 'Basalt Shine',
     year: 2026,
     category: 'suv-coupe',
-    badge: 'new',
+    badge: 'MostRentedCar',
     bodyType: 'suv-5d',
     pricePerDay: 90, // TODO: confirmar con cliente
     currency: 'USD',
@@ -156,56 +81,6 @@ export const vehicles: Vehicle[] = [
       'citroën basalt · trasera',
       'citroën basalt · interior',
       'citroën basalt · tablero',
-    ],
-  },
-  {
-    slug: 'citroen-basalt-shine-2026-b',
-    brand: 'Citroën',
-    model: 'Basalt Shine',
-    year: 2026,
-    category: 'suv-coupe',
-    badge: 'new',
-    bodyType: 'suv-5d',
-    pricePerDay: 90, // TODO: confirmar con cliente
-    currency: 'USD',
-    seats: 5,
-    bags: 3,
-    transmission: 'automatic',
-    fuel: 'gasoline',
-    climate: 'ac',
-    description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.', 
-    shortDescription: 'SUV Coupé — Blanco Nacarado',
-    images: [citroenBasaltBlanco, citroenBlancoDetras, citroenBlancoInterior, citroenBlancoBaul],
-    imageLabels: [
-      'citroën basalt · 3/4 frontal',
-      'citroën basalt · trasera',
-      'citroën basalt · interior',
-      'citroën basalt · baúl',
-    ],
-  },
-  {
-    slug: 'citroen-basalt-shine-2026-c',
-    brand: 'Citroën',
-    model: 'Basalt Shine',
-    year: 2026,
-    category: 'suv-coupe',
-    badge: 'new',
-    bodyType: 'suv-5d',
-    pricePerDay: 90, // TODO: confirmar con cliente
-    currency: 'USD',
-    seats: 5,
-    bags: 3,
-    transmission: 'automatic',
-    fuel: 'gasoline',
-    climate: 'ac',
-    description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
-    shortDescription: 'SUV Coupé — Sting Grey',
-    images: [citroenDark, citroenDarkDetras, citroenDarkInterior, citroenDarkBaul],
-    imageLabels: [
-      'citroën basalt dark · 3/4 frontal',
-      'citroën basalt dark · trasera',
-      'citroën basalt dark · interior',
-      'citroën basalt dark · baúl',
     ],
   },
   {
@@ -234,6 +109,56 @@ export const vehicles: Vehicle[] = [
     ],
   },
   {
+    slug: 'citroen-basalt-shine-2026-c',
+    brand: 'Citroën',
+    model: 'Basalt Shine',
+    year: 2026,
+    category: 'suv-coupe',
+    badge: 'new',
+    bodyType: 'suv-5d',
+    pricePerDay: 90, // TODO: confirmar con cliente
+    currency: 'USD',
+    seats: 5,
+    bags: 3,
+    transmission: 'automatic',
+    fuel: 'gasoline',
+    climate: 'ac',
+    description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
+    shortDescription: 'SUV Coupé — Sting Grey',
+    images: [citroenDark, citroenDarkDetras, citroenDarkInterior, citroenDarkBaul],
+    imageLabels: [
+      'citroën basalt dark · 3/4 frontal',
+      'citroën basalt dark · trasera',
+      'citroën basalt dark · interior',
+      'citroën basalt dark · baúl',
+    ],
+  },
+  {
+    slug: 'citroen-basalt-shine-2026-b',
+    brand: 'Citroën',
+    model: 'Basalt Shine',
+    year: 2026,
+    category: 'suv-coupe',
+    badge: null,
+    bodyType: 'suv-5d',
+    pricePerDay: 90, // TODO: confirmar con cliente
+    currency: 'USD',
+    seats: 5,
+    bags: 3,
+    transmission: 'automatic',
+    fuel: 'gasoline',
+    climate: 'ac',
+    description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.', 
+    shortDescription: 'SUV Coupé — Blanco Nacarado',
+    images: [citroenBasaltBlanco, citroenBlancoDetras, citroenBlancoInterior, citroenBlancoBaul],
+    imageLabels: [
+      'citroën basalt · 3/4 frontal',
+      'citroën basalt · trasera',
+      'citroën basalt · interior',
+      'citroën basalt · baúl',
+    ],
+  },
+  {
     slug: 'chery-tiggo-2-2026-b',
     brand: 'Chery',
     model: 'Tiggo 2',
@@ -256,6 +181,81 @@ export const vehicles: Vehicle[] = [
       'chery tiggo 2 · trasera',
       'chery tiggo 2 · interior',
       'chery tiggo 2 · baúl',
+    ],
+  },
+  {
+    slug: 'honda-accord-2022',
+    brand: 'Honda',
+    model: 'Accord',
+    year: 2022,
+    category: 'sedan',
+    badge: 'corporate',
+    bodyType: 'sedan-4d',
+    pricePerDay: 142,
+    currency: 'USD',
+    seats: 5,
+    bags: 3,
+    transmission: 'automatic',
+    fuel: 'gasoline',
+    climate: 'dualClimate',
+    description: 'Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso.',
+    shortDescription: 'Sedán ejecutivo',
+    images: [accordLateral, accordFrontal, accordDetras, accordBaul],
+    imageLabels: [
+      'honda accord · 3/4 frontal',
+      'honda accord · perfil lateral',
+      'honda accord · trasera',
+      'honda accord · tablero',
+    ],
+  },
+  {
+    slug: 'vw-fox-2022',
+    brand: 'Volkswagen',
+    model: 'Fox',
+    year: 2022,
+    category: 'hatchback-compacto',
+    badge: null,
+    bodyType: 'hatchback-5d',
+    pricePerDay: 70, // TODO: confirmar con cliente
+    currency: 'USD',
+    seats: 5,
+    bags: 2,
+    transmission: 'manual',
+    fuel: 'gasoline',
+    climate: 'ac',
+    description: 'Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones.', 
+    shortDescription: 'Hatchback compacto',
+    images: [vwFoxLateral, vwFoxDetras],
+    imageLabels: [
+      'vw fox · 3/4 frontal',
+      'vw fox · trasera',
+      'vw fox · interior',
+      'vw fox · tablero',
+    ],
+  },
+  {
+    slug: 'kia-rio-2022',
+    brand: 'Kia',
+    model: 'Rio',
+    year: 2022,
+    category: 'sedan',
+    badge: null,
+    bodyType: 'sedan-4d',
+    pricePerDay: 85, // TODO: confirmar con cliente
+    currency: 'USD',
+    seats: 5,
+    bags: 2,
+    transmission: 'automatic',
+    fuel: 'gasoline',
+    climate: 'ac',
+    description: 'Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología.', // TODO: confirmar con cliente
+    shortDescription: 'Sedán urbano',
+    images: [kiaRioLateral, kiaRioDetras, kiaRioInterior, kiaRioBaul],
+    imageLabels: [
+      'kia rio · 3/4 frontal',
+      'kia rio · trasera',
+      'kia rio · interior',
+      'kia rio · baúl',
     ],
   },
 ];

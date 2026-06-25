@@ -1,0 +1,38 @@
+{
+  "section": {
+    "eyebrow": "Customer reviews",
+    "title": "What our customers say when they return the keys.",
+    "kicker": "Thousands of kilometers driven. These are their experiences."
+  },
+  "badges": {
+    "verified": "Verified review",
+    "translated": "Translated"
+  },
+  "items": {
+    "review1": {
+      "name": "Agustín Laiseca",
+      "role": "Argentina",
+      "text": "The service is a 10/10 — always with great energy and incredibly well organized. The cars are spacious, always impeccable and ready to explore Mendoza. The payment options and the attentive service really set the company apart. I'd choose them again and again."
+    },
+    "review2": {
+      "name": "Andrea Colamedici",
+      "role": "Visiting from Italy",
+      "text": "A wonderful experience. The car was impeccable, very comfortable for touring Mendoza and with excellent fuel economy. You can tell there's care and dedication in every detail. Highly recommended."
+    },
+    "review3": {
+      "name": "Natalia Mamani",
+      "role": "Mendoza, Argentina",
+      "text": "I needed mobility fast because I had events lined up and my car was in the shop. It was incredibly practical. Having the option to rent a vehicle is a lifesaver when you can't put your routine on hold. Highly recommended."
+    },
+    "review4": {
+      "name": "Bastiaan Willers",
+      "role": "Visiting from Germany",
+      "text": "The perfect car — roomy and comfortable. Everything spotless and in great condition. The service, the attention to detail, and the price are the best part. I recommend them."
+    },
+    "review5": {
+      "name": "Magdalena Romero",
+      "role": "Visiting from Spain",
+      "text": "I loved the experience. The car was super clean, comfortable, and running beautifully. Ideal for cruising through Mendoza at your own pace and taking in every landscape. On top of that, the service was outstanding — warm and friendly. I'd absolutely do it again."
+    }
+  }
+}

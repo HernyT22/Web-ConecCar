@@ -1,0 +1,38 @@
+{
+  "section": {
+    "eyebrow": "Opiniones de clientes",
+    "title": "Lo que dicen nuestros clientes cuando devuelven las llaves.",
+    "kicker": "Miles de kilómetros recorridos. Estas son sus experiencias."
+  },
+  "badges": {
+    "verified": "Opinión verificada",
+    "translated": "Traducido"
+  },
+  "items": {
+    "review1": {
+      "name": "Agustín Laiseca",
+      "role": "Argentina",
+      "text": "La atención es un 10/10, siempre con buena energía y muy bien organizado todo. Los autos espaciosos, en todas las ocasiones están impecables y listos para recorrer Mendoza. Las facilidades de pago y la buena atención destacan principalmente a la empresa. Volvería a elegirlos una y otra vez."
+    },
+    "review2": {
+      "name": "Andrea Colamedici",
+      "role": "De visita desde Italia",
+      "text": "Una experiencia hermosa. El auto estaba impecable, muy cómodo para recorrer Mendoza y con un consumo excelente. Se nota el cuidado y la dedicación en cada detalle. Lo recomiendo mucho."
+    },
+    "review3": {
+      "name": "Natalia Mamani",
+      "role": "Mendoza, Argentina",
+      "text": "Necesitaba resolver movilidad rápido porque tenía eventos y mi auto estaba en el taller. Fue súper práctico. Tener la posibilidad de alquilar un vehículo te salva muchísimo cuando no podés frenar tu rutina. Súper recomendado."
+    },
+    "review4": {
+      "name": "Bastiaan Willers",
+      "role": "De visita desde Alemania",
+      "text": "El auto perfecto, amplio y cómodo. Todo súper limpio y en perfecto estado. La atención, los detalles y el precio son lo mejor. Lo recomiendo."
+    },
+    "review5": {
+      "name": "Magdalena Romero",
+      "role": "De visita desde España",
+      "text": "Me encantó la experiencia. El coche estaba super limpio, cómodo y andando de maravilla. Ideal para recorrer Mendoza tranquila y disfrutar cada paisaje. Además la atención fue de diez, muy cercana y amable. Sin dudas repetiría."
+    }
+  }
+}

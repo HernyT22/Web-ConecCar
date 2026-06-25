@@ -10,6 +10,10 @@
     "book": "Book now",
     "consult": "Inquire"
   },
+  "whatsapp": {
+    "reserve": "Hi, I'd like to book the {{vehicleName}}. Can we coordinate dates and details?",
+    "consult": "Hi, I have a question about the {{vehicleName}}. Could you share more information?"
+  },
   "specs": {
     "eyebrow": "Specs",
     "title": "Vehicle specifications.",

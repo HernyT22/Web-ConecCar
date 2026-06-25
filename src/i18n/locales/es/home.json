@@ -11,14 +11,15 @@
   },
   "about": {
     "eyebrow": "SOBRE CONECCAR",
-    "title": "Una rentadora mendocina, pensada para cómo viajás de verdad.",
-    "paragraph1": "Empezamos ConecCar en 2014 con dos camionetas y una promesa simple: tratar a cada huésped como a un amigo local con una llave de más. Una década después la flota cubre desde compactos urbanos hasta 4×4 de expedición, pero la promesa sigue intacta.",
-    "paragraph2": "Nuestro equipo vive y maneja estas rutas. Te avisamos qué paso de montaña está cerrado antes de que preguntes, qué bodega tiene el mejor Malbec por menos de cincuenta dólares, y qué estación de servicio evitar camino a San Rafael.",
+    "title": "Una rentadora mendocina, pensada para viajar de verdad",
+    "paragraph1": "Coneccar.rent nació en Mendoza con una idea simple: ",
+    "paragraph1Dorado": "Hacer que alquilar un vehículo sea fácil, rápido y confiable.",
+    "paragraph2": "Atención personalizada, vehículos cuidados y una experiencia pensada para que disfrutes el viaje desde el primer momento",
     "chips": {
       "localFounded": "Fundada localmente",
       "familyOwned": "Empresa familiar",
-      "bCorp": "B Corp en proceso",
-      "carbonOffset": "Flota carbono compensado"
+      "bCorp": "Flota seleccionada y cuidada",
+      "carbonOffset": "Totalmente asegurado"
     },
     "benefitsEyebrow": "Beneficios",
     "benefitsTitle": "Todo lo que incluye tu alquiler.",
@@ -91,16 +92,16 @@
       "description": "Cobertura todo incluido en cada alquiler, con pólizas claras."
     },
     "bilingual": {
-      "title": "Equipo bilingüe",
+      "title": "Equipo trilingüe",
       "description": "Atención en ES / EN / PT antes, durante y después de tu viaje."
     },
     "support": {
       "title": "Asistencia 24/7",
-      "description": "Hablás con una persona real en menos de 90 segundos, a cualquier hora."
+      "description": "Hablás con una persona real a cualquier hora."
     },
     "concierge": {
-      "title": "Mesa de concierge",
-      "description": "Recorridos, reservas y contactos con bodegas a pedido."
+      "title": "Transparencia total",
+      "description": "Sin letra chica, con procesos claros y acompañamiento en toda la experiencia."
     }
   }
 }

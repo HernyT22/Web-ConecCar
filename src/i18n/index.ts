@@ -11,6 +11,7 @@ import esVehicle from './locales/es/vehicle.json';
 import esHelp from './locales/es/help.json';
 import esDestinations from './locales/es/destinations.json';
 import esContact from './locales/es/contact.json';
+import esReviews from './locales/es/reviews.json';
 
 import enCommon from './locales/en/common.json';
 import enHome from './locales/en/home.json';
@@ -19,6 +20,7 @@ import enVehicle from './locales/en/vehicle.json';
 import enHelp from './locales/en/help.json';
 import enDestinations from './locales/en/destinations.json';
 import enContact from './locales/en/contact.json';
+import enReviews from './locales/en/reviews.json';
 
 import ptCommon from './locales/pt-BR/common.json';
 import ptHome from './locales/pt-BR/home.json';
@@ -27,6 +29,7 @@ import ptVehicle from './locales/pt-BR/vehicle.json';
 import ptHelp from './locales/pt-BR/help.json';
 import ptDestinations from './locales/pt-BR/destinations.json';
 import ptContact from './locales/pt-BR/contact.json';
+import ptReviews from './locales/pt-BR/reviews.json';
 
 export const SUPPORTED_LANGS = ['es', 'en', 'pt-BR'] as const;
 export type SupportedLang = (typeof SUPPORTED_LANGS)[number];
@@ -36,16 +39,16 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      es: { common: esCommon, home: esHome, fleet: esFleet, vehicle: esVehicle, help: esHelp, destinations: esDestinations, contact: esContact },
-      en: { common: enCommon, home: enHome, fleet: enFleet, vehicle: enVehicle, help: enHelp, destinations: enDestinations, contact: enContact },
-      'pt-BR': { common: ptCommon, home: ptHome, fleet: ptFleet, vehicle: ptVehicle, help: ptHelp, destinations: ptDestinations, contact: ptContact },
+      es: { common: esCommon, home: esHome, fleet: esFleet, vehicle: esVehicle, help: esHelp, destinations: esDestinations, contact: esContact, reviews: esReviews },
+      en: { common: enCommon, home: enHome, fleet: enFleet, vehicle: enVehicle, help: enHelp, destinations: enDestinations, contact: enContact, reviews: enReviews },
+      'pt-BR': { common: ptCommon, home: ptHome, fleet: ptFleet, vehicle: ptVehicle, help: ptHelp, destinations: ptDestinations, contact: ptContact, reviews: ptReviews },
     },
     lng: undefined,
     fallbackLng: 'es',
     supportedLngs: ['es', 'en', 'pt-BR'],
     load: 'currentOnly',
     nonExplicitSupportedLngs: false,
-    ns: ['common', 'home', 'fleet', 'vehicle', 'help', 'destinations', 'contact'],
+    ns: ['common', 'home', 'fleet', 'vehicle', 'help', 'destinations', 'contact', 'reviews'],
     defaultNS: 'common',
     fallbackNS: 'common',
     detection: {

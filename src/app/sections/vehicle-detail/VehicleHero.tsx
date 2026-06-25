@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
-import { WHATSAPP_URL } from '@/data/contact';
+import { buildWhatsAppUrl } from '@/app/components/ConecCar/whatsapp';
+import { PHONE_TEL_LINKS } from '@/data/contact';
 import type { Vehicle } from '@/data/vehicles';
 import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
 import whatsappIcon from '@/imports/whatsapp.png';
@@ -33,6 +34,9 @@ const VehicleHero = ({ vehicle }: Props) => {
     { icon: I.fuel,  label: tDyn(`fleet:enums.fuel.${fuel}`) },
     { icon: I.snow,  label: tDyn(`fleet:enums.climate.${climate}`) },
   ];
+
+  const vehicleName = `${brand} ${model} ${year}`;
+  const consultUrl = buildWhatsAppUrl(t('vehicle:whatsapp.consult', { vehicleName }));
 
   const mainImage = images[active];
   const priceDisplay = pricePerDay > 0
@@ -115,15 +119,13 @@ const VehicleHero = ({ vehicle }: Props) => {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:ml-auto">
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={PHONE_TEL_LINKS.secondary}
                 className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 font-medium px-6 py-3.5 rounded-full transition"
               >
                 {t('vehicle:hero.book')} {I.arrow}
               </a>
               <a
-                href={WHATSAPP_URL}
+                href={consultUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium px-6 py-3.5 rounded-full transition backdrop-blur"

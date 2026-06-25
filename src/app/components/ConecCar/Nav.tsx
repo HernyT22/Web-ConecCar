@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { ANIM_EASE } from '@/animations/variants';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
 import LanguageSwitcher from '@/app/components/ConecCar/LanguageSwitcher';
@@ -79,29 +81,38 @@ const Nav = () => {
           </button>
         </div>
 
-        {open && (
-          <div className="md:hidden border-t border-navy-100 bg-white">
-            <div className="px-5 py-4 flex flex-col gap-1">
-              {NAV_KEYS.map((link) => (
-                <a key={link.id} href={link.href} onClick={() => setOpen(false)} className="py-2.5 text-navy-800">
-                  {t(`nav.${link.key}`)}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.25, ease: ANIM_EASE }}
+              className="md:hidden border-t border-navy-100 bg-white"
+            >
+              <div className="px-5 py-4 flex flex-col gap-1">
+                {NAV_KEYS.map((link) => (
+                  <a key={link.id} href={link.href} onClick={() => setOpen(false)} className="py-2.5 text-navy-800">
+                    {t(`nav.${link.key}`)}
+                  </a>
+                ))}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="mt-2 inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-amber-500 hover:text-navy-950 text-white py-3 rounded-full text-sm font-medium transition-colors duration-300"
+                >
+                  {t('nav.bookCta')} {I.arrow}
                 </a>
-              ))}
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-amber-500 hover:text-navy-950 text-white py-3 rounded-full text-sm font-medium transition-colors duration-300"
-              >
-                {t('nav.bookCta')} {I.arrow}
-              </a>
-              <div className="mt-3 flex justify-center">
-                <LanguageSwitcher />
+                <div className="mt-3 flex justify-center">
+                  <LanguageSwitcher />
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       <div className="h-24 md:h-28" aria-hidden="true" />

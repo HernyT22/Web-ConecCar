@@ -46,7 +46,16 @@ const About = () => {
           viewport={VIEWPORT_CONFIG}
           variants={staggerContainer}
         >
-          <motion.p variants={slideUpItem}>{t('about.paragraph1')}</motion.p>
+          <div className="flex flex-wrap gap-x-1">
+            <motion.p variants={slideUpItem}>
+              {t('about.paragraph1')}
+            </motion.p>
+            <motion.p variants={slideUpItem} className="text-amber-600 font-bold">
+              {t('about.paragraph1Dorado')}
+            </motion.p>
+          </div>
+
+
           <motion.p variants={slideUpItem}>{t('about.paragraph2')}</motion.p>
           <motion.div className="pt-2 flex flex-wrap gap-2" variants={slideUpItem}>
             {CHIP_IDS.map((id) => (

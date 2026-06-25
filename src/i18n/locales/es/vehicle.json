@@ -10,6 +10,10 @@
     "book": "Reservar ahora",
     "consult": "Consultar"
   },
+  "whatsapp": {
+    "reserve": "Hola, quiero reservar el {{vehicleName}}. ¿Podemos coordinar fechas y detalles?",
+    "consult": "Hola, tengo una consulta sobre el {{vehicleName}}. ¿Me podés dar más información?"
+  },
   "specs": {
     "eyebrow": "Ficha técnica",
     "title": "Especificaciones del vehículo.",
