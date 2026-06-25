@@ -191,7 +191,7 @@ export const vehicles: Vehicle[] = [
     category: 'sedan',
     badge: 'corporate',
     bodyType: 'sedan-4d',
-    pricePerDay: 142,
+    pricePerDay: 250,
     currency: 'USD',
     seats: 5,
     bags: 3,
