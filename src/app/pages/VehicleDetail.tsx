@@ -21,7 +21,7 @@ const VehicleDetail = () => {
       <VehicleHero vehicle={vehicle} />
       <Specs key={vehicle.slug} vehicle={vehicle} />
       <Included />
-      <Similar slug={vehicle.slug} />
+      <Similar key={vehicle.slug} slug={vehicle.slug} />
       <Footer />
     </>
   );
