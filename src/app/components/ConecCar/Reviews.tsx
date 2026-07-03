@@ -5,15 +5,7 @@ import Section from "@/app/components/ConecCar/Section";
 import { I } from "@/app/components/ConecCar/Icons";
 import { staggerContainer, slideUpItem, VIEWPORT_CONFIG } from '@/animations/variants';
 
-// isTranslated es un flag estructural, no contenido traducible:
-// indica que la reseña fue traducida del idioma original al español base.
-const REVIEW_IDS = [
-  { id: 'review1', isTranslated: false },
-  { id: 'review2', isTranslated: true },
-  { id: 'review3', isTranslated: false },
-  { id: 'review4', isTranslated: true },
-  { id: 'review5', isTranslated: false },
-] as const;
+const REVIEW_IDS = ['review1', 'review2', 'review3', 'review4', 'review5'] as const;
 
 const Reviews = () => {
   const { t } = useTranslation('reviews');
@@ -33,7 +25,7 @@ const Reviews = () => {
         viewport={VIEWPORT_CONFIG}
         variants={staggerContainer}
       >
-        {REVIEW_IDS.map(({ id, isTranslated }) => (
+        {REVIEW_IDS.map((id) => (
           <motion.article
             key={id}
             variants={slideUpItem}

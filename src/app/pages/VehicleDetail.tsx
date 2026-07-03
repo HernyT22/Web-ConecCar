@@ -19,7 +19,7 @@ const VehicleDetail = () => {
       <Nav />
       <Breadcrumb vehicle={vehicle} />
       <VehicleHero vehicle={vehicle} />
-      <Specs vehicle={vehicle} />
+      <Specs key={vehicle.slug} vehicle={vehicle} />
       <Included />
       <Similar slug={vehicle.slug} />
       <Footer />
