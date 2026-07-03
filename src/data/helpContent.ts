@@ -6,7 +6,9 @@
 export type HelpSection =
   | { id: 'seguro'; kind: 'paragraphs'; paragraphCount: 4 }
   | { id: 'cancelacion'; kind: 'paragraphs'; paragraphCount: 5 }
-  | { id: 'manejar-en-argentina'; kind: 'subsections'; subsectionIds: readonly string[] };
+  | { id: 'manejar-en-argentina'; kind: 'subsections'; subsectionIds: readonly string[] }
+  | { id: 'terminos'; kind: 'paragraphs'; paragraphCount: 6 }
+  | { id: 'privacidad'; kind: 'paragraphs'; paragraphCount: 5 };
 
 export const HELP_SECTIONS: readonly HelpSection[] = [
   { id: 'seguro', kind: 'paragraphs', paragraphCount: 4 },
@@ -25,6 +27,8 @@ export const HELP_SECTIONS: readonly HelpSection[] = [
       'telefonos',
     ] as const,
   },
+  { id: 'terminos', kind: 'paragraphs', paragraphCount: 6 },
+  { id: 'privacidad', kind: 'paragraphs', paragraphCount: 5 },
 ] as const;
 
 /** IDs de las 12 FAQs, en orden de aparición. */

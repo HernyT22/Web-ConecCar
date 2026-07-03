@@ -35,8 +35,7 @@
     },
     "legal": {
       "terms": "Términos",
-      "privacy": "Privacidad",
-      "cookies": "Cookies"
+      "privacy": "Privacidad"
     },
     "madeIn": "Hecho en Mendoza · AR",
     "copyright": "© {{year}} ConecCar.rent"

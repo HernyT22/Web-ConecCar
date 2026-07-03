@@ -3,14 +3,59 @@ import * as Accordion from '@radix-ui/react-accordion';
 import { Plus } from 'lucide-react';
 import Nav from '@/app/components/ConecCar/Nav';
 import Footer from '@/app/components/ConecCar/Footer';
-import { HELP_SECTIONS, FAQ_IDS } from '@/data/helpContent';
+import { HELP_SECTIONS, FAQ_IDS, type HelpSection } from '@/data/helpContent';
 import { buildWhatsAppUrl } from '@/app/components/ConecCar/whatsapp';
 import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
 import whatsappIcon from '@/imports/whatsapp.png';
 
+const LEGAL_SECTION_IDS = ['terminos', 'privacidad'];
+
 const Help = () => {
   const { t } = useTranslation('help');
   const whatsappUrl = buildWhatsAppUrl(t('whatsappTemplate'));
+
+  const renderSection = (section: HelpSection) => (
+    <section key={section.id} id={section.id} className="scroll-mt-28 mb-20">
+      <h2 className="font-display text-3xl text-navy-950 pb-3 mb-6 border-b-2 border-amber-400">
+        {t(`sections.${section.id}.title`)}
+      </h2>
+
+      {section.kind === 'paragraphs' && (
+        (t(`sections.${section.id}.paragraphs`, { returnObjects: true }) as string[]).map((p, i) => (
+          <p key={i} className="text-gray-700 text-base leading-relaxed mb-4">{p}</p>
+        ))
+      )}
+
+      {section.kind === 'subsections' && (
+        <>
+          <p className="text-gray-700 text-base leading-relaxed mb-6">
+            {t(`sections.${section.id}.intro`)}
+          </p>
+          {section.subsectionIds.map((subId) => {
+            const intro = t(`sections.${section.id}.subsections.${subId}.intro`, { defaultValue: '' });
+            const paragraph = t(`sections.${section.id}.subsections.${subId}.paragraph`, { defaultValue: '' });
+            const items = t(`sections.${section.id}.subsections.${subId}.items`, { returnObjects: true, defaultValue: [] }) as string[];
+            return (
+              <div key={subId} className="mb-8">
+                <h3 className="text-xl font-semibold text-navy-900 mb-3">
+                  {t(`sections.${section.id}.subsections.${subId}.title`)}
+                </h3>
+                {intro && <p className="text-gray-700 leading-relaxed mb-2">{intro}</p>}
+                {paragraph && <p className="text-gray-700 leading-relaxed">{paragraph}</p>}
+                {items.length > 0 && (
+                  <ul className="list-disc list-outside pl-6 space-y-1.5 text-gray-700 mt-2">
+                    {items.map((item, j) => (
+                      <li key={j} className="marker:text-amber-500">{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
+        </>
+      )}
+    </section>
+  );
 
   return (
     <>
@@ -44,48 +89,7 @@ const Help = () => {
       <main className="mx-auto max-w-3xl px-6 py-16 lg:py-24">
 
         {/* Secciones principales */}
-        {HELP_SECTIONS.map((section) => (
-          <section key={section.id} id={section.id} className="scroll-mt-28 mb-20">
-            <h2 className="font-display text-3xl text-navy-950 pb-3 mb-6 border-b-2 border-amber-400">
-              {t(`sections.${section.id}.title`)}
-            </h2>
-
-            {section.kind === 'paragraphs' && (
-              (t(`sections.${section.id}.paragraphs`, { returnObjects: true }) as string[]).map((p, i) => (
-                <p key={i} className="text-gray-700 text-base leading-relaxed mb-4">{p}</p>
-              ))
-            )}
-
-            {section.kind === 'subsections' && (
-              <>
-                <p className="text-gray-700 text-base leading-relaxed mb-6">
-                  {t(`sections.${section.id}.intro`)}
-                </p>
-                {section.subsectionIds.map((subId) => {
-                  const intro = t(`sections.${section.id}.subsections.${subId}.intro`, { defaultValue: '' });
-                  const paragraph = t(`sections.${section.id}.subsections.${subId}.paragraph`, { defaultValue: '' });
-                  const items = t(`sections.${section.id}.subsections.${subId}.items`, { returnObjects: true, defaultValue: [] }) as string[];
-                  return (
-                    <div key={subId} className="mb-8">
-                      <h3 className="text-xl font-semibold text-navy-900 mb-3">
-                        {t(`sections.${section.id}.subsections.${subId}.title`)}
-                      </h3>
-                      {intro && <p className="text-gray-700 leading-relaxed mb-2">{intro}</p>}
-                      {paragraph && <p className="text-gray-700 leading-relaxed">{paragraph}</p>}
-                      {items.length > 0 && (
-                        <ul className="list-disc list-outside pl-6 space-y-1.5 text-gray-700 mt-2">
-                          {items.map((item, j) => (
-                            <li key={j} className="marker:text-amber-500">{item}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  );
-                })}
-              </>
-            )}
-          </section>
-        ))}
+        {HELP_SECTIONS.filter((section) => !LEGAL_SECTION_IDS.includes(section.id)).map(renderSection)}
 
         {/* FAQs */}
         <section id="preguntas-frecuentes" className="scroll-mt-28 mb-20">
@@ -116,6 +120,9 @@ const Help = () => {
             ))}
           </Accordion.Root>
         </section>
+
+        {/* Términos y Privacidad */}
+        {HELP_SECTIONS.filter((section) => LEGAL_SECTION_IDS.includes(section.id)).map(renderSection)}
 
         {/* CTA WhatsApp */}
         <div className="rounded-3xl bg-navy-950 px-8 py-12 text-center">
