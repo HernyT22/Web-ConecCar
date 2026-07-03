@@ -92,11 +92,17 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-white transition">{t('footer.legal.terms')}</a>
-            <a href="#" className="hover:text-white transition">{t('footer.legal.privacy')}</a>
-            <a href="#" className="hover:text-white transition">{t('footer.legal.cookies')}</a>
+            <Link to="/ayuda#terminos" className="hover:text-white transition">{t('footer.legal.terms')}</Link>
+            <Link to="/ayuda#privacidad" className="hover:text-white transition">{t('footer.legal.privacy')}</Link>
           </div>
-          <div className="mono uppercase tracking-widest">{t('footer.madeIn')}</div>
+          <a
+            href="https://www.linkedin.com/in/hern%C3%A1n-guevara-6b75ba25a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mono uppercase tracking-widest"
+          >
+            Hecho por Hernán Guevara
+          </a>
         </div>
       </div>
     </footer>

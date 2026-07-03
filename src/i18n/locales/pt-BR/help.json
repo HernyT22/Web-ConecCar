@@ -77,6 +77,27 @@
           "paragraph": "Emergências: 911. Para assistência relacionada ao seu aluguel, entre em contato diretamente com nossa equipe, disponível durante toda a sua viagem."
         }
       }
+    },
+    "terminos": {
+      "title": "Termos e Condições",
+      "paragraphs": [
+        "O acesso e uso deste site implica na aceitação plena destes Termos e Condições. Caso não concorde com algum dos pontos, recomendamos não continuar utilizando o site.",
+        "As informações publicadas sobre a frota, tarifas e disponibilidade têm caráter referencial e estão sujeitas a alterações sem aviso prévio. A reserva feita pelo site ou WhatsApp não constitui um contrato de aluguel definitivo; este é formalizado no momento da retirada do veículo, conforme a documentação e condições vigentes nesse momento.",
+        "O usuário se compromete a utilizar o site de forma lícita, abstendo-se de qualquer conduta que possa danificar, inutilizar ou sobrecarregar o serviço, ou interferir em seu funcionamento normal.",
+        "Todo o conteúdo do site — textos, imagens, marca, design e estrutura — é propriedade da ConecCar ou de seus licenciantes, protegido pela legislação de propriedade intelectual vigente. É proibida sua reprodução total ou parcial sem autorização expressa.",
+        "A ConecCar poderá modificar a qualquer momento estes Termos e Condições, bem como tarifas e condições de aluguel, sem que isso gere direito a qualquer compensação. Recomendamos revisar esta seção periodicamente.",
+        "Estes Termos são regidos pelas leis da República Argentina. Qualquer controvérsia decorrente de sua interpretação ou aplicação será submetida aos tribunais ordinários da cidade de Mendoza."
+      ]
+    },
+    "privacidad": {
+      "title": "Política de Privacidade",
+      "paragraphs": [
+        "Ao preencher o formulário de contato ou iniciar uma conversa pelo WhatsApp, a ConecCar coleta dados pessoais como nome, e-mail, telefone e demais informações que o usuário decida fornecer voluntariamente.",
+        "Esses dados são utilizados exclusivamente para responder consultas, gerenciar solicitações de reserva e melhorar a qualidade do nosso serviço. Não são utilizados para fins diferentes dos informados no momento da coleta.",
+        "A ConecCar não vende, aluga nem compartilha os dados pessoais de seus usuários com terceiros, exceto por exigência de autoridade competente conforme a legislação vigente.",
+        "Medidas razoáveis de segurança são adotadas para proteger as informações contra acessos não autorizados, perda ou alteração, sendo conservadas apenas pelo tempo necessário para os fins mencionados.",
+        "O usuário pode solicitar a qualquer momento o acesso, a correção ou a exclusão de seus dados pessoais escrevendo para hola@coneccart.ar."
+      ]
     }
   },
   "faqs": {

@@ -77,6 +77,27 @@
           "paragraph": "Emergencies: 911. For rental-related assistance, contact our team directly — we're available throughout your trip."
         }
       }
+    },
+    "terminos": {
+      "title": "Terms and Conditions",
+      "paragraphs": [
+        "Access to and use of this website implies full acceptance of these Terms and Conditions. If you do not agree with any part of them, we recommend that you discontinue use of the site.",
+        "Information published about our fleet, rates and availability is for reference only and is subject to change without notice. A booking made through the website or WhatsApp does not constitute a final rental agreement; this is formalized at the time of vehicle pick-up, under the documentation and conditions in effect at that moment.",
+        "Users agree to use the site lawfully, refraining from any conduct that could damage, disable, overload or interfere with its normal operation.",
+        "All content on this site — text, images, branding, design and structure — is the property of ConecCar or its licensors and is protected under applicable intellectual property law. Full or partial reproduction without express authorization is prohibited.",
+        "ConecCar may modify these Terms and Conditions, as well as rental rates and conditions, at any time, without this giving rise to any right to compensation. We recommend reviewing this section periodically.",
+        "These Terms are governed by the laws of Argentina. Any dispute arising from their interpretation or application will be submitted to the ordinary courts of the city of Mendoza."
+      ]
+    },
+    "privacidad": {
+      "title": "Privacy Policy",
+      "paragraphs": [
+        "When filling out the contact form or starting a WhatsApp conversation, ConecCar collects personal data such as name, email, phone number and any information the user voluntarily provides.",
+        "This data is used exclusively to respond to inquiries, manage booking requests and improve the quality of our service. It is not used for purposes other than those stated at the time of collection.",
+        "ConecCar does not sell, rent or share users' personal data with third parties, except when required by a competent authority under applicable law.",
+        "Reasonable security measures are in place to protect information against unauthorized access, loss or alteration, and data is retained only for as long as necessary for the purposes described.",
+        "Users may request access to, correction of, or deletion of their personal data at any time by writing to hola@coneccart.ar."
+      ]
     }
   },
   "faqs": {

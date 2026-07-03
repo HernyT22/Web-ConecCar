@@ -77,6 +77,27 @@
           "paragraph": "Emergencias: 911. Para asistencia relacionada con su alquiler, comuníquese directamente con nuestro equipo, disponible para acompañarlo durante todo su viaje."
         }
       }
+    },
+    "terminos": {
+      "title": "Términos y Condiciones",
+      "paragraphs": [
+        "El acceso y uso de este sitio web implica la aceptación plena de los presentes Términos y Condiciones. Si no está de acuerdo con alguno de sus puntos, le recomendamos no continuar utilizando el sitio.",
+        "La información publicada sobre la flota, tarifas y disponibilidad tiene carácter referencial y está sujeta a cambios sin previo aviso. La reserva realizada a través del sitio o por WhatsApp no constituye un contrato de alquiler definitivo; este se formaliza al momento del retiro del vehículo, con la documentación y condiciones vigentes en esa instancia.",
+        "El usuario se compromete a utilizar el sitio de manera lícita, absteniéndose de cualquier conducta que pudiera dañar, inutilizar o sobrecargar el servicio, o interferir con su normal funcionamiento.",
+        "Todos los contenidos del sitio —textos, imágenes, marca, diseño y estructura— son propiedad de ConecCar o de sus licenciantes, y están protegidos por la normativa de propiedad intelectual vigente. Queda prohibida su reproducción total o parcial sin autorización expresa.",
+        "ConecCar podrá modificar en cualquier momento los presentes Términos y Condiciones, así como las tarifas y condiciones de alquiler, sin que ello genere derecho a compensación alguna. Se recomienda revisar esta sección periódicamente.",
+        "Los presentes Términos se rigen por las leyes de la República Argentina. Cualquier controversia derivada de su interpretación o aplicación se someterá a los tribunales ordinarios de la ciudad de Mendoza."
+      ]
+    },
+    "privacidad": {
+      "title": "Política de Privacidad",
+      "paragraphs": [
+        "Al completar el formulario de contacto o iniciar una conversación por WhatsApp, ConecCar recolecta datos personales como nombre, correo electrónico, teléfono y la información que el usuario decida proporcionar voluntariamente.",
+        "Estos datos se utilizan exclusivamente para responder consultas, gestionar solicitudes de reserva y mejorar la calidad de nuestro servicio. No se destinan a fines distintos a los informados en el momento de la recolección.",
+        "ConecCar no vende, alquila ni cede a terceros los datos personales de sus usuarios, salvo requerimiento de autoridad competente en el marco de la legislación vigente.",
+        "Se adoptan medidas razonables de seguridad para proteger la información contra accesos no autorizados, pérdida o alteración, conservándola únicamente durante el tiempo necesario para los fines mencionados.",
+        "El usuario puede solicitar en cualquier momento el acceso, la rectificación o la eliminación de sus datos personales escribiendo a hola@coneccart.ar."
+      ]
     }
   },
   "faqs": {
