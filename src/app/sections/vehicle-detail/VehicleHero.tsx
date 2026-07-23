@@ -5,6 +5,7 @@ import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { buildWhatsAppUrl } from '@/app/components/ConecCar/whatsapp';
 import { PHONE_TEL_LINKS } from '@/data/contact';
+import { formatPrice } from '@/data/vehicles';
 import type { Vehicle } from '@/data/vehicles';
 import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
 import whatsappIcon from '@/imports/whatsapp.png';
@@ -40,7 +41,7 @@ const VehicleHero = ({ vehicle }: Props) => {
 
   const mainImage = images[active];
   const priceDisplay = pricePerDay > 0
-    ? `${currency === 'USD' ? 'US$' : currency} ${pricePerDay}`
+    ? formatPrice(pricePerDay, currency)
     : t('vehicle:hero.consult');
 
   return (

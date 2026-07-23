@@ -36,6 +36,17 @@ export type BodyTypeId = 'sedan-4d' | 'hatchback-5d' | 'suv-5d';
 export type BadgeId = 'new' | 'corporate' | 'mostBooked' | 'family' | 'MostRentedCar' | null;
 export type CurrencyId = 'USD' | 'ARS';
 
+const CURRENCY_SYMBOLS: Record<CurrencyId, string> = {
+  USD: 'US$',
+  ARS: '$',
+};
+
+export const formatPrice = (pricePerDay: number, currency: CurrencyId): string => {
+  const amount = pricePerDay.toLocaleString('es-AR');
+  const suffix = currency === 'ARS' ? ' ARS' : '';
+  return `${CURRENCY_SYMBOLS[currency]} ${amount}${suffix}`;
+};
+
 export interface Vehicle {
   slug: string;
   brand: string;
@@ -66,8 +77,8 @@ export const vehicles: Vehicle[] = [
     category: 'suv-coupe',
     badge: 'MostRentedCar',
     bodyType: 'suv-5d',
-    pricePerDay: 90, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 100000,
+    currency: 'ARS',
     seats: 5,
     bags: 3,
     transmission: 'automatic',
@@ -91,8 +102,8 @@ export const vehicles: Vehicle[] = [
     category: 'suv-compacta',
     badge: 'new',
     bodyType: 'suv-5d',
-    pricePerDay: 95, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 100000,
+    currency: 'ARS',
     seats: 5,
     bags: 3,
     transmission: 'automatic',
@@ -116,8 +127,8 @@ export const vehicles: Vehicle[] = [
     category: 'suv-coupe',
     badge: 'new',
     bodyType: 'suv-5d',
-    pricePerDay: 90, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 100000,
+    currency: 'ARS',
     seats: 5,
     bags: 3,
     transmission: 'automatic',
@@ -141,8 +152,8 @@ export const vehicles: Vehicle[] = [
     category: 'suv-coupe',
     badge: null,
     bodyType: 'suv-5d',
-    pricePerDay: 90, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 100000,
+    currency: 'ARS',
     seats: 5,
     bags: 3,
     transmission: 'automatic',
@@ -166,8 +177,8 @@ export const vehicles: Vehicle[] = [
     category: 'suv-compacta',
     badge: null,
     bodyType: 'suv-5d',
-    pricePerDay: 95, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 100000,
+    currency: 'ARS',
     seats: 5,
     bags: 3,
     transmission: 'automatic',
@@ -191,8 +202,8 @@ export const vehicles: Vehicle[] = [
     category: 'sedan',
     badge: 'corporate',
     bodyType: 'sedan-4d',
-    pricePerDay: 250,
-    currency: 'USD',
+    pricePerDay: 280000,
+    currency: 'ARS',
     seats: 5,
     bags: 3,
     transmission: 'automatic',
@@ -216,8 +227,8 @@ export const vehicles: Vehicle[] = [
     category: 'hatchback-compacto',
     badge: null,
     bodyType: 'hatchback-5d',
-    pricePerDay: 70, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 80000,
+    currency: 'ARS',
     seats: 5,
     bags: 2,
     transmission: 'manual',
@@ -241,8 +252,8 @@ export const vehicles: Vehicle[] = [
     category: 'sedan',
     badge: null,
     bodyType: 'sedan-4d',
-    pricePerDay: 85, // TODO: confirmar con cliente
-    currency: 'USD',
+    pricePerDay: 120000,
+    currency: 'ARS',
     seats: 5,
     bags: 2,
     transmission: 'automatic',

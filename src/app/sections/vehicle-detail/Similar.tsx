@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
-import { getSimilarVehicles } from '@/data/vehicles';
+import { getSimilarVehicles, formatPrice } from '@/data/vehicles';
 import { staggerContainer, slideUpItem, slideFromLeftItem, VIEWPORT_CONFIG } from '@/animations/variants';
 
 interface Props {
@@ -83,7 +83,7 @@ const Similar = ({ slug }: Props) => {
                       <div className="flex items-baseline gap-1">
                         {c.pricePerDay > 0
                           ? <>
-                              <span className="font-display text-2xl font-semibold text-navy-900">US$ {c.pricePerDay}</span>
+                              <span className="font-display text-2xl font-semibold text-navy-900">{formatPrice(c.pricePerDay, c.currency)}</span>
                               <span className="text-sm text-navy-500">{t('vehicle:similar.perDay')}</span>
                             </>
                           : <span className="font-display text-xl font-semibold text-navy-900">{t('vehicle:similar.inquire')}</span>

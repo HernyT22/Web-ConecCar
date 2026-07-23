@@ -10,7 +10,7 @@ import PlaceholderImg from "@/app/components/ConecCar/PlaceholderImg";
 import { I } from "@/app/components/ConecCar/Icons";
 import { CATEGORY_IDS, parseCatFromHash } from "./fleetCategories";
 import { ANIM_DURATION, ANIM_EASE } from "@/animations/variants";
-import { vehicles } from "@/data/vehicles";
+import { vehicles, formatPrice } from "@/data/vehicles";
 import type { CategoryId, Vehicle } from "@/data/vehicles";
 
 type SortId = 'recommended' | 'priceAsc' | 'priceDesc';
@@ -77,16 +77,16 @@ const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle
         <div className="mt-5 pt-5 border-t border-navy-100 flex items-end justify-between gap-3">
           <div className="min-w-0">
             <div className="mono uppercase text-navy-500">{t('card.from')}</div>
-            <div className="flex items-baseline gap-1 whitespace-nowrap">
+            <div className="flex flex-wrap items-baseline gap-x-1">
               {v.pricePerDay > 0 ? (
                 <>
-                  <span className="font-display text-2xl font-semibold text-navy-900">
-                    US$ {v.pricePerDay}
+                  <span className="font-display text-lg font-semibold text-navy-900">
+                    {formatPrice(v.pricePerDay, v.currency)}
                   </span>
-                  <span className="text-sm text-navy-500">&bull; {t('card.perDay')}</span>
+                  <span className="text-xs text-navy-500">&bull; {t('card.perDay')}</span>
                 </>
               ) : (
-                <span className="font-display text-xl font-semibold text-navy-900">
+                <span className="font-display text-lg font-semibold text-navy-900">
                   {t('card.consult')}
                 </span>
               )}
