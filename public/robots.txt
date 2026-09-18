@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coneccar-rent.com/sitemap.xml
