@@ -5,6 +5,7 @@ import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { buildWhatsAppUrl } from '@/app/components/ConecCar/whatsapp';
 import { PHONE_TEL_LINKS } from '@/data/contact';
+import { trackLead } from '@/lib/analytics';
 import { formatPrice } from '@/data/vehicles';
 import type { Vehicle } from '@/data/vehicles';
 import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
@@ -121,6 +122,7 @@ const VehicleHero = ({ vehicle }: Props) => {
             <div className="flex flex-col sm:flex-row gap-3 sm:ml-auto">
               <a
                 href={PHONE_TEL_LINKS.secondary}
+                onClick={() => trackLead('phone_call', { vehicle: vehicle.slug })}
                 className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 font-medium px-6 py-3.5 rounded-full transition"
               >
                 {t('vehicle:hero.book')} {I.arrow}
@@ -129,6 +131,7 @@ const VehicleHero = ({ vehicle }: Props) => {
                 href={consultUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLead('whatsapp', { vehicle: vehicle.slug })}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium px-6 py-3.5 rounded-full transition backdrop-blur"
               >
                 <img src={whatsappIcon} alt="" aria-hidden="true" className="w-5 h-5" />{t('vehicle:hero.consult')}

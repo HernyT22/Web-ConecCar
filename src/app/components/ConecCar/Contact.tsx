@@ -12,6 +12,7 @@ import {
 } from '@/data/contact';
 import { buildWhatsAppUrl } from './whatsapp';
 import whatsappIcon from '@/imports/whatsapp.png';
+import { trackLead } from '@/lib/analytics';
 
 type FormState = {
   name: string;
@@ -91,6 +92,7 @@ const Contact = () => {
       if (result.success) {
         setStatus('success');
         setFormData(INITIAL_FORM);
+        trackLead('contact_form');
         setTimeout(() => setStatus('idle'), 6000);
       } else {
         console.error('Web3Forms error:', result);
@@ -135,6 +137,7 @@ const Contact = () => {
               href={buildWhatsAppUrl(t('whatsappTemplate'), 'primary')}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLead('whatsapp')}
               className="inline-flex items-center gap-3 bg-[#25D366] hover:brightness-110 text-navy-950 font-semibold px-6 py-4 rounded-full transition shadow-lg"
             >
               <img src={whatsappIcon} alt="" aria-hidden="true" className="w-6 h-6" />
@@ -144,6 +147,7 @@ const Contact = () => {
               href={buildWhatsAppUrl(t('whatsappTemplate'), 'secondary')}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLead('whatsapp_alt')}
               className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold px-6 py-4 rounded-full transition backdrop-blur"
             >
               <img src={whatsappIcon} alt="" aria-hidden="true" className="w-5 h-5" />
