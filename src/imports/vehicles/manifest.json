@@ -1,0 +1,408 @@
+{
+  "citroen-azul-lateral": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "citroen-azul-detras": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "citroen-azul-interior": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 960,
+      "height": 1280
+    }
+  },
+  "cheri-blanco-lateral": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "cheri-blanco-detras": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "cheri-blanco-interior": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "cheri-blanco-baul": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "citroen-dark-lateral": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "citroen-dark-detras": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "citroen-dark-interior": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "citroen-dark-baul": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "citroen-blanco-lateral": {
+    "480": {
+      "width": 480,
+      "height": 278
+    },
+    "800": {
+      "width": 800,
+      "height": 463
+    },
+    "1200": {
+      "width": 1200,
+      "height": 695
+    }
+  },
+  "citroen-blanco-detras": {
+    "480": {
+      "width": 480,
+      "height": 343
+    },
+    "800": {
+      "width": 800,
+      "height": 572
+    },
+    "1200": {
+      "width": 1200,
+      "height": 858
+    }
+  },
+  "citroen-blanco-interior": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "citroen-blanco-baul": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "cheri-rojo-lateral": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "cheri-rojo-detras": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "cheri-rojo-interior": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "cheri-rojo-baul": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  },
+  "accord-lateral": {
+    "480": {
+      "width": 480,
+      "height": 270
+    },
+    "800": {
+      "width": 800,
+      "height": 450
+    },
+    "1200": {
+      "width": 1200,
+      "height": 675
+    }
+  },
+  "accord-frontal": {
+    "480": {
+      "width": 480,
+      "height": 853
+    },
+    "800": {
+      "width": 800,
+      "height": 1422
+    },
+    "1200": {
+      "width": 1200,
+      "height": 2133
+    }
+  },
+  "accord-detras": {
+    "480": {
+      "width": 480,
+      "height": 853
+    },
+    "800": {
+      "width": 800,
+      "height": 1422
+    },
+    "1200": {
+      "width": 1200,
+      "height": 2133
+    }
+  },
+  "accord-baul": {
+    "480": {
+      "width": 480,
+      "height": 270
+    },
+    "800": {
+      "width": 800,
+      "height": 450
+    },
+    "1200": {
+      "width": 1200,
+      "height": 675
+    }
+  },
+  "fox-lateral": {
+    "480": {
+      "width": 480,
+      "height": 317
+    },
+    "800": {
+      "width": 800,
+      "height": 528
+    },
+    "1200": {
+      "width": 1200,
+      "height": 792
+    }
+  },
+  "fox-detras": {
+    "480": {
+      "width": 480,
+      "height": 349
+    },
+    "800": {
+      "width": 800,
+      "height": 581
+    },
+    "1200": {
+      "width": 1200,
+      "height": 872
+    }
+  },
+  "kia-rio-lateral": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "kia-rio-detras": {
+    "480": {
+      "width": 480,
+      "height": 318
+    },
+    "800": {
+      "width": 800,
+      "height": 530
+    },
+    "1200": {
+      "width": 1200,
+      "height": 795
+    }
+  },
+  "kia-rio-interior": {
+    "480": {
+      "width": 480,
+      "height": 360
+    },
+    "800": {
+      "width": 800,
+      "height": 600
+    },
+    "1200": {
+      "width": 1200,
+      "height": 900
+    }
+  },
+  "kia-rio-baul": {
+    "480": {
+      "width": 480,
+      "height": 640
+    },
+    "800": {
+      "width": 800,
+      "height": 1067
+    },
+    "1200": {
+      "width": 1200,
+      "height": 1600
+    }
+  }
+}
