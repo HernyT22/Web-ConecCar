@@ -166,6 +166,7 @@ const Fleet = () => {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder={t('search.placeholder')}
+              aria-label={t('search.ariaLabel')}
               className="bg-transparent w-full py-2.5 outline-none placeholder:text-navy-400 text-navy-900"
             />
           </div>
@@ -174,6 +175,7 @@ const Fleet = () => {
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as SortId)}
+              aria-label={t('sort.label')}
               className="text-navy-900 text-sm py-2 bg-transparent outline-none cursor-pointer"
             >
               {SORT_OPTIONS.map((o) => (

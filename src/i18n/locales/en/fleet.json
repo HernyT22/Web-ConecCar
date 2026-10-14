@@ -5,7 +5,8 @@
     "kicker": "City cars, sedans, and SUVs ready to move you through Mendoza with comfort and confidence."
   },
   "search": {
-    "placeholder": "Search by model, type, or feature…"
+    "placeholder": "Search by model, type, or feature…",
+    "ariaLabel": "Search vehicles"
   },
   "sort": {
     "label": "Sort",

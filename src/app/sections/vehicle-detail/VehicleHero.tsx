@@ -156,6 +156,7 @@ const VehicleHero = ({ vehicle }: Props) => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
+                aria-label={t('vehicle:hero.viewImage', { n: i + 1, total: images.length })}
                 className={`relative rounded-xl overflow-hidden border transition ${
                   active === i
                     ? 'border-amber-500 ring-2 ring-amber-500/40'

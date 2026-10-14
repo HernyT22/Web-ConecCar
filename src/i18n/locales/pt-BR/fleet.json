@@ -5,7 +5,8 @@
     "kicker": "City cars, sedãs e SUVs prontos para te levar por Mendoza com conforto e confiança."
   },
   "search": {
-    "placeholder": "Buscar por modelo, tipo ou característica…"
+    "placeholder": "Buscar por modelo, tipo ou característica…",
+    "ariaLabel": "Buscar veículos"
   },
   "sort": {
     "label": "Ordenar",

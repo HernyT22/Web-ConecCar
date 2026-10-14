@@ -1,5 +1,6 @@
 // ConecCar.rent — Medios de pago
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { staggerContainerFast, scaleInItem, VIEWPORT_CONFIG } from '@/animations/variants';
 import logoMP from "@/imports/logos/logomp.png";
 import logoVisa from "@/imports/logos/visa.png";
@@ -9,6 +10,7 @@ import iconEfectivoARS from "@/imports/logos/dinero-argentino.png";
 import iconEfectivoUSD from "@/imports/logos/billete-de-banco.png";
 
 const Payments = () => {
+  const { t } = useTranslation();
   const methods = [
     {
       name: "Visa",
@@ -105,19 +107,18 @@ const Payments = () => {
   ];
 
   return (
-    <section className="py-14 bg-navy-50/40 border-y border-navy-100">
+    <section aria-labelledby="payments-title" className="py-14 bg-navy-50/40 border-y border-navy-100">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center gap-8">
           <div className="md:w-1/4">
             <div className="mono uppercase text-amber-600 tracking-widest mb-1">
-              Medios de pago
+              {t('payments.eyebrow')}
             </div>
-            <div className="font-display text-2xl font-semibold text-navy-900">
-              Pagá como prefieras.
-            </div>
+            <h2 id="payments-title" className="font-display text-2xl font-semibold text-navy-900">
+              {t('payments.title')}
+            </h2>
             <div className="text-sm text-navy-700/70 mt-1">
-              Locales e internacionales. Aceptamos pagos en ARS
-              y USD.
+              {t('payments.subtitle')}
             </div>
           </div>
           <motion.div

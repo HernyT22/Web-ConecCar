@@ -6,7 +6,9 @@
     "reviews": "Reviews",
     "contact": "Contact",
     "help": "Help",
-    "bookCta": "Book a vehicle"
+    "bookCta": "Book a vehicle",
+    "ariaLabel": "Main navigation",
+    "menu": "Menu"
   },
   "buttons": {
     "viewFleet": "View the fleet",
@@ -16,6 +18,11 @@
     "viewDetails": "View details",
     "sendRequest": "Send request",
     "backToTop": "Back to top"
+  },
+  "payments": {
+    "eyebrow": "Payment methods",
+    "title": "Pay the way you prefer.",
+    "subtitle": "Local and international. We accept payments in ARS and USD."
   },
   "footer": {
     "tagline": "Vehicle rental in Mendoza,",

@@ -17,11 +17,13 @@ const VehicleDetail = () => {
   return (
     <>
       <Nav />
+      <main id="main">
       <Breadcrumb vehicle={vehicle} />
       <VehicleHero vehicle={vehicle} />
       <Specs key={vehicle.slug} vehicle={vehicle} />
       <Included />
       <Similar key={vehicle.slug} slug={vehicle.slug} />
+      </main>
       <Footer />
     </>
   );

@@ -2,10 +2,12 @@
   "breadcrumb": {
     "back": "Back to fleet",
     "home": "Home",
-    "fleet": "Fleet"
+    "fleet": "Fleet",
+    "ariaLabel": "Breadcrumb"
   },
   "hero": {
     "dailyRate": "Daily rate",
+    "viewImage": "View image {{n}} of {{total}}",
     "perDay": "/ day",
     "book": "Book now",
     "consult": "Inquire"

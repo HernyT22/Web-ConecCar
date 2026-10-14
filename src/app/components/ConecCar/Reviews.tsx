@@ -32,6 +32,7 @@ const Reviews = () => {
             className="relative rounded-2xl border border-navy-100 bg-white p-6 md:p-7 lift flex flex-col hover:border-amber-500/50 hover:shadow-[0_10px_30px_-12px_rgba(201,161,74,0.35)] transition"
           >
             <div className="flex items-center justify-between gap-3 mb-4 relative">
+              {/* PENDIENTE-CLIENTA: confirmar que las opiniones son verificables antes de mostrar este badge */}
               <span className="inline-flex items-center gap-1.5 mono uppercase tracking-widest text-amber-600 text-[10px]">
                 <span className="w-3.5 h-3.5">{I.check}</span>
                 {t('badges.verified')}

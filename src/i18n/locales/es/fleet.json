@@ -5,7 +5,8 @@
     "kicker": "City cars, sedans y SUVs preparados para moverte por Mendoza con comodidad y confianza."
   },
   "search": {
-    "placeholder": "Buscar por modelo, tipo o característica…"
+    "placeholder": "Buscar por modelo, tipo o característica…",
+    "ariaLabel": "Buscar vehículos"
   },
   "sort": {
     "label": "Ordenar",

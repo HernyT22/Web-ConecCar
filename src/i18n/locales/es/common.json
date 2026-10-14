@@ -6,7 +6,9 @@
     "reviews": "Opiniones",
     "contact": "Contacto",
     "help": "Ayuda",
-    "bookCta": "Reservar vehículo"
+    "bookCta": "Reservar vehículo",
+    "ariaLabel": "Navegación principal",
+    "menu": "Menú"
   },
   "buttons": {
     "viewFleet": "Ver la flota",
@@ -16,6 +18,11 @@
     "viewDetails": "Ver detalles",
     "sendRequest": "Enviar solicitud",
     "backToTop": "Volver arriba"
+  },
+  "payments": {
+    "eyebrow": "Medios de pago",
+    "title": "Pagá como prefieras.",
+    "subtitle": "Locales e internacionales. Aceptamos pagos en ARS y USD."
   },
   "footer": {
     "tagline": "Alquiler de vehículos en Mendoza,",

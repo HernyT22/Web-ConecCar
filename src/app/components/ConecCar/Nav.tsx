@@ -36,12 +36,9 @@ const Nav = () => {
               <ImageWithFallback src={logoConeccar} alt={BRAND_NAME} className="absolute inset-0 w-full h-full object-cover" />
               <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-500/10 to-transparent pointer-events-none" />
             </span>
-            <span className="flex flex-col leading-tight">
-              <span className="sr-only">{BRAND_NAME}</span>
-            </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav aria-label={t('nav.ariaLabel')} className="hidden md:flex items-center gap-8">
             {NAV_KEYS.map((link) => {
               const isActive = isHome && activeId === link.id;
               return (
@@ -76,7 +73,7 @@ const Nav = () => {
             </a>
           </div>
 
-          <button className="md:hidden text-navy-900 p-2 -mr-2" onClick={() => setOpen(!open)} aria-label="Menú">
+          <button className="md:hidden text-navy-900 p-2 -mr-2" onClick={() => setOpen(!open)} aria-label={t('nav.menu')}>
             {open ? I.close : I.menu}
           </button>
         </div>

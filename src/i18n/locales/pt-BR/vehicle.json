@@ -2,10 +2,12 @@
   "breadcrumb": {
     "back": "Voltar à frota",
     "home": "Início",
-    "fleet": "Frota"
+    "fleet": "Frota",
+    "ariaLabel": "Trilha de navegação"
   },
   "hero": {
     "dailyRate": "Diária",
+    "viewImage": "Ver imagem {{n}} de {{total}}",
     "perDay": "/ dia",
     "book": "Reservar agora",
     "consult": "Consultar"

@@ -2,10 +2,12 @@
   "breadcrumb": {
     "back": "Volver a la flota",
     "home": "Inicio",
-    "fleet": "Flota"
+    "fleet": "Flota",
+    "ariaLabel": "Migas de pan"
   },
   "hero": {
     "dailyRate": "Tarifa diaria",
+    "viewImage": "Ver imagen {{n}} de {{total}}",
     "perDay": "/ día",
     "book": "Reservar ahora",
     "consult": "Consultar"

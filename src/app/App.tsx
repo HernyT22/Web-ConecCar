@@ -16,6 +16,7 @@ export default function App() {
   return (
     <>
       <Nav />
+      <main id="main">
       <Hero />
       <About />
       <Fleet />
@@ -23,6 +24,7 @@ export default function App() {
       <Reviews />
       <Payments />
       <Contact />
+      </main>
       <Footer />
     </>
   );

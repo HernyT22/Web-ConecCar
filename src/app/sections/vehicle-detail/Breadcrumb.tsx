@@ -23,7 +23,7 @@ const Breadcrumb = ({ vehicle }: Props) => {
           <span className="w-4 h-4">{I.arrowLeft}</span>
           {t('breadcrumb.back')}
         </a>
-        <nav className="hidden sm:flex items-center gap-2 text-sm text-navy-500" aria-label="Migas de pan">
+        <nav className="hidden sm:flex items-center gap-2 text-sm text-navy-500" aria-label={t('breadcrumb.ariaLabel')}>
           <a href="/" className="hover:text-navy-900 transition">{t('breadcrumb.home')}</a>
           <span className="w-3.5 h-3.5 text-navy-300">{I.chevronR}</span>
           <a href="/#fleet" className="hover:text-navy-900 transition">{t('breadcrumb.fleet')}</a>
