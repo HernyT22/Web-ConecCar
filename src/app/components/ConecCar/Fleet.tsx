@@ -21,6 +21,10 @@ const SORT_OPTIONS: { id: SortId }[] = [
   { id: 'priceDesc' },
 ];
 
+// sizes = ancho real de la imagen: contenedor max-w-7xl (1280) con px-5/md:px-8; grid 1/2/3/4 columnas con gap-5.
+const CARD_IMG_SIZES =
+  '(min-width: 1280px) 289px, (min-width: 1024px) 31vw, (min-width: 640px) 46vw, calc(100vw - 40px)';
+
 const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle }) {
   const { t } = useTranslation('fleet');
   return (
@@ -31,7 +35,11 @@ const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle
       <div className="relative aspect-[4/3] bg-navy-50">
         {v.images[0] ? (
           <ImageWithFallback
-            src={v.images[0]}
+            src={v.images[0].src}
+            srcSet={v.images[0].srcSet}
+            sizes={CARD_IMG_SIZES}
+            width={v.images[0].width}
+            height={v.images[0].height}
             alt={`${v.brand} ${v.model}`}
             loading="lazy"
             decoding="async"

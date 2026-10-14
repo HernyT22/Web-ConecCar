@@ -10,6 +10,10 @@ interface Props {
   slug: string;
 }
 
+// sizes = ancho real de la tarjeta: contenedor max-w-7xl con px-5/md:px-8; grid 1/2/3 columnas con gap-5.
+const SIMILAR_IMG_SIZES =
+  '(min-width: 1280px) 392px, (min-width: 1024px) 31vw, (min-width: 640px) 46vw, calc(100vw - 40px)';
+
 const Similar = ({ slug }: Props) => {
   const { t } = useTranslation(['vehicle', 'fleet']);
   const tDyn = t as (key: string) => string;
@@ -54,7 +58,7 @@ const Similar = ({ slug }: Props) => {
               >
                 <div className="relative aspect-[4/3] bg-navy-50">
                   {c.images[0]
-                    ? <img src={c.images[0]} alt={`${c.brand} ${c.model}`} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                    ? <img src={c.images[0].src} srcSet={c.images[0].srcSet} sizes={SIMILAR_IMG_SIZES} width={c.images[0].width} height={c.images[0].height} alt={`${c.brand} ${c.model}`} className="w-full h-full object-contain" loading="lazy" decoding="async" />
                     : <PlaceholderImg label={c.imageLabels[0]} className="w-full h-full" />
                   }
                   <span className="absolute top-3 right-3 bg-white/95 text-navy-700 text-[11px] font-medium px-2.5 py-1 rounded-full border border-navy-100">

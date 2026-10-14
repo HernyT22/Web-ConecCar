@@ -1,32 +1,4 @@
-import citroenBasaltAzul from '@/imports/citroen-azul-lateral.jpg';
-import citroenAzulDetras from '@/imports/citroen-azul-detras.webp';
-import citroenAzulInterior from '@/imports/citroen-azul-interior.webp';
-import citroenBasaltBlanco from '@/imports/citroen-blanco-lateral.webp';
-import citroenBlancoDetras from '@/imports/citroen-blanco-detras.webp';
-import citroenBlancoInterior from '@/imports/citroen-blanco-interior.webp';
-import citroenBlancoBaul from '@/imports/citroen-blanco-baul.webp';
-import citroenDark from '@/imports/citroen-dark-lateral.webp';
-import citroenDarkDetras from '@/imports/citroen-dark-detras.jpg';
-import citroenDarkInterior from '@/imports/citroen-dark-interior.jpg';
-import citroenDarkBaul from '@/imports/citroen-dark-baul.jpg';
-import cheryBlancoLateral from '@/imports/cheri-blanco-lateral.jpg';
-import cheryBlancoDetras from '@/imports/cheri-blanco-detras.jpg';
-import cheryBlancoInterior from '@/imports/cheri-blanco-interior.jpg';
-import cheryBlancoBaul from '@/imports/cheri-blanco-baul.jpg';
-import cheryRojoLateral from '@/imports/cheri-rojo-lateral.webp';
-import cheryRojoDetras from '@/imports/cheri-rojo-detras.webp';
-import cheryRojoInterior from '@/imports/cheri-rojo-interior.jpg';
-import cheryRojoBaul from '@/imports/cheri-rojo-baul.jpg';
-import kiaRioLateral from '@/imports/kia-rio-lateral.webp';
-import kiaRioDetras from '@/imports/kia-rio-detras.webp';
-import kiaRioInterior from '@/imports/kia-rio-interior.webp';
-import kiaRioBaul from '@/imports/kia-rio-baul.jpg';
-import vwFoxLateral from '@/imports/fox-lateral.jpg';
-import vwFoxDetras from '@/imports/fox-detras.webp';
-import accordLateral from '@/imports/accord-lateral.jpg';
-import accordFrontal from '@/imports/accord-frontal.webp';
-import accordDetras from '@/imports/accord-detras.webp';
-import accordBaul from '@/imports/accord-baul.webp';
+import { vehicleImage, type VehicleImage } from './vehicleImages';
 
 export type TransmissionId = 'automatic' | 'manual';
 export type FuelId = 'gasoline' | 'diesel' | 'electric' | 'hybrid';
@@ -64,7 +36,7 @@ export interface Vehicle {
   climate: ClimateId;
   description: string;       // ES por ahora — Fase 2.B
   shortDescription: string;  // ES por ahora — Fase 2.B
-  images: string[];
+  images: VehicleImage[];
   imageLabels: string[];     // ES por ahora — Fase 2.B
 }
 
@@ -86,7 +58,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
     shortDescription: 'SUV Coupé — Azul Cosmo',
-    images: [citroenBasaltAzul, citroenAzulDetras, citroenAzulInterior],
+    images: [vehicleImage('citroen-azul-lateral'), vehicleImage('citroen-azul-detras'), vehicleImage('citroen-azul-interior')],
     imageLabels: [
       'citroën basalt · 3/4 frontal',
       'citroën basalt · trasera',
@@ -111,7 +83,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino.',
     shortDescription: 'SUV Compacta — Blanco',
-    images: [cheryBlancoLateral, cheryBlancoDetras, cheryBlancoInterior, cheryBlancoBaul],
+    images: [vehicleImage('cheri-blanco-lateral'), vehicleImage('cheri-blanco-detras'), vehicleImage('cheri-blanco-interior'), vehicleImage('cheri-blanco-baul')],
     imageLabels: [
       'chery tiggo 2 · 3/4 frontal',
       'chery tiggo 2 · trasera',
@@ -136,7 +108,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
     shortDescription: 'SUV Coupé — Sting Grey',
-    images: [citroenDark, citroenDarkDetras, citroenDarkInterior, citroenDarkBaul],
+    images: [vehicleImage('citroen-dark-lateral'), vehicleImage('citroen-dark-detras'), vehicleImage('citroen-dark-interior'), vehicleImage('citroen-dark-baul')],
     imageLabels: [
       'citroën basalt dark · 3/4 frontal',
       'citroën basalt dark · trasera',
@@ -161,7 +133,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
     shortDescription: 'SUV Coupé — Blanco Nacarado',
-    images: [citroenBasaltBlanco, citroenBlancoDetras, citroenBlancoInterior, citroenBlancoBaul],
+    images: [vehicleImage('citroen-blanco-lateral'), vehicleImage('citroen-blanco-detras'), vehicleImage('citroen-blanco-interior'), vehicleImage('citroen-blanco-baul')],
     imageLabels: [
       'citroën basalt · 3/4 frontal',
       'citroën basalt · trasera',
@@ -186,7 +158,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino.', 
     shortDescription: 'SUV Compacta — Rojo',
-    images: [cheryRojoLateral, cheryRojoDetras, cheryRojoInterior, cheryRojoBaul],
+    images: [vehicleImage('cheri-rojo-lateral'), vehicleImage('cheri-rojo-detras'), vehicleImage('cheri-rojo-interior'), vehicleImage('cheri-rojo-baul')],
     imageLabels: [
       'chery tiggo 2 · 3/4 frontal',
       'chery tiggo 2 · trasera',
@@ -211,7 +183,7 @@ export const vehicles: Vehicle[] = [
     climate: 'dualClimate',
     description: 'Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso.',
     shortDescription: 'Sedán ejecutivo',
-    images: [accordLateral, accordFrontal, accordDetras, accordBaul],
+    images: [vehicleImage('accord-lateral'), vehicleImage('accord-frontal'), vehicleImage('accord-detras'), vehicleImage('accord-baul')],
     imageLabels: [
       'honda accord · 3/4 frontal',
       'honda accord · perfil lateral',
@@ -236,7 +208,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones.', 
     shortDescription: 'Hatchback compacto',
-    images: [vwFoxLateral, vwFoxDetras],
+    images: [vehicleImage('fox-lateral'), vehicleImage('fox-detras')],
     imageLabels: [
       'vw fox · 3/4 frontal',
       'vw fox · trasera',
@@ -261,7 +233,7 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología.', // TODO: confirmar con cliente
     shortDescription: 'Sedán urbano',
-    images: [kiaRioLateral, kiaRioDetras, kiaRioInterior, kiaRioBaul],
+    images: [vehicleImage('kia-rio-lateral'), vehicleImage('kia-rio-detras'), vehicleImage('kia-rio-interior'), vehicleImage('kia-rio-baul')],
     imageLabels: [
       'kia rio · 3/4 frontal',
       'kia rio · trasera',

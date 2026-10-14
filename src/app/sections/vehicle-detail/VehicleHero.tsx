@@ -18,6 +18,11 @@ const PRIORITY_HIGH = { fetchpriority: 'high' } as Record<string, string>;
 // navegador usa este GIF transparente de 1x1: no se descarga hero-bg-lite (ni en el HTML prerenderizado).
 const BG_PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
+// sizes = ancho real: contenedor max-w-7xl con px-5/md:px-8; desde lg grid [1.05fr_1fr] con gap-14.
+const MAIN_IMG_SIZES =
+  '(min-width: 1280px) 566px, (min-width: 1024px) 44vw, (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)';
+const THUMB_IMG_SIZES = '(min-width: 1280px) 132px, (min-width: 1024px) 10vw, 22vw';
+
 interface Props {
   vehicle: Vehicle;
 }
@@ -155,7 +160,7 @@ const VehicleHero = ({ vehicle }: Props) => {
         <div className="order-1 lg:order-2">
           <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
             {mainImage
-              ? <img src={mainImage} alt={`${brand} ${model}`} width={1200} height={900} loading="eager" {...PRIORITY_HIGH} className="aspect-[4/3] w-full object-contain" />
+              ? <img src={mainImage.src} srcSet={mainImage.srcSet} sizes={MAIN_IMG_SIZES} alt={`${brand} ${model}`} width={mainImage.width} height={mainImage.height} loading="eager" {...PRIORITY_HIGH} className="aspect-[4/3] w-full object-contain" />
               : <PlaceholderImg label={imageLabels[active] ?? imageLabels[0]} tone="dark" className="aspect-[4/3] w-full" />
             }
             <span className="absolute top-4 left-4 bg-navy-950/70 text-white mono uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur">
@@ -163,7 +168,7 @@ const VehicleHero = ({ vehicle }: Props) => {
             </span>
           </div>
           <div className="grid grid-cols-4 gap-3 mt-3">
-            {images.map((src, i) => (
+            {images.map((img, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
@@ -175,7 +180,11 @@ const VehicleHero = ({ vehicle }: Props) => {
                 }`}
               >
                 <img
-                  src={src}
+                  src={img.src}
+                  srcSet={img.srcSet}
+                  sizes={THUMB_IMG_SIZES}
+                  width={img.width}
+                  height={img.height}
                   alt={imageLabels[i] ?? `${brand} ${model}`}
                   loading="lazy"
                   decoding="async"

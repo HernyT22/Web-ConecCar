@@ -121,7 +121,7 @@ export const car = (v: Vehicle, canonical: string): Json => ({
   vehicleTransmission: TRANSMISSIONS[v.transmission],
   fuelType: FUEL_TYPES[v.fuel],
   bodyType: BODY_TYPES[v.bodyType],
-  image: v.images.map(absoluteUrl),
+  image: v.images.map((img) => absoluteUrl(img.src)),
   ...(v.pricePerDay > 0 && {
     offers: {
       '@type': 'Offer',
