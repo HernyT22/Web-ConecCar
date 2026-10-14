@@ -3,4 +3,16 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
+
+# --- Rutas prerenderizadas (S8c) ---------------------------------------------
+# Si no existe el archivo pedido pero sí <ruta>.html, se sirve ese HTML:
+#   /ayuda            -> /ayuda.html
+#   /flota/<slug>     -> /flota/<slug>.html
+# No se pudo probar en local (vite preview ya hace esta resolución): verificar
+# con los curl de docs tras el deploy. Para desactivar, comentar estas 2 líneas.
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Fallback actual (SPA): cualquier otra ruta sirve index.html.
+# TODO S11: 404 real, HTTPS y www.
 RewriteRule ^ index.html [L]
