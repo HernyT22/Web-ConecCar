@@ -37,9 +37,9 @@ const Similar = ({ slug }: Props) => {
               {t('vehicle:similar.title')}
             </h2>
           </div>
-          <a href="/#fleet" className="hidden sm:inline-flex items-center gap-2 text-navy-700 hover:text-navy-900 text-sm transition">
+          <Link to="/#fleet" className="hidden sm:inline-flex items-center gap-2 text-navy-700 hover:text-navy-900 text-sm transition">
             {t('vehicle:similar.viewAll')} {I.arrow}
-          </a>
+          </Link>
         </motion.div>
 
         <motion.ul

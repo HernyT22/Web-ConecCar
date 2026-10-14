@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ANIM_EASE } from '@/animations/variants';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
@@ -31,20 +31,20 @@ const Nav = () => {
     <>
       <header className="fixed inset-x-0 top-0 z-50 bg-white/85 backdrop-blur border-b border-navy-100">
         <div className="mx-auto max-w-7xl px-5 md:px-8 h-24 md:h-28 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3.5 group">
+          <Link to="/" className="flex items-center gap-3.5 group">
             <span className="relative h-16 md:h-20 aspect-square rounded-2xl overflow-hidden ring-1 ring-amber-500/50 shadow-[0_4px_18px_-6px_rgba(201,161,74,0.55),0_2px_6px_rgba(9,22,40,0.18)] bg-navy-950 transition-transform group-hover:scale-[1.03]">
               <ImageWithFallback src={logoConeccar} alt={BRAND_NAME} className="absolute inset-0 w-full h-full object-cover" />
               <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-500/10 to-transparent pointer-events-none" />
             </span>
-          </a>
+          </Link>
 
           <nav aria-label={t('nav.ariaLabel')} className="hidden md:flex items-center gap-8">
             {NAV_KEYS.map((link) => {
               const isActive = isHome && activeId === link.id;
               return (
-                <a
+                <Link
                   key={link.id}
-                  href={link.href}
+                  to={link.href}
                   className={[
                     'relative text-[15px] transition',
                     "after:content-[''] after:absolute after:left-0 after:bottom-[-6px]",
@@ -56,7 +56,7 @@ const Nav = () => {
                   ].join(' ')}
                 >
                   {t(`nav.${link.key}`)}
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -90,9 +90,9 @@ const Nav = () => {
             >
               <div className="px-5 py-4 flex flex-col gap-1">
                 {NAV_KEYS.map((link) => (
-                  <a key={link.id} href={link.href} onClick={() => setOpen(false)} className="py-2.5 text-navy-800">
+                  <Link key={link.id} to={link.href} onClick={() => setOpen(false)} className="py-2.5 text-navy-800">
                     {t(`nav.${link.key}`)}
-                  </a>
+                  </Link>
                 ))}
                 <a
                   href={WHATSAPP_URL}
