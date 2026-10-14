@@ -8,9 +8,13 @@ import { PHONE_TEL_LINKS } from '@/data/contact';
 import { trackLead } from '@/lib/analytics';
 import { formatPrice } from '@/data/vehicles';
 import type { Vehicle } from '@/data/vehicles';
-import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
+import heroBgLite from '@/imports/hero-bg-lite.webp';
 import whatsappIcon from '@/imports/whatsapp.png';
 import { fadeIn } from '@/animations/variants';
+
+// React 18.3 no soporta fetchPriority (camelCase): se usa el atributo HTML en minúscula.
+const PRIORITY_HIGH = { fetchpriority: 'high' } as Record<string, string>;
+const PRIORITY_LOW = { fetchpriority: 'low' } as Record<string, string>;
 
 interface Props {
   vehicle: Vehicle;
@@ -50,10 +54,13 @@ const VehicleHero = ({ vehicle }: Props) => {
       {/* Imagen de fondo — cordillera al atardecer */}
       <div className="absolute inset-0">
         <img
-          src={heroCordillera}
+          src={heroBgLite}
           alt=""
           aria-hidden="true"
+          width={1024}
+          height={682}
           loading="eager"
+          {...PRIORITY_LOW}
           className="w-full h-full object-cover"
         />
       </div>
@@ -144,7 +151,7 @@ const VehicleHero = ({ vehicle }: Props) => {
         <div className="order-1 lg:order-2">
           <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
             {mainImage
-              ? <img src={mainImage} alt={`${brand} ${model}`} className="aspect-[4/3] w-full object-contain" />
+              ? <img src={mainImage} alt={`${brand} ${model}`} width={1200} height={900} loading="eager" {...PRIORITY_HIGH} className="aspect-[4/3] w-full object-contain" />
               : <PlaceholderImg label={imageLabels[active] ?? imageLabels[0]} tone="dark" className="aspect-[4/3] w-full" />
             }
             <span className="absolute top-4 left-4 bg-navy-950/70 text-white mono uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur">

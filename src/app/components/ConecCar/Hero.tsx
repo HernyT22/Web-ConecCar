@@ -2,9 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
-import heroCordillera from '@/imports/hero-cordillera-mendoza.webp';
+import hero640 from '@/imports/hero-640.webp';
+import hero1024 from '@/imports/hero-1024.webp';
+import hero1600 from '@/imports/hero-1600.webp';
 import { WHATSAPP_URL } from '@/data/contact';
 import { fadeIn } from '@/animations/variants';
+
+// React 18.3 no soporta fetchPriority (camelCase): se usa el atributo HTML en minúscula.
+const LCP_PRIORITY = { fetchpriority: 'high' } as Record<string, string>;
 
 const Hero = () => {
   const { t } = useTranslation('home');
@@ -16,7 +21,13 @@ const Hero = () => {
     >
       <div className="absolute inset-0">
         <ImageWithFallback
-          src={heroCordillera}
+          src={hero1024}
+          srcSet={`${hero640} 640w, ${hero1024} 1024w, ${hero1600} 1600w`}
+          sizes="100vw"
+          width={1920}
+          height={1279}
+          loading="eager"
+          {...LCP_PRIORITY}
           alt="Ruta hacia la cordillera de los Andes en Mendoza"
           className="w-full h-full object-cover"
         />
