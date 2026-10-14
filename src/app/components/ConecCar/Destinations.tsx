@@ -54,10 +54,9 @@ const Destinations = () => {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
-  const handleWhatsAppClick = (destId: string) => {
-    const name = t(`items.${destId}.name`);
-    const msg = t('whatsappTemplate', { name });
-    window.open(buildWhatsAppUrl(msg), "_blank");
+  const closeCard = (id: string) => {
+    setOpenId(null);
+    document.getElementById(`dest-${id}-toggle`)?.focus();
   };
 
   return (
@@ -77,18 +76,15 @@ const Destinations = () => {
       >
         {destinations.map((d) => {
           const isOpen = openId === d.id;
+          const name = t(`items.${d.id}.name`);
+          const whatsappHref = buildWhatsAppUrl(t('whatsappTemplate', { name }));
           return (
-            <motion.button
+            <motion.article
               key={d.id}
               variants={slideDownItem}
-              type="button"
-              onClick={() => handleCardClick(d.id)}
-              aria-expanded={isOpen}
-              aria-label={t(`items.${d.id}.name`) + ", " + t(`items.${d.id}.tag`)}
               className={cn(
                 "relative aspect-[4/3] rounded-2xl overflow-hidden",
-                "border border-navy-100 text-left cursor-pointer",
-                "focus:outline-none focus:ring-2 focus:ring-amber-500",
+                "border border-navy-100 text-left",
                 "[contain:layout_paint]"
               )}
             >
@@ -96,7 +92,7 @@ const Destinations = () => {
                 src={d.img.md}
                 srcSet={`${d.img.sm} 480w, ${d.img.md} 800w, ${d.img.lg} 1200w`}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt={t(`items.${d.id}.name`)}
+                alt={name}
                 loading="lazy"
                 decoding="async"
                 width="800"
@@ -117,12 +113,12 @@ const Destinations = () => {
 
               <div
                 className={cn(
-                  "absolute inset-x-0 bottom-0 p-4 text-white z-[1] transition-opacity duration-300",
+                  "absolute inset-x-0 bottom-0 p-4 text-white z-[1] transition-opacity duration-300 pointer-events-none",
                   isOpen ? "opacity-0" : "opacity-100"
                 )}
               >
                 <h3 className="font-display text-xl leading-tight mb-1">
-                  {t(`items.${d.id}.name`)}
+                  {name}
                 </h3>
                 <span className="inline-flex items-center gap-1 text-xs text-white/80">
                   {I.pin}
@@ -130,7 +126,19 @@ const Destinations = () => {
                 </span>
               </div>
 
+              <button
+                type="button"
+                id={`dest-${d.id}-toggle`}
+                onClick={() => handleCardClick(d.id)}
+                aria-expanded={isOpen}
+                aria-controls={`dest-${d.id}-panel`}
+                aria-label={name + ", " + t(`items.${d.id}.tag`)}
+                className="absolute inset-0 z-[1] cursor-pointer rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500"
+              />
+
               <div
+                id={`dest-${d.id}-panel`}
+                aria-hidden={!isOpen}
                 className={cn(
                   "absolute inset-0 bg-navy-950/95 p-5 z-[2]",
                   "flex flex-col justify-between text-white",
@@ -138,53 +146,34 @@ const Destinations = () => {
                   isOpen ? "translate-y-0" : "translate-y-full"
                 )}
               >
-                <span
-                  role="button"
+                <button
+                  type="button"
                   aria-label={t('card.closeAriaLabel')}
-                  tabIndex={0}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setOpenId(null);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      setOpenId(null);
-                    }
-                  }}
+                  tabIndex={isOpen ? 0 : -1}
+                  onClick={() => closeCard(d.id)}
                   className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer transition-colors"
                 >
                   {I.close}
-                </span>
+                </button>
 
                 <div>
-                  <h3 className="font-display text-lg mb-2">{t(`items.${d.id}.name`)}</h3>
+                  <p className="font-display text-lg mb-2">{name}</p>
                   <p className="text-sm leading-relaxed text-white/85">
                     {t(`items.${d.id}.description`)}
                   </p>
                 </div>
 
-                <span
-                  role="button"
-                  tabIndex={0}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleWhatsAppClick(d.id);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleWhatsAppClick(d.id);
-                    }
-                  }}
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={isOpen ? 0 : -1}
                   className="self-start inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 text-sm font-medium px-4 py-2 rounded-full mt-4 cursor-pointer transition-colors"
                 >
                   {t('card.ctaMore')}
-                </span>
+                </a>
               </div>
-            </motion.button>
+            </motion.article>
           );
         })}
       </motion.div>
