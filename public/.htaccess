@@ -1,18 +1,85 @@
+# =============================================================================
+# Coneccar Rent — .htaccess (Hostinger / LiteSpeed)
+#
+# Rollback: restaurar el .htaccess anterior (copia del usuario).
+#
+# El sitio se publica como HTML prerenderizado (dist/):
+#   /            -> index.html
+#   /ayuda       -> ayuda.html
+#   /flota/<slug>-> flota/<slug>.html
+#   (404)        -> 404.html (estático, sin JS, noindex)
+# No hay fallback a index.html: lo inexistente responde 404 real.
+#
+# Las URLs de redirección son ABSOLUTAS (https://coneccar-rent.com) a propósito:
+# evita depender de cómo el servidor ve el esquema detrás del proxy de Hostinger.
+# HTTPS NO se fuerza acá: lo hace Hostinger (repetirlo arriesga un bucle).
+# =============================================================================
+
+# --- 1. Opciones base ---------------------------------------------------------
+# Sin listado de directorios ni MultiViews (evita 403/negociación inesperada).
+# Si el hosting no permite "Options" en .htaccess da error 500: quitar esta línea.
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
 
-# --- Rutas prerenderizadas (S8c) ---------------------------------------------
-# Si no existe el archivo pedido pero sí <ruta>.html, se sirve ese HTML:
-#   /ayuda            -> /ayuda.html
-#   /flota/<slug>     -> /flota/<slug>.html
-# No se pudo probar en local (vite preview ya hace esta resolución): verificar
-# con los curl de docs tras el deploy. Para desactivar, comentar estas 2 líneas.
+# --- 2. www -> sin www (301) --------------------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.coneccar-rent\.com$ [NC]
+RewriteRule ^ https://coneccar-rent.com%{REQUEST_URI} [R=301,L]
+
+# --- 3. (HTTPS: lo fuerza Hostinger; no se agrega regla acá) -------------------
+
+# --- 4. /index.html -> / (301) ------------------------------------------------
+# Se usa THE_REQUEST (lo que pidió el cliente) para no chocar con rewrites internos.
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?]
+RewriteRule ^index\.html$ https://coneccar-rent.com/ [R=301,L]
+
+# --- 5. /flota y /flota/ -> / (301) -------------------------------------------
+# No existe listado de flota. El directorio flota/ existe y, con -Indexes, daría 403.
+RewriteRule ^flota/?$ https://coneccar-rent.com/ [R=301,L]
+
+# --- 6. Barra final -> sin barra (301) ----------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ https://coneccar-rent.com/$1 [R=301,L]
+
+# --- 7. /<ruta>.html pedido explícitamente -> /<ruta> (301) -------------------
+# Excepciones: 404.html y archivos de verificación de Google (google*.html).
+# La captura (%1) va en la ÚLTIMA condición: es la que RewriteRule puede referenciar.
+RewriteCond %{REQUEST_URI} !^/(404|google[0-9a-f]+)\.html$ [NC]
+RewriteCond %{THE_REQUEST} \s/([^\s?]+)\.html[\s?]
+RewriteRule ^ https://coneccar-rent.com/%1 [R=301,L]
+
+# --- 8. Rewrite interno extensionless -> .html --------------------------------
+# /ayuda -> ayuda.html ; /flota/<slug> -> flota/<slug>.html (solo si el .html existe).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
-# Fallback actual (SPA): cualquier otra ruta sirve index.html.
-# TODO S11: 404 real, HTTPS y www.
-RewriteRule ^ index.html [L]
+# --- 9. Sin fallback a index.html ---------------------------------------------
+# Lo inexistente cae en ErrorDocument 404 (status 404 real).
+
+# --- 10a. Caché: marca los assets hasheados como inmutables --------------------
+# Solo /assets (nombres con hash de contenido). NO /og, favicons, robots ni sitemap.
+RewriteRule ^assets/ - [E=IMMUTABLE:1]
+</IfModule>
+
+# --- 10b. Caché: cabeceras ------------------------------------------------------
+<IfModule mod_headers.c>
+  # Assets hasheados: un año, inmutables.
+  Header set Cache-Control "public, max-age=31536000, immutable" env=IMMUTABLE
+  # HTML: siempre revalidar. El deploy es manual y un HTML cacheado apuntaría a
+  # assets hasheados que ya no existen.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# --- 11. Compresión -------------------------------------------------------------
+# Inofensivo si LiteSpeed ya comprime.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/x-javascript application/json image/svg+xml application/xml application/manifest+json
+</IfModule>
