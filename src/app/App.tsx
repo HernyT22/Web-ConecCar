@@ -11,10 +11,12 @@ import Payments from "@/app/components/ConecCar/Payments";
 import Reviews from "@/app/components/ConecCar/Reviews";
 import Contact from "@/app/components/ConecCar/Contact";
 import Footer from "@/app/components/ConecCar/Footer";
+import Seo from "@/seo/Seo";
 
 export default function App() {
   return (
     <>
+      <Seo page="home" />
       <Nav />
       <main id="main">
       <Hero />

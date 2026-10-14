@@ -8,6 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "sitemap": "vite-node scripts/generate-sitemap.ts",
+    "make:icons": "vite-node scripts/make-icons.ts",
+    "make:og": "vite-node scripts/make-og.ts",
     "prebuild": "npm run sitemap"
   },
   "dependencies": {

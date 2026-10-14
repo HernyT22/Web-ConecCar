@@ -66,6 +66,17 @@ export const OFFICE_DAYS = [
 ] as const;
 export const ONLINE_SUPPORT = '24/7';
 
+/** Medios de pago aceptados (los mismos que muestra Payments.tsx). */
+export const PAYMENT_METHODS = [
+  'Visa',
+  'Mastercard',
+  'American Express',
+  'Mercado Pago',
+  'Transferencia bancaria',
+  'Efectivo ARS',
+  'Efectivo USD',
+] as const;
+
 export const SOCIAL = {
   instagram: 'https://instagram.com/coneccar.rent',
   facebook: 'https://facebook.com/coneccar.rent',
