@@ -14,7 +14,9 @@ import { fadeIn } from '@/animations/variants';
 
 // React 18.3 no soporta fetchPriority (camelCase): se usa el atributo HTML en minúscula.
 const PRIORITY_HIGH = { fetchpriority: 'high' } as Record<string, string>;
-const PRIORITY_LOW = { fetchpriority: 'low' } as Record<string, string>;
+// Fondo decorativo solo desde lg (1024 px). Bajo ese ancho ningún <source> coincide y el
+// navegador usa este GIF transparente de 1x1: no se descarga hero-bg-lite (ni en el HTML prerenderizado).
+const BG_PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 interface Props {
   vehicle: Vehicle;
@@ -52,17 +54,19 @@ const VehicleHero = ({ vehicle }: Props) => {
   return (
     <section className="relative overflow-hidden text-white">
       {/* Imagen de fondo — cordillera al atardecer */}
-      <div className="absolute inset-0">
-        <img
-          src={heroBgLite}
-          alt=""
-          aria-hidden="true"
-          width={1024}
-          height={682}
-          loading="eager"
-          {...PRIORITY_LOW}
-          className="w-full h-full object-cover"
-        />
+      <div className="absolute inset-0 bg-navy-950">
+        <picture className="block w-full h-full">
+          <source media="(min-width: 1024px)" srcSet={heroBgLite} />
+          <img
+            src={BG_PLACEHOLDER}
+            alt=""
+            aria-hidden="true"
+            width={1024}
+            height={682}
+            loading="eager"
+            className="w-full h-full object-cover"
+          />
+        </picture>
       </div>
       {/* Overlay navy al 85 % — subir a /90 si se nota demasiado, bajar a /80 si se nota poco */}
       <div className="absolute inset-0 bg-navy-950/85" />
