@@ -2,9 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
-import hero640 from '@/imports/hero-640.webp';
-import hero1024 from '@/imports/hero-1024.webp';
-import hero1600 from '@/imports/hero-1600.webp';
+import { HERO_HOME } from '@/seo/lcp';
 import { WHATSAPP_URL } from '@/data/contact';
 import { fadeIn } from '@/animations/variants';
 
@@ -21,11 +19,11 @@ const Hero = () => {
     >
       <div className="absolute inset-0">
         <ImageWithFallback
-          src={hero1024}
-          srcSet={`${hero640} 640w, ${hero1024} 1024w, ${hero1600} 1600w`}
-          sizes="100vw"
-          width={1920}
-          height={1279}
+          src={HERO_HOME.src}
+          srcSet={HERO_HOME.srcSet}
+          sizes={HERO_HOME.sizes}
+          width={HERO_HOME.width}
+          height={HERO_HOME.height}
           loading="eager"
           {...LCP_PRIORITY}
           alt="Ruta hacia la cordillera de los Andes en Mendoza"

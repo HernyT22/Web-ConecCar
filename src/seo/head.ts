@@ -1,6 +1,7 @@
 import { formatPrice, type Vehicle } from '@/data/vehicles';
 import { PENDING, SLOTS } from './slots';
 import { BRAND_NAME, DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_HEIGHT, OG_WIDTH, SITE_URL, ogImageUrl } from './site';
+import { heroPreload, vehiclePreload } from './lcp';
 import { autoRental, breadcrumb, car, graph, organization, vehicleName, website } from './jsonld';
 
 export type SeoPage = { kind: 'home' } | { kind: 'vehicle'; vehicle: Vehicle };
@@ -20,6 +21,8 @@ export interface HeadSpec {
   meta: HeadTag[];
   link: HeadTag[];
   jsonLd: object[];
+  /** Preload de la imagen LCP. Solo lo emite el prerender, sin data-seo; Seo.tsx no lo toca. */
+  preload: HeadTag[];
 }
 
 
@@ -44,6 +47,7 @@ export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
   let canonicalPath: string;
   let ogImage: string;
   let jsonLd: object[];
+  let lcp: HeadTag;
 
   if (page.kind === 'home') {
     title = pick(SLOTS.home.title, DEFAULT_TITLE, 'home.title', ctx);
@@ -51,6 +55,7 @@ export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
     canonicalPath = ctx.pathname ? normalizePath(ctx.pathname) : '/';
     ogImage = ogImageUrl();
     jsonLd = [graph([organization(), website(), autoRental()])];
+    lcp = heroPreload();
   } else {
     const v = page.vehicle;
     const slot = SLOTS.vehicles[v.slug];
@@ -62,6 +67,7 @@ export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
     ogImage = ogImageUrl(v.slug);
     const url = `${SITE_URL}${canonicalPath}`;
     jsonLd = [graph([car(v, url), breadcrumb(v, url)])];
+    lcp = vehiclePreload(v.images[0]);
   }
 
   const canonical = canonicalPath === '/' ? `${SITE_URL}/` : `${SITE_URL}${canonicalPath}`;
@@ -84,5 +90,12 @@ export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
     { name: 'twitter:image', content: ogImage },
   ];
 
-  return { title, description, meta, link: [{ rel: 'canonical', href: canonical }], jsonLd };
+  return {
+    title,
+    description,
+    meta,
+    link: [{ rel: 'canonical', href: canonical }],
+    jsonLd,
+    preload: [{ rel: 'preload', as: 'image', ...lcp, fetchpriority: 'high' }],
+  };
 }

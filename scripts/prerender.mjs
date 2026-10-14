@@ -66,7 +66,14 @@ const PRELOAD_FONTS = ['libre-baskerville-latin-700-normal', 'plus-jakarta-sans-
 const preloadMarkup = PRELOAD_FONTS.map(
   (href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>`,
 ).join('\n      ');
-const withPreload = (html) => html.replace('<script type="module"', `${preloadMarkup}\n      <script type="module"`);
+// Preload de la imagen LCP (hero de Home / foto principal de la ficha): sin data-seo,
+// así Seo.tsx no lo borra ni lo recrea al hidratar.
+const imagePreloadMarkup = (head) => (head?.preload ?? []).map((t) => `<link ${attrs(t)}>`).join('\n      ');
+const withPreload = (html, head) =>
+  html.replace(
+    '<script type="module"',
+    `${[preloadMarkup, imagePreloadMarkup(head)].filter(Boolean).join('\n      ')}\n      <script type="module"`,
+  );
 
 const pages = [];
 
@@ -81,7 +88,7 @@ for (const url of ROUTES) {
     html = inHead(html, `      <link ${attrs(canonical)} data-seo="1">`);
   }
   html = inHead(html, `      ${NOSCRIPT}`);
-  html = withPreload(html);
+  html = withPreload(html, head);
   pages.push({ url, file: outPath(url), html, kind: 'page' });
 }
 
@@ -144,6 +151,16 @@ for (const p of pages) {
     for (const href of PRELOAD_FONTS) {
       if (!html.includes(`<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>`))
         fail(p, `falta preload de ${href}`);
+    }
+  }
+  // preload de la imagen LCP (Home y fichas), sin data-seo y con imagesrcset/imagesizes
+  if (!is404 && p.url !== '/ayuda') {
+    const tags = [...html.matchAll(/<link rel="preload" as="image"[^>]*>/g)].map((m) => m[0]);
+    if (tags.length !== 1) fail(p, `preload de imagen LCP = ${tags.length} (se espera 1)`);
+    else {
+      if (tags[0].includes('data-seo')) fail(p, 'el preload de imagen no debe llevar data-seo');
+      if (!/imagesrcset="[^"]+"/.test(tags[0]) || !/imagesizes="[^"]+"/.test(tags[0]) || !tags[0].includes('fetchpriority="high"'))
+        fail(p, 'preload de imagen sin imagesrcset/imagesizes/fetchpriority');
     }
   }
   // assets referenciados

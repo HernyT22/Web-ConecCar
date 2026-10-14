@@ -6,7 +6,8 @@ import { ANIM_EASE } from '@/animations/variants';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
 import LanguageSwitcher from '@/app/components/ConecCar/LanguageSwitcher';
-import logoConeccar from '@/imports/coneccar-logo.webp';
+import logo128 from '@/imports/logo-128.webp';
+import logo256 from '@/imports/logo-256.webp';
 import { BRAND_NAME, WHATSAPP_URL } from '@/data/contact';
 import { useActiveSection } from '@/app/hooks/useActiveSection';
 
@@ -33,7 +34,7 @@ const Nav = () => {
         <div className="mx-auto max-w-7xl px-5 md:px-8 h-24 md:h-28 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3.5 group">
             <span className="relative h-16 md:h-20 aspect-square rounded-2xl overflow-hidden ring-1 ring-amber-500/50 shadow-[0_4px_18px_-6px_rgba(201,161,74,0.55),0_2px_6px_rgba(9,22,40,0.18)] bg-navy-950 transition-transform group-hover:scale-[1.03]">
-              <ImageWithFallback src={logoConeccar} alt={BRAND_NAME} className="absolute inset-0 w-full h-full object-cover" />
+              <ImageWithFallback src={logo256} srcSet={`${logo128} 128w, ${logo256} 256w`} sizes="(min-width: 768px) 80px, 64px" width={256} height={256} alt={BRAND_NAME} className="absolute inset-0 w-full h-full object-cover" />
               <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-500/10 to-transparent pointer-events-none" />
             </span>
           </Link>

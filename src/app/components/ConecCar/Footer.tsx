@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
-import logoConeccar from '@/imports/coneccar-logo.webp';
+import logo128 from '@/imports/logo-128.webp';
+import logo256 from '@/imports/logo-256.webp';
 import { CATEGORY_IDS } from './fleetCategories';
 import {
   BRAND_NAME,
@@ -48,7 +49,11 @@ const Footer = () => {
           <div className="flex items-center gap-3 mb-4">
             <span className="h-16 aspect-square rounded-xl overflow-hidden ring-1 ring-amber-500/40 bg-navy-950">
               <ImageWithFallback
-                src={logoConeccar}
+                src={logo256}
+                srcSet={`${logo128} 128w, ${logo256} 256w`}
+                sizes="64px"
+                width={256}
+                height={256}
                 alt={BRAND_NAME}
                 className="w-full h-full object-cover"
               />

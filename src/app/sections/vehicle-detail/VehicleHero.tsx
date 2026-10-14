@@ -9,6 +9,7 @@ import { trackLead } from '@/lib/analytics';
 import { formatPrice } from '@/data/vehicles';
 import type { Vehicle } from '@/data/vehicles';
 import heroBgLite from '@/imports/hero-bg-lite.webp';
+import { VEHICLE_MAIN_SIZES } from '@/seo/lcp';
 import whatsappIcon from '@/imports/whatsapp.png';
 import { fadeIn } from '@/animations/variants';
 
@@ -18,9 +19,8 @@ const PRIORITY_HIGH = { fetchpriority: 'high' } as Record<string, string>;
 // navegador usa este GIF transparente de 1x1: no se descarga hero-bg-lite (ni en el HTML prerenderizado).
 const BG_PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-// sizes = ancho real: contenedor max-w-7xl con px-5/md:px-8; desde lg grid [1.05fr_1fr] con gap-14.
-const MAIN_IMG_SIZES =
-  '(min-width: 1280px) 566px, (min-width: 1024px) 44vw, (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)';
+// sizes de la foto principal: compartido con el preload del head (src/seo/lcp.ts).
+const MAIN_IMG_SIZES = VEHICLE_MAIN_SIZES;
 const THUMB_IMG_SIZES = '(min-width: 1280px) 132px, (min-width: 1024px) 10vw, 22vw';
 
 interface Props {
@@ -180,8 +180,8 @@ const VehicleHero = ({ vehicle }: Props) => {
                 }`}
               >
                 <img
-                  src={img.src}
-                  srcSet={img.srcSet}
+                  src={img.thumbSrc}
+                  srcSet={img.thumbSrcSet}
                   sizes={THUMB_IMG_SIZES}
                   width={img.width}
                   height={img.height}
