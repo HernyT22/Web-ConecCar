@@ -1,14 +1,19 @@
-import { restoreSavedLanguage } from './i18n';
 import { lazy, Suspense, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { restoreSavedLanguage } from './i18n';
 import App from './app/App.tsx';
 import ScrollToTop from './app/components/ScrollToTop.tsx';
 import { useHtmlLang } from './i18n/useHtmlLang.ts';
-import './styles/index.css';
 
-const VehicleDetail = lazy(() => import('./app/pages/VehicleDetail.tsx'));
-const Help = lazy(() => import('./app/pages/Help.tsx'));
+// En SSR las rutas se importan de forma estática (top-level await); en el
+// cliente quedan como chunks lazy que entry-client precarga antes de hidratar.
+export const loadVehicleDetail = () => import('./app/pages/VehicleDetail.tsx');
+export const loadHelp = () => import('./app/pages/Help.tsx');
+
+const VehicleDetail = import.meta.env.SSR
+  ? (await loadVehicleDetail()).default
+  : lazy(loadVehicleDetail);
+const Help = import.meta.env.SSR ? (await loadHelp()).default : lazy(loadHelp);
 
 function PageLoadingFallback() {
   return <div className="min-h-screen" aria-busy="true" />;
@@ -44,8 +49,4 @@ const Root = () => {
   );
 };
 
-createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <Root />
-  </BrowserRouter>
-);
+export default Root;

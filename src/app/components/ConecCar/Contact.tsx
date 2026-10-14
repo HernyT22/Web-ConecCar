@@ -1,5 +1,5 @@
 // ConecCar.rent — Contacto
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import Section from "@/app/components/ConecCar/Section";
 import { I } from "@/app/components/ConecCar/Icons";
@@ -106,11 +106,13 @@ const Contact = () => {
     }
   };
 
-  const minPickupDate = (() => {
+  // Se calcula tras montar para no depender de la fecha en el render (SSR).
+  const [minPickupDate, setMinPickupDate] = useState('');
+  useEffect(() => {
     const d = new Date();
     d.setDate(d.getDate() + 2);
-    return d.toISOString().split('T')[0];
-  })();
+    setMinPickupDate(d.toISOString().split('T')[0]);
+  }, []);
 
   const inputClass = (field: keyof FormState) =>
     `mt-1.5 w-full bg-white/10 border rounded-xl px-4 py-3 placeholder:text-white/30 focus:outline-none focus:border-amber-500 text-white ${
@@ -282,7 +284,7 @@ const Contact = () => {
                     type="date"
                     value={formData.pickupDate}
                     onChange={handleChange('pickupDate')}
-                    min={minPickupDate}
+                    min={minPickupDate || undefined}
                     aria-invalid={!!errors.pickupDate}
                     aria-describedby={errors.pickupDate ? 'contact-pickup-date-error' : undefined}
                     className={inputClass('pickupDate')}

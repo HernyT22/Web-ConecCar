@@ -16,7 +16,7 @@ function figmaAssetResolver() {
   }
 }
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
@@ -24,6 +24,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  define: {
+    __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
+  },
   resolve: {
     alias: {
       // Alias @ to the src directory
@@ -33,4 +36,7 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv', '**/*.png', '**/*.jpg', '**/*.jpeg'],
-})
+
+  // El bundle SSR corre en Node: usa top-level await y no copia public/.
+  ...(isSsrBuild && { build: { target: 'esnext', copyPublicDir: false } }),
+}))

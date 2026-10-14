@@ -105,9 +105,9 @@ const Fleet = () => {
   const { t } = useTranslation('fleet');
   const location = useLocation();
   const [q, setQ] = useState("");
-  const [cat, setCat] = useState<CategoryId | "all">(
-    () => parseCatFromHash(window.location.hash) ?? "all"
-  );
+  // Inicia en "all" (igual que el HTML prerenderizado); el efecto de abajo
+  // lo sincroniza con location.hash tras hidratar.
+  const [cat, setCat] = useState<CategoryId | "all">("all");
   const [sort, setSort] = useState<SortId>('recommended');
 
   // Sync hash → state when React Router navigation changes the hash.

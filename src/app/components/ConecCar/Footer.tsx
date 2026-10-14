@@ -78,7 +78,7 @@ const Footer = () => {
             <p>{t('footer.nap.online', { support: ONLINE_SUPPORT })}</p>
           </address>
           <div className="mt-5 mono uppercase text-white/40 tracking-widest">
-            {t('footer.copyright', { year: new Date().getFullYear() })}
+            {t('footer.copyright', { year: __BUILD_YEAR__ })}
           </div>
         </div>
 
