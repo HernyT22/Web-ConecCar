@@ -11,7 +11,7 @@
  * No carga GA ni usa red. Las aserciones finales hacen fallar el build.
  * Variables opcionales: DIST_DIR (default "dist"), SSR_DIR (default "dist-ssr").
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -56,6 +56,18 @@ function outPath(url) {
   return join(DIST, `${url.slice(1)}.html`);
 }
 
+// Preload de las 2 fuentes críticas (Libre Baskerville 700 = títulos, Plus Jakarta
+// Sans 400 = cuerpo), resolviendo el nombre hasheado real en dist/assets.
+const PRELOAD_FONTS = ['libre-baskerville-latin-700-normal', 'plus-jakarta-sans-latin-400-normal'].map((base) => {
+  const file = readdirSync(join(DIST, 'assets')).find((f) => f.startsWith(`${base}-`) && f.endsWith('.woff2'));
+  if (!file) throw new Error(`prerender: no se encontró el woff2 de ${base} en dist/assets`);
+  return `/assets/${file}`;
+});
+const preloadMarkup = PRELOAD_FONTS.map(
+  (href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>`,
+).join('\n      ');
+const withPreload = (html) => html.replace('<script type="module"', `${preloadMarkup}\n      <script type="module"`);
+
 const pages = [];
 
 for (const url of ROUTES) {
@@ -69,6 +81,7 @@ for (const url of ROUTES) {
     html = inHead(html, `      <link ${attrs(canonical)} data-seo="1">`);
   }
   html = inHead(html, `      ${NOSCRIPT}`);
+  html = withPreload(html);
   pages.push({ url, file: outPath(url), html, kind: 'page' });
 }
 
@@ -125,6 +138,13 @@ for (const p of pages) {
     const expected = `${SITE_URL}${p.url === '/' ? '/' : p.url}`;
     const canon = [...html.matchAll(/<link rel="canonical" href="([^"]*)"/g)].map((m) => m[1]);
     if (canon.length !== 1 || canon[0] !== expected) fail(p, `canonical ${JSON.stringify(canon)} != ${expected}`);
+  }
+  // fuentes precargadas (solo páginas con app)
+  if (!is404) {
+    for (const href of PRELOAD_FONTS) {
+      if (!html.includes(`<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>`))
+        fail(p, `falta preload de ${href}`);
+    }
   }
   // assets referenciados
   const assets = new Set([...html.matchAll(/\/assets\/[^"'\s,)<>]+/g)].map((m) => m[0]));

@@ -5,7 +5,12 @@
    ============================================================ */
 
 /* 1. Fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+/* Self-host (fontsource, subset latin, font-display: swap). Mismas familias y pesos que antes. */
+@import '@fontsource/libre-baskerville/latin-700.css';
+@import '@fontsource/plus-jakarta-sans/latin-400.css';
+@import '@fontsource/plus-jakarta-sans/latin-500.css';
+@import '@fontsource/plus-jakarta-sans/latin-600.css';
+@import '@fontsource/plus-jakarta-sans/latin-700.css';
 
 /* 2. Tailwind v4 */
 @import 'tailwindcss' source(none);
