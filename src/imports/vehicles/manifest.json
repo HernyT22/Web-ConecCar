@@ -1,5 +1,9 @@
 {
   "citroen-azul-lateral": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -14,6 +18,10 @@
     }
   },
   "citroen-azul-detras": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -28,6 +36,10 @@
     }
   },
   "citroen-azul-interior": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -42,6 +54,10 @@
     }
   },
   "cheri-blanco-lateral": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -56,6 +72,10 @@
     }
   },
   "cheri-blanco-detras": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -70,6 +90,10 @@
     }
   },
   "cheri-blanco-interior": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -84,6 +108,10 @@
     }
   },
   "cheri-blanco-baul": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -98,6 +126,10 @@
     }
   },
   "citroen-dark-lateral": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -112,6 +144,10 @@
     }
   },
   "citroen-dark-detras": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -126,6 +162,10 @@
     }
   },
   "citroen-dark-interior": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -140,6 +180,10 @@
     }
   },
   "citroen-dark-baul": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -154,6 +198,10 @@
     }
   },
   "citroen-blanco-lateral": {
+    "240": {
+      "width": 240,
+      "height": 139
+    },
     "480": {
       "width": 480,
       "height": 278
@@ -168,6 +216,10 @@
     }
   },
   "citroen-blanco-detras": {
+    "240": {
+      "width": 240,
+      "height": 172
+    },
     "480": {
       "width": 480,
       "height": 343
@@ -182,6 +234,10 @@
     }
   },
   "citroen-blanco-interior": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -196,6 +252,10 @@
     }
   },
   "citroen-blanco-baul": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -210,6 +270,10 @@
     }
   },
   "cheri-rojo-lateral": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -224,6 +288,10 @@
     }
   },
   "cheri-rojo-detras": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -238,6 +306,10 @@
     }
   },
   "cheri-rojo-interior": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -252,6 +324,10 @@
     }
   },
   "cheri-rojo-baul": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640
@@ -266,6 +342,10 @@
     }
   },
   "accord-lateral": {
+    "240": {
+      "width": 240,
+      "height": 135
+    },
     "480": {
       "width": 480,
       "height": 270
@@ -280,6 +360,10 @@
     }
   },
   "accord-frontal": {
+    "240": {
+      "width": 240,
+      "height": 427
+    },
     "480": {
       "width": 480,
       "height": 853
@@ -294,6 +378,10 @@
     }
   },
   "accord-detras": {
+    "240": {
+      "width": 240,
+      "height": 427
+    },
     "480": {
       "width": 480,
       "height": 853
@@ -308,6 +396,10 @@
     }
   },
   "accord-baul": {
+    "240": {
+      "width": 240,
+      "height": 135
+    },
     "480": {
       "width": 480,
       "height": 270
@@ -322,6 +414,10 @@
     }
   },
   "fox-lateral": {
+    "240": {
+      "width": 240,
+      "height": 158
+    },
     "480": {
       "width": 480,
       "height": 317
@@ -336,6 +432,10 @@
     }
   },
   "fox-detras": {
+    "240": {
+      "width": 240,
+      "height": 174
+    },
     "480": {
       "width": 480,
       "height": 349
@@ -350,6 +450,10 @@
     }
   },
   "kia-rio-lateral": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -364,6 +468,10 @@
     }
   },
   "kia-rio-detras": {
+    "240": {
+      "width": 240,
+      "height": 159
+    },
     "480": {
       "width": 480,
       "height": 318
@@ -378,6 +486,10 @@
     }
   },
   "kia-rio-interior": {
+    "240": {
+      "width": 240,
+      "height": 180
+    },
     "480": {
       "width": 480,
       "height": 360
@@ -392,6 +504,10 @@
     }
   },
   "kia-rio-baul": {
+    "240": {
+      "width": 240,
+      "height": 320
+    },
     "480": {
       "width": 480,
       "height": 640

@@ -11,7 +11,8 @@
     "make:icons": "vite-node scripts/make-icons.ts",
     "make:og": "vite-node scripts/make-og.ts",
     "make:hero": "vite-node scripts/make-hero.ts",
-    "make:vehicles": "vite-node scripts/optimize-images.ts"
+    "make:vehicles": "vite-node scripts/optimize-images.ts",
+    "make:logo": "vite-node scripts/make-logo.ts"
   },
   "dependencies": {
     "@fontsource/libre-baskerville": "^5.3.0",
