@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "sitemap": "vite-node scripts/generate-sitemap.ts",
     "make:icons": "vite-node scripts/make-icons.ts",
-    "make:og": "vite-node scripts/make-og.ts"
+    "make:og": "vite-node scripts/make-og.ts",
+    "make:hero": "vite-node scripts/make-hero.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.14",
