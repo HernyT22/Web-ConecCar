@@ -66,13 +66,13 @@ export const OFFICE_DAYS = [
 ] as const;
 export const ONLINE_SUPPORT = '24/7';
 
-/** Medios de pago aceptados (los mismos que muestra Payments.tsx). */
+/** Medios de pago aceptados. Fuente única: Payments.tsx (nombres) y JSON-LD. */
 export const PAYMENT_METHODS = [
   'Visa',
   'Mastercard',
-  'American Express',
+  'Amex',
   'Mercado Pago',
-  'Transferencia bancaria',
+  'Transferencia',
   'Efectivo ARS',
   'Efectivo USD',
 ] as const;

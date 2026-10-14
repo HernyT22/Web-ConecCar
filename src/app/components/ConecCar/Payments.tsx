@@ -1,6 +1,7 @@
 // ConecCar.rent — Medios de pago
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { PAYMENT_METHODS } from '@/data/contact';
 import { staggerContainerFast, scaleInItem, VIEWPORT_CONFIG } from '@/animations/variants';
 import logoMP from "@/imports/logos/logomp.png";
 import logoVisa from "@/imports/logos/visa.png";
@@ -13,7 +14,7 @@ const Payments = () => {
   const { t } = useTranslation();
   const methods = [
     {
-      name: "Visa",
+      name: PAYMENT_METHODS[0],
       icon: (
         <img
           src={logoVisa}
@@ -25,7 +26,7 @@ const Payments = () => {
       ),
     },
     {
-      name: "Mastercard",
+      name: PAYMENT_METHODS[1],
       icon: (
         <svg viewBox="0 0 48 32" className="h-7 p-0.5">
           <rect fill="#252525" width="48" height="32" rx="3" />
@@ -45,7 +46,7 @@ const Payments = () => {
       ),
     },
     {
-      name: "Amex",
+      name: PAYMENT_METHODS[2],
       icon: (
         <img
           src={logoAmex}
@@ -57,7 +58,7 @@ const Payments = () => {
       ),
     },
     {
-      name: "Mercado Pago",
+      name: PAYMENT_METHODS[3],
       icon: (
         <img
           src={logoMP}
@@ -69,7 +70,7 @@ const Payments = () => {
       ),
     },
     {
-      name: "Transferencia",
+      name: PAYMENT_METHODS[4],
       icon: (
         <img
           src={iconTransferencia}
@@ -81,7 +82,7 @@ const Payments = () => {
       ),
     },
     {
-      name: "Efectivo ARS",
+      name: PAYMENT_METHODS[5],
       icon: (
         <img
           src={iconEfectivoARS}
@@ -93,7 +94,7 @@ const Payments = () => {
       ),
     },
     {
-      name: "Efectivo USD",
+      name: PAYMENT_METHODS[6],
       icon: (
         <img
           src={iconEfectivoUSD}
