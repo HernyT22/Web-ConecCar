@@ -76,8 +76,8 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-          subject: `ConecCar — Nueva solicitud de contacto de ${formData.name}`,
-          from_name: 'ConecCar Web',
+          subject: `Coneccar Rent — Nueva solicitud de contacto de ${formData.name}`,
+          from_name: 'Coneccar Rent Web',
           botcheck: '',
           name: formData.name,
           email: formData.email,

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import logoConeccar from '@/imports/coneccar-logo.webp';
 import { CATEGORY_IDS } from './fleetCategories';
+import { BRAND_NAME } from '@/data/contact';
 
 const NAV_LINKS = [
   { key: 'about',        href: '/#about' },
@@ -32,7 +33,7 @@ const Footer = () => {
             <span className="h-16 aspect-square rounded-xl overflow-hidden ring-1 ring-amber-500/40 bg-navy-950">
               <ImageWithFallback
                 src={logoConeccar}
-                alt="ConecCar.rent"
+                alt={BRAND_NAME}
                 className="w-full h-full object-cover"
               />
             </span>

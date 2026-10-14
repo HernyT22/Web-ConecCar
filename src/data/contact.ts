@@ -3,6 +3,7 @@
  * Cualquier componente que muestre número, email, dirección o redes
  * sociales debe consumir de este archivo. NO hardcodear nada en componentes.
  */
+export const BRAND_NAME = 'Coneccar Rent';
 
 export const WHATSAPP_NUMBERS = {
   /** Número operativo principal. Default para todos los CTAs de WhatsApp. */

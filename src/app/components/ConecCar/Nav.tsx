@@ -7,7 +7,7 @@ import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
 import LanguageSwitcher from '@/app/components/ConecCar/LanguageSwitcher';
 import logoConeccar from '@/imports/coneccar-logo.webp';
-import { WHATSAPP_URL } from '@/data/contact';
+import { BRAND_NAME, WHATSAPP_URL } from '@/data/contact';
 import { useActiveSection } from '@/app/hooks/useActiveSection';
 
 const SECTION_IDS = ['about', 'fleet', 'destinations', 'reviews', 'contact'];
@@ -33,11 +33,11 @@ const Nav = () => {
         <div className="mx-auto max-w-7xl px-5 md:px-8 h-24 md:h-28 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3.5 group">
             <span className="relative h-16 md:h-20 aspect-square rounded-2xl overflow-hidden ring-1 ring-amber-500/50 shadow-[0_4px_18px_-6px_rgba(201,161,74,0.55),0_2px_6px_rgba(9,22,40,0.18)] bg-navy-950 transition-transform group-hover:scale-[1.03]">
-              <ImageWithFallback src={logoConeccar} alt="ConecCar.rent" className="absolute inset-0 w-full h-full object-cover" />
+              <ImageWithFallback src={logoConeccar} alt={BRAND_NAME} className="absolute inset-0 w-full h-full object-cover" />
               <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-500/10 to-transparent pointer-events-none" />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="sr-only">ConecCar.rent</span>
+              <span className="sr-only">{BRAND_NAME}</span>
             </span>
           </a>
 
