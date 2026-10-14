@@ -2,7 +2,6 @@ import type {} from './types';
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import esCommon from './locales/es/common.json';
 import esHome from './locales/es/home.json';
@@ -35,7 +34,6 @@ export const SUPPORTED_LANGS = ['es', 'en', 'pt-BR'] as const;
 export type SupportedLang = (typeof SUPPORTED_LANGS)[number];
 
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -43,7 +41,7 @@ i18n
       en: { common: enCommon, home: enHome, fleet: enFleet, vehicle: enVehicle, help: enHelp, destinations: enDestinations, contact: enContact, reviews: enReviews },
       'pt-BR': { common: ptCommon, home: ptHome, fleet: ptFleet, vehicle: ptVehicle, help: ptHelp, destinations: ptDestinations, contact: ptContact, reviews: ptReviews },
     },
-    lng: undefined,
+    lng: 'es',
     fallbackLng: 'es',
     supportedLngs: ['es', 'en', 'pt-BR'],
     load: 'currentOnly',
@@ -51,11 +49,6 @@ i18n
     ns: ['common', 'home', 'fleet', 'vehicle', 'help', 'destinations', 'contact', 'reviews'],
     defaultNS: 'common',
     fallbackNS: 'common',
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
-      lookupLocalStorage: 'i18nextLng',
-    },
     interpolation: { escapeValue: false },
     returnNull: false,
     react: {
@@ -63,5 +56,32 @@ i18n
     },
   });
 
+
+const STORAGE_KEY = 'i18nextLng';
+let restored = false;
+
+/**
+ * Restaura el idioma elegido por el visitante. Se llama desde un efecto cliente
+ * (después del montaje) para que el primer render sea siempre 'es'.
+ */
+export function restoreSavedLanguage() {
+  if (restored) return;
+  restored = true;
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    const prefix = saved?.split('-')[0];
+    const lang = SUPPORTED_LANGS.find((l) => l === saved) ?? SUPPORTED_LANGS.find((l) => l.split('-')[0] === prefix);
+    if (lang && lang !== i18n.language) i18n.changeLanguage(lang);
+  } catch {
+    /* storage no disponible */
+  }
+  i18n.on('languageChanged', (lng) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, lng);
+    } catch {
+      /* storage no disponible */
+    }
+  });
+}
 
 export default i18n;
