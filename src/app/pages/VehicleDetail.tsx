@@ -1,4 +1,5 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import NotFound from '@/app/pages/NotFound';
 import Nav from '@/app/components/ConecCar/Nav';
 import Footer from '@/app/components/ConecCar/Footer';
 import Seo from '@/seo/Seo';
@@ -13,7 +14,7 @@ const VehicleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const vehicle = getVehicleBySlug(slug ?? '');
 
-  if (!vehicle) return <Navigate to="/" replace />;
+  if (!vehicle) return <NotFound />;
 
   return (
     <>

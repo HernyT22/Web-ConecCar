@@ -19,6 +19,12 @@
     "sendRequest": "Send request",
     "backToTop": "Back to top"
   },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has moved.",
+    "home": "Go to home",
+    "fleet": "See the fleet"
+  },
   "payments": {
     "eyebrow": "Payment methods",
     "title": "Pay the way you prefer.",

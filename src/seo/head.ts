@@ -4,7 +4,7 @@ import { BRAND_NAME, DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_HEIGHT, OG_WIDTH, SI
 import { heroPreload, vehiclePreload } from './lcp';
 import { autoRental, breadcrumb, car, graph, organization, vehicleName, website } from './jsonld';
 
-export type SeoPage = { kind: 'home' } | { kind: 'vehicle'; vehicle: Vehicle };
+export type SeoPage = { kind: 'home' } | { kind: 'vehicle'; vehicle: Vehicle } | { kind: 'notfound' };
 
 export interface HeadContext {
   /** Ruta actual; si falta se deriva de la página. */
@@ -42,6 +42,18 @@ const normalizePath = (pathname: string): string => {
 };
 
 export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
+  if (page.kind === 'notfound') {
+    // Ruta inexistente: noindex, sin canonical, sin JSON-LD ni preload.
+    const title = `Página no encontrada · ${BRAND_NAME}`;
+    return {
+      title,
+      description: DEFAULT_DESCRIPTION,
+      meta: [{ name: 'robots', content: 'noindex,follow' }],
+      link: [],
+      jsonLd: [],
+      preload: [],
+    };
+  }
   let title: string;
   let description: string;
   let canonicalPath: string;

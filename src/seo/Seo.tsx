@@ -4,7 +4,7 @@ import type { Vehicle } from '@/data/vehicles';
 import { buildHead, type HeadTag } from './head';
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE } from './site';
 
-type SeoProps = { page: 'home' } | { page: 'vehicle'; vehicle: Vehicle };
+type SeoProps = { page: 'home' } | { page: 'vehicle'; vehicle: Vehicle } | { page: 'notfound' };
 
 const MARK = 'data-seo';
 
@@ -26,7 +26,7 @@ const Seo = (props: SeoProps) => {
 
   useEffect(() => {
     const head = buildHead(
-      vehicle ? { kind: 'vehicle', vehicle } : { kind: 'home' },
+      props.page === 'notfound' ? { kind: 'notfound' } : vehicle ? { kind: 'vehicle', vehicle } : { kind: 'home' },
       { pathname, dev: import.meta.env.DEV },
     );
 

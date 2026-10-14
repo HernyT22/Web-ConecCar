@@ -1,7 +1,8 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { restoreSavedLanguage } from './i18n';
 import App from './app/App.tsx';
+import NotFound from './app/pages/NotFound.tsx';
 import ScrollToTop from './app/components/ScrollToTop.tsx';
 import { useHtmlLang } from './i18n/useHtmlLang.ts';
 
@@ -43,7 +44,7 @@ const Root = () => {
             </Suspense>
           }
         />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

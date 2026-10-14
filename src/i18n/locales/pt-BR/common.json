@@ -19,6 +19,12 @@
     "sendRequest": "Enviar solicitação",
     "backToTop": "Voltar ao topo"
   },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "A página que você procura não existe ou mudou de lugar.",
+    "home": "Ir para o início",
+    "fleet": "Ver a frota"
+  },
   "payments": {
     "eyebrow": "Formas de pagamento",
     "title": "Pague como preferir.",
