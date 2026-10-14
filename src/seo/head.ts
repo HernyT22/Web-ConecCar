@@ -1,6 +1,6 @@
 import { formatPrice, type Vehicle } from '@/data/vehicles';
 import { PENDING, SLOTS } from './slots';
-import { BRAND_NAME, OG_HEIGHT, OG_WIDTH, SITE_URL, ogImageUrl } from './site';
+import { BRAND_NAME, DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_HEIGHT, OG_WIDTH, SITE_URL, ogImageUrl } from './site';
 import { autoRental, breadcrumb, car, graph, organization, vehicleName, website } from './jsonld';
 
 export type SeoPage = { kind: 'home' } | { kind: 'vehicle'; vehicle: Vehicle };
@@ -22,9 +22,6 @@ export interface HeadSpec {
   jsonLd: object[];
 }
 
-const HOME_FALLBACK_TITLE = `${BRAND_NAME} — Alquiler de vehículos premium en Mendoza, Argentina`;
-const HOME_FALLBACK_DESCRIPTION =
-  'Alquiler de vehículos premium en Mendoza para viajeros de negocios y visitantes de todo el mundo. Atención bilingüe, precios transparentes, sin sorpresas.';
 
 const warned = new Set<string>();
 const pick = (value: string, fallback: string, label: string, ctx: HeadContext): string => {
@@ -49,8 +46,8 @@ export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
   let jsonLd: object[];
 
   if (page.kind === 'home') {
-    title = pick(SLOTS.home.title, HOME_FALLBACK_TITLE, 'home.title', ctx);
-    description = pick(SLOTS.home.description, HOME_FALLBACK_DESCRIPTION, 'home.description', ctx);
+    title = pick(SLOTS.home.title, DEFAULT_TITLE, 'home.title', ctx);
+    description = pick(SLOTS.home.description, DEFAULT_DESCRIPTION, 'home.description', ctx);
     canonicalPath = ctx.pathname ? normalizePath(ctx.pathname) : '/';
     ogImage = ogImageUrl();
     jsonLd = [graph([organization(), website(), autoRental()])];

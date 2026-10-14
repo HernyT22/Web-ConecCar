@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { Vehicle } from '@/data/vehicles';
 import { buildHead, type HeadTag } from './head';
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE } from './site';
 
 type SeoProps = { page: 'home' } | { page: 'vehicle'; vehicle: Vehicle };
 
@@ -29,9 +30,15 @@ const Seo = (props: SeoProps) => {
       { pathname, dev: import.meta.env.DEV },
     );
 
-    const originalTitle = document.title;
-    const descEl = document.head.querySelector<HTMLMetaElement>('meta[name="description"]:not([data-seo])');
-    const originalDescription = descEl?.getAttribute('content') ?? null;
+    // Head prerenderizado (data-seo): se reemplaza sin duplicar. En ese caso
+    // los valores "originales" de index.html ya no están en el DOM.
+    const prerendered = document.head.querySelectorAll(`[${MARK}]`);
+    const hadPrerender = prerendered.length > 0;
+    prerendered.forEach((el) => el.remove());
+
+    let descEl = document.head.querySelector<HTMLMetaElement>('meta[name="description"]');
+    const originalTitle = hadPrerender ? DEFAULT_TITLE : document.title;
+    const originalDescription = hadPrerender ? DEFAULT_DESCRIPTION : descEl?.getAttribute('content') ?? null;
 
     document.title = head.title;
     for (const m of head.meta) {
@@ -44,7 +51,16 @@ const Seo = (props: SeoProps) => {
     return () => {
       document.head.querySelectorAll(`[${MARK}]`).forEach((el) => el.remove());
       document.title = originalTitle;
-      if (descEl && originalDescription !== null) descEl.setAttribute('content', originalDescription);
+      if (originalDescription !== null) {
+        descEl = document.head.querySelector<HTMLMetaElement>('meta[name="description"]');
+        if (descEl) descEl.setAttribute('content', originalDescription);
+        else {
+          descEl = document.createElement('meta');
+          descEl.setAttribute('name', 'description');
+          descEl.setAttribute('content', originalDescription);
+          document.head.appendChild(descEl);
+        }
+      }
     };
   }, [pathname, vehicle]);
 
