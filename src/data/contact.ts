@@ -34,10 +34,37 @@ export const PHONE_TEL_LINKS = {
 export const EMAIL = 'contacto@coneccar-rent.com';
 export const EMAIL_MAILTO = `mailto:${EMAIL}`;
 
-export const ADDRESS = 'Primitivo de la Reta 928, Local 4 — Ciudad de Mendoza';
+export const SITE_URL = 'https://coneccar-rent.com';
+
+export const ADDRESS_STRUCTURED = {
+  streetAddress: 'Primitivo de la Reta 928, Local 4',
+  addressLocality: 'Mendoza',
+  addressRegion: 'Mendoza',
+  addressCountry: 'AR',
+  /** Confirmado. */
+  postalCode: '5500',
+} as const;
+
+export const ADDRESS = `${ADDRESS_STRUCTURED.streetAddress} — Ciudad de ${ADDRESS_STRUCTURED.addressLocality}`;
 export const ADDRESS_MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=' +
-  encodeURIComponent('Primitivo de la Reta 928, Local 4, Mendoza, Argentina');
+  encodeURIComponent(
+    `${ADDRESS_STRUCTURED.streetAddress}, ${ADDRESS_STRUCTURED.addressLocality}, Argentina`,
+  );
+
+export const GEO = { latitude: -32.89252480452625, longitude: -68.83843385872592 } as const;
+
+/** Horario de oficina confirmado (lun a sáb). Fuente única. */
+export const OFFICE_HOURS = { opens: '09:00', closes: '19:00' } as const;
+export const OFFICE_DAYS = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+] as const;
+export const ONLINE_SUPPORT = '24/7';
 
 export const SOCIAL = {
   instagram: 'https://instagram.com/coneccar.rent',

@@ -37,6 +37,20 @@
       "terms": "Terms",
       "privacy": "Privacy"
     },
+    "nap": {
+      "daysRange": "{{from}} to {{to}}",
+      "office": "Office {{days}} {{hours}}",
+      "online": "Online support {{support}}",
+      "days": {
+        "Monday": "Mon",
+        "Tuesday": "Tue",
+        "Wednesday": "Wed",
+        "Thursday": "Thu",
+        "Friday": "Fri",
+        "Saturday": "Sat",
+        "Sunday": "Sun"
+      }
+    },
     "madeIn": "Made in Mendoza · AR",
     "copyright": "© {{year}} Coneccar Rent"
   },

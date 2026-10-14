@@ -8,6 +8,8 @@ import {
   EMAIL_MAILTO,
   ADDRESS,
   ADDRESS_MAPS_URL,
+  PHONE_DISPLAY,
+  PHONE_TEL_LINKS,
   SOCIAL,
 } from '@/data/contact';
 import { buildWhatsAppUrl } from './whatsapp';
@@ -164,15 +166,26 @@ const Contact = () => {
               {EMAIL}
             </a>
             <a
-              href={ADDRESS_MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t('channels.addressLabel')}
+              href={PHONE_TEL_LINKS.primary}
+              onClick={() => trackLead('phone_call')}
+              aria-label={`${t('channels.phoneLabel')}: ${PHONE_DISPLAY.primary}`}
               className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-4 py-2.5 rounded-full text-sm hover:text-amber-500 transition-colors duration-300"
             >
-              <span className="text-amber-500">{I.pin}</span>
-              {ADDRESS}
+              <span className="text-amber-500">{I.phone}</span>
+              {PHONE_DISPLAY.primary}
             </a>
+            <address className="not-italic">
+              <a
+                href={ADDRESS_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('channels.addressLabel')}
+                className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-4 py-2.5 rounded-full text-sm hover:text-amber-500 transition-colors duration-300"
+              >
+                <span className="text-amber-500">{I.pin}</span>
+                {ADDRESS}
+              </a>
+            </address>
           </div>
 
           <div className="mt-10 flex items-center gap-3">

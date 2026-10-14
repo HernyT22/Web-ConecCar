@@ -3,7 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import logoConeccar from '@/imports/coneccar-logo.webp';
 import { CATEGORY_IDS } from './fleetCategories';
-import { BRAND_NAME } from '@/data/contact';
+import {
+  BRAND_NAME,
+  ADDRESS,
+  ADDRESS_MAPS_URL,
+  EMAIL,
+  EMAIL_MAILTO,
+  OFFICE_DAYS,
+  OFFICE_HOURS,
+  ONLINE_SUPPORT,
+  PHONE_DISPLAY,
+  PHONE_TEL_LINKS,
+} from '@/data/contact';
 
 const NAV_LINKS = [
   { key: 'about',        href: '/#about' },
@@ -22,6 +33,11 @@ const HELP_LINKS = [
 const Footer = () => {
   const { t } = useTranslation();
   const { t: tFleet } = useTranslation('fleet');
+  const days = t('footer.nap.daysRange', {
+    from: t(`footer.nap.days.${OFFICE_DAYS[0]}`),
+    to: t(`footer.nap.days.${OFFICE_DAYS[OFFICE_DAYS.length - 1]}`),
+  });
+  const hours = `${OFFICE_HOURS.opens.replace(/^0/, '')}–${OFFICE_HOURS.closes}`;
 
   return (
     <footer className="bg-navy-950 text-white/70">
@@ -42,6 +58,25 @@ const Footer = () => {
             {t('footer.tagline')}{' '}
             <span className="text-amber-500">{t('footer.taglineAccent')}</span>
           </p>
+          <address className="not-italic mt-5 space-y-1.5 text-sm">
+            <div className="text-white font-medium">{BRAND_NAME}</div>
+            <a
+              href={ADDRESS_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-white transition"
+            >
+              {ADDRESS}
+            </a>
+            <a href={PHONE_TEL_LINKS.primary} className="block hover:text-white transition">
+              {PHONE_DISPLAY.primary}
+            </a>
+            <a href={EMAIL_MAILTO} className="block hover:text-white transition">
+              {EMAIL}
+            </a>
+            <p>{t('footer.nap.office', { days, hours })}</p>
+            <p>{t('footer.nap.online', { support: ONLINE_SUPPORT })}</p>
+          </address>
           <div className="mt-5 mono uppercase text-white/40 tracking-widest">
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>

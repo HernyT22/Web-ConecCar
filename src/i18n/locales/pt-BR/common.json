@@ -37,6 +37,20 @@
       "terms": "Termos",
       "privacy": "Privacidade"
     },
+    "nap": {
+      "daysRange": "{{from}} a {{to}}",
+      "office": "Escritório {{days}} {{hours}}",
+      "online": "Atendimento online {{support}}",
+      "days": {
+        "Monday": "seg",
+        "Tuesday": "ter",
+        "Wednesday": "qua",
+        "Thursday": "qui",
+        "Friday": "sex",
+        "Saturday": "sáb",
+        "Sunday": "dom"
+      }
+    },
     "madeIn": "Feito em Mendoza · AR",
     "copyright": "© {{year}} Coneccar Rent"
   },
