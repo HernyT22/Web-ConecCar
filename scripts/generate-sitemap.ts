@@ -1,56 +1,45 @@
 /**
  * scripts/generate-sitemap.ts
- * Genera public/sitemap.xml para coneccar-rent.com.
+ * Genera dist/sitemap.xml DESPUÉS del prerender (último paso de "build").
  *
- * - Rutas: '/', '/flota/:slug', '/ayuda'. Catch-all '*' no se lista (redirect).
- * - El idioma NO va en la URL (i18next resuelve client-side) → una sola
- *   entrada por ruta, sin hreflang.
- * - Los slugs de /flota/:slug salen de src/data/vehicles.ts.
+ * - Lee los HTML de dist/ (excluye 404.html) y toma el <link rel="canonical">
+ *   de cada uno como <loc>: el sitemap y el canonical no pueden divergir.
+ * - Sin lastmod, changefreq ni priority; sin hreflang (solo ES indexable).
  *
- * Run: npx tsx scripts/generate-sitemap.ts
+ * Run: npm run sitemap  (requiere dist/ ya prerenderizado)
  */
 
-import { writeFileSync } from 'node:fs';
-import { vehicles } from '../src/data/vehicles';
+import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 
+const DIST = resolve(process.env.DIST_DIR ?? 'dist');
 const SITE_URL = 'https://coneccar-rent.com';
 
-type Route = { path: string; changefreq: string; priority: number };
+function htmlFiles(dir: string): string[] {
+  return readdirSync(dir).flatMap((name) => {
+    const full = join(dir, name);
+    if (statSync(full).isDirectory()) return name === 'assets' ? [] : htmlFiles(full);
+    return name.endsWith('.html') && name !== '404.html' ? [full] : [];
+  });
+}
 
-const staticRoutes: Route[] = [
-  { path: '/', changefreq: 'weekly', priority: 1.0 },
-  { path: '/ayuda', changefreq: 'monthly', priority: 0.4 },
-];
+const locs = htmlFiles(DIST).map((file) => {
+  const html = readFileSync(file, 'utf8');
+  const m = html.match(/<link rel="canonical" href="([^"]+)"/);
+  if (!m) throw new Error(`sitemap: ${file} no tiene canonical`);
+  if (!m[1].startsWith(`${SITE_URL}/`)) throw new Error(`sitemap: canonical fuera del dominio en ${file}: ${m[1]}`);
+  return m[1];
+});
 
-const vehicleRoutes: Route[] = vehicles.map((v) => ({
-  path: `/flota/${v.slug}`,
-  changefreq: 'weekly',
-  priority: 0.8,
-}));
+// "/" primero y el resto en orden alfabético (salida estable entre builds).
+locs.sort((a, b) => (a === `${SITE_URL}/` ? -1 : b === `${SITE_URL}/` ? 1 : a.localeCompare(b)));
 
-const routes = [...staticRoutes, ...vehicleRoutes];
-const today = new Date().toISOString().split('T')[0];
-
-const urlset = routes
-  .map(
-    (r) => `  <url>
-    <loc>${SITE_URL}${r.path}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${r.changefreq}</changefreq>
-    <priority>${r.priority}</priority>
-  </url>`
-  )
-  .join('\n');
-
+const urlset = locs.map((loc) => `  <url>\n    <loc>${loc}</loc>\n  </url>`).join('\n');
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urlset}
 </urlset>
 `;
 
-const outputPath = new URL('../public/sitemap.xml', import.meta.url);
-writeFileSync(outputPath, xml, 'utf-8');
-
-console.log(
-  `sitemap.xml generado con ${routes.length} URLs (${staticRoutes.length} estáticas + ${vehicleRoutes.length} de flota).`
-);
+writeFileSync(join(DIST, 'sitemap.xml'), xml, 'utf-8');
+console.log(`dist/sitemap.xml generado con ${locs.length} URLs.`);

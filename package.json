@@ -5,12 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && vite-node scripts/generate-sitemap.ts",
     "preview": "vite preview",
     "sitemap": "vite-node scripts/generate-sitemap.ts",
     "make:icons": "vite-node scripts/make-icons.ts",
-    "make:og": "vite-node scripts/make-og.ts",
-    "prebuild": "npm run sitemap"
+    "make:og": "vite-node scripts/make-og.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.14",
