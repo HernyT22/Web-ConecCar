@@ -21,10 +21,22 @@ const SITE_URL = 'https://coneccar-rent.com';
 
 const { render, headFor, ROUTES } = await import(pathToFileURL(join(SSR, 'entry-server.js')).href);
 
-const template = readFileSync(join(DIST, 'index.html'), 'utf8');
-if (!template.includes('<div id="root"></div>')) {
+const rawTemplate = readFileSync(join(DIST, 'index.html'), 'utf8');
+if (!rawTemplate.includes('<div id="root"></div>')) {
   throw new Error('dist/index.html no es la plantilla CSR (¿falta correr "vite build"?)');
 }
+
+// Inline del CSS de entrada: evita el round-trip bloqueante de
+// <link rel="stylesheet"> en las 11 rutas (no hay CSS de chunks lazy: Tailwind
+// emite un único archivo para toda la app, ver dist/assets/*.css).
+const CSS_FILE = readdirSync(join(DIST, 'assets')).find((f) => f.startsWith('index-') && f.endsWith('.css'));
+if (!CSS_FILE) throw new Error('prerender: no se encontró el CSS de entrada en dist/assets');
+const cssContent = readFileSync(join(DIST, 'assets', CSS_FILE), 'utf8');
+const CSS_LINK_RE = new RegExp(`\\s*<link rel="stylesheet"[^>]*href="/assets/${CSS_FILE}"[^>]*>`);
+if (!CSS_LINK_RE.test(rawTemplate)) {
+  throw new Error(`prerender: no se encontró <link rel="stylesheet"> de /assets/${CSS_FILE} en dist/index.html`);
+}
+const template = rawTemplate.replace(CSS_LINK_RE, `\n    <style>${cssContent}</style>`);
 
 const NOSCRIPT =
   '<noscript><style>[style*="opacity:0"]{opacity:1!important;transform:none!important}</style></noscript>';
