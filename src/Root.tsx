@@ -30,7 +30,12 @@ function PageLoadingFallback() {
 // para sí misma, porque es la única sección que usa el prop `layout`.
 const Root = () => {
   useHtmlLang();
-  useEffect(restoreSavedLanguage, []);
+  // restoreSavedLanguage ahora es async (puede esperar el import() del
+  // idioma guardado) — no se pasa directo como efecto para que React no
+  // trate la Promise devuelta como función de cleanup.
+  useEffect(() => {
+    restoreSavedLanguage();
+  }, []);
   return (
     <LazyMotion features={domAnimation} strict>
       <ScrollToTop />

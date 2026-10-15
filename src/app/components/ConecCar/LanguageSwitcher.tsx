@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { I } from '@/app/components/ConecCar/Icons';
-import { SUPPORTED_LANGS, type SupportedLang } from '@/i18n';
+import { SUPPORTED_LANGS, changeLanguageSafely, type SupportedLang } from '@/i18n';
 
 const LANG_FLAGS: Record<SupportedLang, string> = {
   'es': '🇦🇷',
@@ -38,8 +38,8 @@ const LanguageSwitcher = () => {
   }, []);
 
   const handleSelect = (code: SupportedLang) => {
-    i18n.changeLanguage(code);
     setOpen(false);
+    void changeLanguageSafely(code);
   };
 
   return (

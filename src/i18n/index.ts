@@ -12,34 +12,16 @@ import esDestinations from './locales/es/destinations.json';
 import esContact from './locales/es/contact.json';
 import esReviews from './locales/es/reviews.json';
 
-import enCommon from './locales/en/common.json';
-import enHome from './locales/en/home.json';
-import enFleet from './locales/en/fleet.json';
-import enVehicle from './locales/en/vehicle.json';
-import enHelp from './locales/en/help.json';
-import enDestinations from './locales/en/destinations.json';
-import enContact from './locales/en/contact.json';
-import enReviews from './locales/en/reviews.json';
-
-import ptCommon from './locales/pt-BR/common.json';
-import ptHome from './locales/pt-BR/home.json';
-import ptFleet from './locales/pt-BR/fleet.json';
-import ptVehicle from './locales/pt-BR/vehicle.json';
-import ptHelp from './locales/pt-BR/help.json';
-import ptDestinations from './locales/pt-BR/destinations.json';
-import ptContact from './locales/pt-BR/contact.json';
-import ptReviews from './locales/pt-BR/reviews.json';
-
 export const SUPPORTED_LANGS = ['es', 'en', 'pt-BR'] as const;
 export type SupportedLang = (typeof SUPPORTED_LANGS)[number];
+
+const NAMESPACES = ['common', 'home', 'fleet', 'vehicle', 'help', 'destinations', 'contact', 'reviews'] as const;
 
 i18n
   .use(initReactI18next)
   .init({
     resources: {
       es: { common: esCommon, home: esHome, fleet: esFleet, vehicle: esVehicle, help: esHelp, destinations: esDestinations, contact: esContact, reviews: esReviews },
-      en: { common: enCommon, home: enHome, fleet: enFleet, vehicle: enVehicle, help: enHelp, destinations: enDestinations, contact: enContact, reviews: enReviews },
-      'pt-BR': { common: ptCommon, home: ptHome, fleet: ptFleet, vehicle: ptVehicle, help: ptHelp, destinations: ptDestinations, contact: ptContact, reviews: ptReviews },
     },
     lng: 'es',
     fallbackLng: 'es',
@@ -56,6 +38,45 @@ i18n
     },
   });
 
+// EN y PT-BR bajo demanda: ES queda síncrono/bundleado (siempre es el primer
+// render, SSR incluido); los otros 2 idiomas (8 namespaces c/u) se piden
+// recién cuando el visitante los elige, y Vite los separa en su propio chunk.
+type LazyLang = Exclude<SupportedLang, 'es'>;
+
+const enModules = import.meta.glob<{ default: Record<string, unknown> }>('./locales/en/*.json');
+const ptModules = import.meta.glob<{ default: Record<string, unknown> }>('./locales/pt-BR/*.json');
+const LAZY_LOCALE_MODULES: Record<LazyLang, Record<string, () => Promise<{ default: Record<string, unknown> }>>> = {
+  en: enModules,
+  'pt-BR': ptModules,
+};
+
+const localeLoadPromises = new Map<LazyLang, Promise<void>>();
+
+function loadLazyLocale(lang: LazyLang): Promise<void> {
+  const cached = localeLoadPromises.get(lang);
+  if (cached) return cached;
+  const modules = LAZY_LOCALE_MODULES[lang];
+  const promise = Promise.all(
+    NAMESPACES.map(async (ns) => {
+      const importer = modules[`./locales/${lang}/${ns}.json`];
+      const mod = await importer();
+      i18n.addResourceBundle(lang, ns, mod.default, true, true);
+    }),
+  ).then(() => undefined);
+  localeLoadPromises.set(lang, promise);
+  return promise;
+}
+
+/**
+ * Cambia de idioma esperando a que sus namespaces estén cargados
+ * (addResourceBundle) antes de aplicar el cambio — evita el flash de claves
+ * sin traducir que daría un changeLanguage a un idioma todavía sin recursos.
+ */
+export async function changeLanguageSafely(lang: SupportedLang) {
+  if (lang !== 'es') await loadLazyLocale(lang);
+  await i18n.changeLanguage(lang);
+}
+
 
 const STORAGE_KEY = 'i18nextLng';
 let restored = false;
@@ -71,7 +92,7 @@ export function restoreSavedLanguage() {
     const saved = localStorage.getItem(STORAGE_KEY);
     const prefix = saved?.split('-')[0];
     const lang = SUPPORTED_LANGS.find((l) => l === saved) ?? SUPPORTED_LANGS.find((l) => l.split('-')[0] === prefix);
-    if (lang && lang !== i18n.language) i18n.changeLanguage(lang);
+    if (lang && lang !== i18n.language) void changeLanguageSafely(lang);
   } catch {
     /* storage no disponible */
   }
