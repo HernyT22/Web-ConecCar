@@ -260,3 +260,22 @@
     animation: accordion-up 0.2s ease-out;
   }
 }
+
+/* Fade-in del texto del Hero por CSS puro: el H1 queda en el HTML
+   prerenderizado sin depender de que React hidrate para ser visible
+   (mismos valores que animations/variants.ts:14-17 — fadeIn). */
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero-fade-in {
+  animation: hero-fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-in {
+    animation: none;
+    opacity: 1;
+  }
+}

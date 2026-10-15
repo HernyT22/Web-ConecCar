@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { I } from '@/app/components/ConecCar/Icons';
 import { HERO_HOME } from '@/seo/lcp';
 import { WHATSAPP_URL } from '@/data/contact';
-import { fadeIn } from '@/animations/variants';
 
 // React 18.3 no soporta fetchPriority (camelCase): se usa el atributo HTML en minúscula.
 const LCP_PRIORITY = { fetchpriority: 'high' } as Record<string, string>;
@@ -34,12 +32,7 @@ const Hero = () => {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 pt-20 md:pt-28 pb-40 md:pb-48">
-        <motion.div
-          className="max-w-2xl"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-        >
+        <div className="max-w-2xl hero-fade-in">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur text-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
             <span className="mono uppercase tracking-widest">
@@ -81,7 +74,7 @@ const Hero = () => {
               {t('hero.deliveryText')}
             </span>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="relative mx-auto max-w-6xl px-5 md:px-8 -mb-10 md:-mb-12 translate-y-10 md:translate-y-12" />
