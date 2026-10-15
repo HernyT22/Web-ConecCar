@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
 import { fadeIn } from '@/animations/variants';
 import type { Vehicle } from '@/data/vehicles';
@@ -13,7 +13,7 @@ const Breadcrumb = ({ vehicle }: Props) => {
   const { t } = useTranslation('vehicle');
 
   return (
-    <motion.div
+    <m.div
       className="bg-white border-b border-navy-100"
       initial="hidden"
       animate="visible"
@@ -34,7 +34,7 @@ const Breadcrumb = ({ vehicle }: Props) => {
           </span>
         </nav>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

@@ -1,5 +1,5 @@
 // ConecCar.rent — Medios de pago
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { PAYMENT_METHODS } from '@/data/contact';
 import { staggerContainerFast, scaleInItem, VIEWPORT_CONFIG } from '@/animations/variants';
@@ -122,28 +122,28 @@ const Payments = () => {
               {t('payments.subtitle')}
             </div>
           </div>
-          <motion.div
+          <m.div
             className="md:w-3/4 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT_CONFIG}
             variants={staggerContainerFast}
           >
-            {methods.map((m) => (
-              <motion.div
-                key={m.name}
+            {methods.map((method) => (
+              <m.div
+                key={method.name}
                 variants={scaleInItem}
                 className="bg-white rounded-xl border-2 border-amber-500/30 hover:border-amber-500/70 hover:bg-amber-500/5 hover:shadow-[0_4px_16px_-6px_rgba(201,161,74,0.4)] h-14 flex flex-col items-center justify-center text-navy-700 transition gap-1"
               >
                 <div className="flex items-center justify-center">
-                  {m.icon}
+                  {method.icon}
                 </div>
                 <span className="mono uppercase tracking-widest text-center px-2 text-[9px]">
-                  {m.name}
+                  {method.name}
                 </span>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

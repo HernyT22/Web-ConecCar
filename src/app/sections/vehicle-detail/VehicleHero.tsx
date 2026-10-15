@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { buildWhatsAppUrl } from '@/app/components/ConecCar/whatsapp';
@@ -79,7 +79,7 @@ const VehicleHero = ({ vehicle }: Props) => {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 py-12 md:py-16 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
 
         {/* columna texto */}
-        <motion.div
+        <m.div
           className="order-2 lg:order-1"
           initial="hidden"
           animate="visible"
@@ -154,7 +154,7 @@ const VehicleHero = ({ vehicle }: Props) => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* columna galería */}
         <div className="order-1 lg:order-2">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ANIM_EASE } from '@/animations/variants';
@@ -81,7 +81,7 @@ const Nav = () => {
 
         <AnimatePresence>
           {open && (
-            <motion.div
+            <m.div
               key="mobile-menu"
               initial={{ opacity: 0, y: -16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ const Nav = () => {
                   <LanguageSwitcher />
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </header>

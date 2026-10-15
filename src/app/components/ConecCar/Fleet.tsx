@@ -1,7 +1,7 @@
 // ConecCar.rent — Flota
 import { useState, useEffect, useMemo, memo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { LazyMotion, m, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/app/components/ui/utils";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
@@ -12,6 +12,11 @@ import { CATEGORY_IDS, parseCatFromHash } from "./fleetCategories";
 import { ANIM_DURATION, ANIM_EASE } from "@/animations/variants";
 import { vehicles, formatPrice } from "@/data/vehicles";
 import type { CategoryId, Vehicle } from "@/data/vehicles";
+
+// El prop `layout` (reacomodo animado al filtrar categoría) requiere domMax,
+// no incluido en el domAnimation que usa el resto de la app (Root.tsx) — se
+// carga aparte y solo para esta sección, como chunk separado.
+const loadDomMax = () => import('framer-motion').then((mod) => mod.domMax);
 
 type SortId = 'recommended' | 'priceAsc' | 'priceDesc';
 
@@ -223,25 +228,27 @@ const Fleet = () => {
 
       {/* grilla de tarjetas */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <AnimatePresence mode="popLayout">
-          {list.map((v, i) => (
-            <motion.div
-              key={v.slug}
-              layout
-              initial={{ opacity: 0, x: -32 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 16, transition: { duration: 0.2, ease: ANIM_EASE } }}
-              transition={{
-                duration: ANIM_DURATION,
-                ease: ANIM_EASE,
-                delay: Math.min(i * 0.05, 0.4),
-                layout: { duration: 0.3, ease: ANIM_EASE },
-              }}
-            >
-              <VehicleCard vehicle={v} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
+        <LazyMotion features={loadDomMax}>
+          <AnimatePresence mode="popLayout">
+            {list.map((v, i) => (
+              <m.div
+                key={v.slug}
+                layout
+                initial={{ opacity: 0, x: -32 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 16, transition: { duration: 0.2, ease: ANIM_EASE } }}
+                transition={{
+                  duration: ANIM_DURATION,
+                  ease: ANIM_EASE,
+                  delay: Math.min(i * 0.05, 0.4),
+                  layout: { duration: 0.3, ease: ANIM_EASE },
+                }}
+              >
+                <VehicleCard vehicle={v} />
+              </m.div>
+            ))}
+          </AnimatePresence>
+        </LazyMotion>
       </div>
 
       {list.length === 0 && (

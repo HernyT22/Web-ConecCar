@@ -1,6 +1,6 @@
 // ConecCar.rent — Destinos
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/app/components/ui/utils";
 import Section from "@/app/components/ConecCar/Section";
@@ -67,7 +67,7 @@ const Destinations = () => {
       kicker={t('section.kicker')}
       className="bg-white"
     >
-      <motion.div
+      <m.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         initial="hidden"
         whileInView="visible"
@@ -79,7 +79,7 @@ const Destinations = () => {
           const name = t(`items.${d.id}.name`);
           const whatsappHref = buildWhatsAppUrl(t('whatsappTemplate', { name }));
           return (
-            <motion.article
+            <m.article
               key={d.id}
               variants={slideDownItem}
               className={cn(
@@ -173,10 +173,10 @@ const Destinations = () => {
                   {t('card.ctaMore')}
                 </a>
               </div>
-            </motion.article>
+            </m.article>
           );
         })}
-      </motion.div>
+      </m.div>
     </Section>
   );
 };

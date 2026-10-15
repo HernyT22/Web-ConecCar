@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { LazyMotion, domAnimation } from 'framer-motion';
 import { restoreSavedLanguage } from './i18n';
 import App from './app/App.tsx';
 import ScrollToTop from './app/components/ScrollToTop.tsx';
@@ -24,11 +25,14 @@ function PageLoadingFallback() {
   return <div className="min-h-screen" aria-busy="true" />;
 }
 
+// LazyMotion con domAnimation (variants + enter/exit, sin drag ni layout
+// animations) para toda la app vía m.*; Fleet carga domMax aparte y solo
+// para sí misma, porque es la única sección que usa el prop `layout`.
 const Root = () => {
   useHtmlLang();
   useEffect(restoreSavedLanguage, []);
   return (
-    <>
+    <LazyMotion features={domAnimation} strict>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
@@ -57,7 +61,7 @@ const Root = () => {
           }
         />
       </Routes>
-    </>
+    </LazyMotion>
   );
 };
 

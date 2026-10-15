@@ -1,5 +1,5 @@
 // ConecCar.rent — Opiniones
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Section from "@/app/components/ConecCar/Section";
 import { I } from "@/app/components/ConecCar/Icons";
@@ -18,7 +18,7 @@ const Reviews = () => {
       kicker={t('section.kicker')}
       className="bg-white"
     >
-      <motion.div
+      <m.div
         className="grid md:grid-cols-3 gap-5"
         initial="hidden"
         whileInView="visible"
@@ -26,7 +26,7 @@ const Reviews = () => {
         variants={staggerContainer}
       >
         {REVIEW_IDS.map((id) => (
-          <motion.article
+          <m.article
             key={id}
             variants={slideUpItem}
             className="relative rounded-2xl border border-navy-100 bg-white p-6 md:p-7 lift flex flex-col hover:border-amber-500/50 hover:shadow-[0_10px_30px_-12px_rgba(201,161,74,0.35)] transition"
@@ -66,9 +66,9 @@ const Reviews = () => {
                 </div>
               </div>
             </div>
-          </motion.article>
+          </m.article>
         ))}
-      </motion.div>
+      </m.div>
     </Section>
   );
 };

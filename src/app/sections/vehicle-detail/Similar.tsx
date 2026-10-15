@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { getSimilarVehicles, formatPrice } from '@/data/vehicles';
@@ -20,7 +20,7 @@ const Similar = ({ slug }: Props) => {
   const cars = getSimilarVehicles(slug, 3);
 
   return (
-    <motion.section
+    <m.section
       className="py-20 md:py-24 bg-white"
       initial="hidden"
       whileInView="visible"
@@ -28,7 +28,7 @@ const Similar = ({ slug }: Props) => {
       variants={staggerContainer}
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <motion.div
+        <m.div
           className="flex items-end justify-between gap-4 mb-10"
           variants={slideUpItem}
         >
@@ -44,14 +44,14 @@ const Similar = ({ slug }: Props) => {
           <Link to="/#fleet" className="hidden sm:inline-flex items-center gap-2 text-navy-700 hover:text-navy-900 text-sm transition">
             {t('vehicle:similar.viewAll')} {I.arrow}
           </Link>
-        </motion.div>
+        </m.div>
 
-        <motion.ul
+        <m.ul
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none"
           variants={staggerContainer}
         >
           {cars.map((c) => (
-            <motion.li key={c.slug} variants={slideFromLeftItem}>
+            <m.li key={c.slug} variants={slideFromLeftItem}>
               <Link
                 to={`/flota/${c.slug}`}
                 className="bg-white rounded-2xl border border-navy-100 overflow-hidden flex flex-col lift"
@@ -100,11 +100,11 @@ const Similar = ({ slug }: Props) => {
                   </div>
                 </div>
               </Link>
-            </motion.li>
+            </m.li>
           ))}
-        </motion.ul>
+        </m.ul>
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 
