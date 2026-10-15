@@ -2,7 +2,10 @@ import './i18n';
 import { hydrateRoot } from 'react-dom/client';
 import { BrowserRouter, matchPath } from 'react-router-dom';
 import Root, { loadHelp, loadVehicleDetail } from './Root.tsx';
+import { initGtagOnFirstInteraction } from './lib/analytics';
 import './styles/index.css';
+
+initGtagOnFirstInteraction();
 
 // Precarga el chunk de la ruta actual ANTES de hidratar, para que el primer
 // render coincida con el HTML prerenderizado (sin fallback de Suspense).
