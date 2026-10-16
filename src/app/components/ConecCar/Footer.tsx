@@ -88,8 +88,8 @@ const Footer = () => {
         </div>
 
         {/* Navegación */}
-        <div>
-          <h2 className="text-white font-medium mb-4 text-base">{t('footer.navigation')}</h2>
+        <nav aria-label={t('footer.navigation')}>
+          <div className="text-white font-medium mb-4 text-base">{t('footer.navigation')}</div>
           <ul className="space-y-2.5 text-sm">
             {NAV_LINKS.map((li) => (
               <li key={li.key}>
@@ -99,11 +99,11 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         {/* Flota */}
-        <div>
-          <h2 className="text-white font-medium mb-4 text-base">{t('footer.fleet')}</h2>
+        <nav aria-label={t('footer.fleet')}>
+          <div className="text-white font-medium mb-4 text-base">{t('footer.fleet')}</div>
           <ul className="space-y-2.5 text-sm">
             {CATEGORY_IDS.map((id) => (
               <li key={id}>
@@ -113,11 +113,11 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         {/* Ayuda */}
-        <div>
-          <h2 className="text-white font-medium mb-4 text-base">{t('footer.help')}</h2>
+        <nav aria-label={t('footer.help')}>
+          <div className="text-white font-medium mb-4 text-base">{t('footer.help')}</div>
           <ul className="space-y-2.5 text-sm">
             {HELP_LINKS.map((li) => (
               <li key={li.key}>
@@ -127,7 +127,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
       </div>
 
       <div className="border-t border-white/10">

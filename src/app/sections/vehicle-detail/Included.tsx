@@ -67,7 +67,7 @@ const Included = () => {
                 <div className="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-600 grid place-items-center border-2 border-amber-500/60 mb-4 group-hover:scale-[1.04] transition-transform">
                   {icons[i]}
                 </div>
-                <div className="font-medium text-navy-900">{c.t}</div>
+                <h3 className="font-medium text-navy-900 text-base">{c.t}</h3>
                 <div className="text-sm text-navy-700/70 mt-1">{c.s}</div>
               </m.div>
             ))}

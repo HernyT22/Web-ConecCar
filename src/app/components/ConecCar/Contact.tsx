@@ -206,9 +206,9 @@ const Contact = () => {
         </div>
 
         <div className="bg-white/5 border border-white/15 rounded-3xl p-6 md:p-8 backdrop-blur">
-          <div className="font-display text-xl font-semibold">
+          <h3 className="font-display text-xl font-semibold">
             {t('form.title')}
-          </div>
+          </h3>
           <p className="text-sm text-white/60 mt-1">
             {t('form.subtitle')}
           </p>

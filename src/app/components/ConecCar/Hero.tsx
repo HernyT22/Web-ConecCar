@@ -41,6 +41,7 @@ const Hero = () => {
           </div>
           <h1 className="font-display text-[42px] sm:text-6xl md:text-7xl font-semibold leading-[1.02] mt-6">
             {t('hero.titleLine1')}
+            {' '}
             <br />
             <span className="text-amber-500">{t('hero.titleLine2')}</span>
           </h1>
