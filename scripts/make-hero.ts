@@ -9,9 +9,13 @@ import sharp from 'sharp';
 
 const SRC = 'src/imports/hero-cordillera-mendoza.webp';
 
+// Calidad 62 en el ancho que sirve de LCP en mobile (1024); 65 en el resto
+// (el degradado + 2 overlays navy del Hero disimulan artefactos de más).
+const QUALITY: Record<number, number> = { 640: 65, 1024: 62, 1600: 65 };
+
 for (const w of [640, 1024, 1600]) {
   const out = `src/imports/hero-${w}.webp`;
-  await sharp(SRC).resize({ width: w }).webp({ quality: 75 }).toFile(out);
+  await sharp(SRC).resize({ width: w }).webp({ quality: QUALITY[w] }).toFile(out);
   console.log(`${out}  ${Math.round(statSync(out).size / 1024)} KB`);
 }
 
