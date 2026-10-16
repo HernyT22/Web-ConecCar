@@ -68,9 +68,17 @@ function outPath(url) {
   return join(DIST, `${url.slice(1)}.html`);
 }
 
-// Preload de las 2 fuentes críticas (Libre Baskerville 700 = títulos, Plus Jakarta
-// Sans 400 = cuerpo), resolviendo el nombre hasheado real en dist/assets.
-const PRELOAD_FONTS = ['libre-baskerville-latin-700-normal', 'plus-jakarta-sans-latin-400-normal'].map((base) => {
+// Preload de las fuentes críticas sobre el pliegue (Libre Baskerville 700 = títulos,
+// Plus Jakarta Sans 400 = cuerpo, 500 = CTAs del Hero/Nav), resolviendo el nombre
+// hasheado real en dist/assets. Jakarta 600/700 NO se precargan: solo los usan
+// elementos bajo el pliegue (Fleet.tsx:57, Contact.tsx, Reviews.tsx:52,
+// About.tsx:53) — con el CSS inline (ver withPreload más abajo) el navegador ya
+// los pide a prioridad VeryHigh igual, sin necesidad de forzarlo.
+const PRELOAD_FONTS = [
+  'libre-baskerville-latin-700-normal',
+  'plus-jakarta-sans-latin-400-normal',
+  'plus-jakarta-sans-latin-500-normal',
+].map((base) => {
   const file = readdirSync(join(DIST, 'assets')).find((f) => f.startsWith(`${base}-`) && f.endsWith('.woff2'));
   if (!file) throw new Error(`prerender: no se encontró el woff2 de ${base} en dist/assets`);
   return `/assets/${file}`;
