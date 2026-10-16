@@ -21,6 +21,8 @@ const Payments = () => {
           alt="Visa"
           loading="lazy"
           decoding="async"
+          width={208}
+          height={68}
           className="h-7 object-contain p-1"
         />
       ),
@@ -53,6 +55,8 @@ const Payments = () => {
           alt="American Express"
           loading="lazy"
           decoding="async"
+          width={100}
+          height={28}
           className="h-7 object-contain p-1"
         />
       ),
@@ -65,6 +69,8 @@ const Payments = () => {
           alt="Mercado Pago"
           loading="lazy"
           decoding="async"
+          width={433}
+          height={143}
           className="h-6 object-contain p-1"
         />
       ),
@@ -77,6 +83,8 @@ const Payments = () => {
           alt="Transferencia bancaria"
           loading="lazy"
           decoding="async"
+          width={512}
+          height={512}
           className="w-8 h-8 object-contain p-1"
         />
       ),
@@ -89,6 +97,8 @@ const Payments = () => {
           alt="Efectivo ARS"
           loading="lazy"
           decoding="async"
+          width={512}
+          height={512}
           className="w-8 h-8 object-contain p-1"
         />
       ),
@@ -101,6 +111,8 @@ const Payments = () => {
           alt="Efectivo USD"
           loading="lazy"
           decoding="async"
+          width={512}
+          height={512}
           className="w-8 h-8 object-contain p-1"
         />
       ),
