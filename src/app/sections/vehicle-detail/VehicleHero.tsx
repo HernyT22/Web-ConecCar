@@ -10,6 +10,7 @@ import { formatPrice } from '@/data/vehicles';
 import type { Vehicle } from '@/data/vehicles';
 import heroBgLite from '@/imports/hero-bg-lite.webp';
 import { VEHICLE_MAIN_SIZES } from '@/seo/lcp';
+import { vehicleAltBase, vehicleTypeLabel } from '@/seo/altText';
 import whatsappIcon from '@/imports/whatsapp.png';
 import { fadeIn } from '@/animations/variants';
 
@@ -31,14 +32,28 @@ const VehicleHero = ({ vehicle }: Props) => {
   const [active, setActive] = useState(0);
   const { t } = useTranslation(['vehicle', 'fleet']);
 
-  const { slug, brand, model, year, badge, category,
+  const { slug, brand, model, year, badge, category, color,
           seats, bags, transmission, fuel, climate, pricePerDay, currency,
           images, imageLabels } = vehicle;
 
-  const tDyn = t as (key: string) => string;
+  const tDyn = t as (key: string, options?: Record<string, unknown>) => string;
 
-  const shortDesc = tDyn(`vehicle:vehicleDescriptions.${slug}.short`);
-  const longDesc  = tDyn(`vehicle:vehicleDescriptions.${slug}.long`);
+  const transmissionLabel = tDyn(`fleet:enums.transmission.${transmission}`).toLowerCase();
+  const fuelLabel = tDyn(`fleet:enums.fuel.${fuel}`).toLowerCase();
+  const climateLabel = tDyn(`fleet:enums.climate.${climate}`).toLowerCase();
+  const colorLower = color?.toLowerCase();
+
+  const descriptionVars = {
+    color: colorLower,
+    passengers: seats,
+    bags,
+    transmission: transmissionLabel,
+    fuel: fuelLabel,
+    climate: climateLabel,
+  };
+
+  const shortDesc = tDyn(`vehicle:vehicleDescriptions.${slug}.short`, descriptionVars);
+  const longDesc  = tDyn(`vehicle:vehicleDescriptions.${slug}.long`, descriptionVars);
 
   const quick = [
     { icon: I.users, label: t('vehicle:specs.passenger', { count: seats }) },
@@ -55,6 +70,14 @@ const VehicleHero = ({ vehicle }: Props) => {
   const priceDisplay = pricePerDay > 0
     ? formatPrice(pricePerDay, currency)
     : t('vehicle:hero.consult');
+
+  // Alt de imágenes (SEO T4): "{marca} {modelo} {año} {color}, {tipo/vista} de alquiler en Mendoza".
+  const altBase = vehicleAltBase(vehicle);
+  const mainImageAlt = `${altBase}, ${vehicleTypeLabel(category)} de alquiler en Mendoza`;
+  const thumbAlt = (i: number) => {
+    const vista = imageLabels[i];
+    return vista ? `${altBase}, ${vista}` : `${altBase}, foto ${i + 1}`;
+  };
 
   return (
     <section className="relative overflow-hidden text-white">
@@ -98,12 +121,13 @@ const VehicleHero = ({ vehicle }: Props) => {
           </div>
 
           <h1 className="font-display text-[40px] sm:text-6xl md:text-7xl font-semibold leading-[1.02] mt-5">
-            {brand} <span className="text-amber-500">{model}</span>
+            <span className="block text-lg sm:text-xl font-medium text-white/70 mb-1">{t('vehicle:hero.titlePrefix')}</span>{' '}
+            {brand} <span className="text-amber-500">{model}</span>{' '}
+            <span className="block text-lg sm:text-xl font-medium text-white/70 mt-1">{year} {t('vehicle:hero.titleSuffix')}</span>
           </h1>
           <div className="flex items-center gap-3 mt-3 text-white/70">
-            <span className="text-lg">{year}</span>
-            <span className="w-1 h-1 rounded-full bg-white/30" />
             <span className="text-lg">{shortDesc}</span>
+            <span className="w-1 h-1 rounded-full bg-white/30" />
             <span className="hidden sm:flex items-center gap-1.5 ml-1">
               <span className="flex text-amber-500">
                 {[0,1,2,3,4].map((s) => <span key={s} className="w-4 h-4">{I.star}</span>)}
@@ -135,11 +159,11 @@ const VehicleHero = ({ vehicle }: Props) => {
                 {pricePerDay > 0 && <span className="text-white/60">{t('vehicle:hero.perDay')}</span>}
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:ml-auto">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:ml-auto">
               <a
                 href={PHONE_TEL_LINKS.secondary}
                 onClick={() => trackLead('phone_call', { vehicle: vehicle.slug })}
-                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 font-medium px-6 py-3.5 rounded-full transition"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-amber-500 hover:bg-amber-600 text-navy-950 font-medium px-5 sm:px-6 py-3.5 rounded-full transition"
               >
                 {t('vehicle:hero.book')} {I.arrow}
               </a>
@@ -148,7 +172,7 @@ const VehicleHero = ({ vehicle }: Props) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackLead('whatsapp', { vehicle: vehicle.slug })}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium px-6 py-3.5 rounded-full transition backdrop-blur"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium px-5 sm:px-6 py-3.5 rounded-full transition backdrop-blur"
               >
                 <img src={whatsappIcon} alt="" aria-hidden="true" className="w-5 h-5" />{t('vehicle:hero.consult')}
               </a>
@@ -160,7 +184,7 @@ const VehicleHero = ({ vehicle }: Props) => {
         <div className="order-1 lg:order-2">
           <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
             {mainImage
-              ? <img src={mainImage.src} srcSet={mainImage.srcSet} sizes={MAIN_IMG_SIZES} alt={`${brand} ${model}`} width={mainImage.width} height={mainImage.height} loading="eager" {...PRIORITY_HIGH} className="aspect-[4/3] w-full object-contain" />
+              ? <img src={mainImage.src} srcSet={mainImage.srcSet} sizes={MAIN_IMG_SIZES} alt={mainImageAlt} width={mainImage.width} height={mainImage.height} loading="eager" {...PRIORITY_HIGH} className="aspect-[4/3] w-full object-contain" />
               : <PlaceholderImg label={imageLabels[active] ?? imageLabels[0]} tone="dark" className="aspect-[4/3] w-full" />
             }
             <span className="absolute top-4 left-4 bg-navy-950/70 text-white mono uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur">
@@ -185,7 +209,7 @@ const VehicleHero = ({ vehicle }: Props) => {
                   sizes={THUMB_IMG_SIZES}
                   width={img.width}
                   height={img.height}
-                  alt={imageLabels[i] ?? `${brand} ${model}`}
+                  alt={thumbAlt(i)}
                   loading="lazy"
                   decoding="async"
                   className="aspect-[4/3] w-full object-contain"

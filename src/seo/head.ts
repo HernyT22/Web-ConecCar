@@ -1,8 +1,62 @@
-import { formatPrice, type Vehicle } from '@/data/vehicles';
+import { formatPrice, vehicles, type CategoryId, type Vehicle } from '@/data/vehicles';
 import { PENDING, SLOTS } from './slots';
 import { BRAND_NAME, DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_HEIGHT, OG_WIDTH, SITE_URL, ogImageUrl } from './site';
 import { heroPreload, vehiclePreload } from './lcp';
-import { autoRental, breadcrumb, car, graph, organization, vehicleName, website } from './jsonld';
+import { autoRental, breadcrumb, car, graph, organization, website } from './jsonld';
+
+// Fallback de título/descripción por ficha, generado desde vehicles.ts mientras
+// SLOTS.vehicles[slug] esté PENDING (ver plan de copy SEO, secciones 5-6).
+const TYPE_LABEL_TITLE: Record<CategoryId, string> = {
+  'suv-coupe': 'camioneta',
+  'suv-compacta': 'camioneta',
+  sedan: 'sedán',
+  'hatchback-compacto': 'auto compacto',
+};
+
+const TYPE_LABEL_DESCRIPTION: Record<CategoryId, string> = {
+  'suv-coupe': 'la camioneta',
+  'suv-compacta': 'la camioneta',
+  sedan: 'el sedán',
+  'hatchback-compacto': 'el auto compacto',
+};
+
+const TRANSMISSION_LABEL: Record<Vehicle['transmission'], string> = {
+  automatic: 'automática',
+  manual: 'manual',
+};
+
+// Variante de color = comparte marca+modelo con al menos otra ficha (Basalt a/b/c, Tiggo a/b).
+const isColorVariant = (v: Vehicle): boolean =>
+  vehicles.filter((x) => x.brand === v.brand && x.model === v.model).length > 1;
+
+const vehicleFallbackTitle = (v: Vehicle): string => {
+  const base = `${v.brand} ${v.model} ${v.year}`;
+  if (isColorVariant(v)) {
+    const withColor = v.color ? `${base} ${v.color.toLowerCase()}: alquiler en Mendoza` : `${base}: alquiler en Mendoza`;
+    return withColor.length <= 60 ? withColor : `${base}: alquiler en Mendoza`;
+  }
+  return `${base}: alquiler de ${TYPE_LABEL_TITLE[v.category]} en Mendoza`;
+};
+
+const vehicleFallbackDescription = (v: Vehicle): string => {
+  const base = `${v.brand} ${v.model} ${v.year}`;
+  const tipo = TYPE_LABEL_DESCRIPTION[v.category];
+  const transmision = TRANSMISSION_LABEL[v.transmission];
+  const precio = formatPrice(v.pricePerDay, v.currency).replace(/\s(ARS|USD)$/, '');
+
+  // Variantes de color: el color reemplaza a "{pasajeros} pasajeros," para no
+  // repetir la misma description entre fichas que comparten marca+modelo.
+  if (isColorVariant(v) && v.color) {
+    const color = v.color.toLowerCase();
+    const full = `Alquilá ${tipo} ${base} ${color} en Mendoza: transmisión ${transmision} y kilometraje libre. Desde ${precio} por día. Entrega en el aeropuerto.`;
+    if (full.length <= 160) return full;
+    return `Alquilá ${tipo} ${base} ${color} en Mendoza: transmisión ${transmision} y km libre. Desde ${precio} por día. Entrega en el aeropuerto.`;
+  }
+
+  const full = `Alquilá ${tipo} ${base} en Mendoza: ${v.seats} pasajeros, transmisión ${transmision} y kilometraje libre. Desde ${precio} por día. Entrega en el aeropuerto.`;
+  if (full.length <= 160) return full;
+  return `Alquilá ${tipo} ${base} en Mendoza: ${v.seats} pasajeros, transmisión ${transmision} y km libre. Desde ${precio} por día. Entrega en el aeropuerto.`;
+};
 
 export type SeoPage = { kind: 'home' } | { kind: 'vehicle'; vehicle: Vehicle } | { kind: 'notfound' };
 
@@ -66,19 +120,17 @@ export function buildHead(page: SeoPage, ctx: HeadContext = {}): HeadSpec {
     description = pick(SLOTS.home.description, DEFAULT_DESCRIPTION, 'home.description', ctx);
     canonicalPath = ctx.pathname ? normalizePath(ctx.pathname) : '/';
     ogImage = ogImageUrl();
-    jsonLd = [graph([organization(), website(), autoRental()])];
+    jsonLd = [graph([organization(), website(), autoRental(description)])];
     lcp = heroPreload();
   } else {
     const v = page.vehicle;
     const slot = SLOTS.vehicles[v.slug];
-    const name = vehicleName(v);
-    const fallbackDescription = `${name} · ${v.shortDescription}. Tarifa diaria ${formatPrice(v.pricePerDay, v.currency)}. Alquiler en Mendoza.`;
-    title = pick(slot?.title ?? PENDING, `${name} · ${BRAND_NAME}`, `${v.slug}.title`, ctx);
-    description = pick(slot?.description ?? PENDING, fallbackDescription, `${v.slug}.description`, ctx);
+    title = pick(slot?.title ?? PENDING, vehicleFallbackTitle(v), `${v.slug}.title`, ctx);
+    description = pick(slot?.description ?? PENDING, vehicleFallbackDescription(v), `${v.slug}.description`, ctx);
     canonicalPath = ctx.pathname ? normalizePath(ctx.pathname) : `/flota/${v.slug}`;
     ogImage = ogImageUrl(v.slug);
     const url = `${SITE_URL}${canonicalPath}`;
-    jsonLd = [graph([car(v, url), breadcrumb(v, url)])];
+    jsonLd = [graph([car(v, url, description), breadcrumb(v, url)])];
     lcp = vehiclePreload(v.images[0]);
   }
 

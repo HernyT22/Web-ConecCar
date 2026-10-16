@@ -6,11 +6,13 @@
     "ariaLabel": "Migas de pan"
   },
   "hero": {
+    "titlePrefix": "Alquiler de",
+    "titleSuffix": "en Mendoza",
     "dailyRate": "Tarifa diaria",
     "viewImage": "Ver imagen {{n}} de {{total}}",
     "perDay": "/ día",
-    "book": "Reservar ahora",
-    "consult": "Consultar"
+    "book": "Llamar para reservar",
+    "consult": "Consultar por WhatsApp"
   },
   "whatsapp": {
     "reserve": "Hola, quiero reservar el {{vehicleName}}. ¿Podemos coordinar fechas y detalles?",
@@ -18,7 +20,7 @@
   },
   "specs": {
     "eyebrow": "Ficha técnica",
-    "title": "Especificaciones del vehículo.",
+    "title": "Especificaciones del {{name}}.",
     "labels": {
       "category": "Categoría",
       "year": "Año",
@@ -36,21 +38,21 @@
   },
   "included": {
     "eyebrow": "Incluido en tu alquiler",
-    "title": "Todo resuelto antes de subir al auto.",
-    "subtitle": "El precio por día ya contempla lo esencial para que solo te preocupes por el camino.",
+    "title": "Qué incluye tu alquiler: todo resuelto antes de subir al auto.",
+    "subtitle": "El precio por día de tu alquiler en Mendoza ya contempla lo esencial para que solo te preocupes por el camino.",
     "requirements": "Requisitos: licencia vigente, tarjeta de crédito a nombre del conductor y edad mínima de 21 años.",
     "items": [
       { "t": "Seguro incluido", "s": "Cobertura todo riesgo con franquicia clara, sin sorpresas." },
       { "t": "Asistencia 24/7", "s": "Una persona real al teléfono a cualquier hora del viaje." },
       { "t": "Kilometraje libre", "s": "Recorré Mendoza sin límite de kilómetros dentro de la provincia." },
-      { "t": "Entrega flexible", "s": "Aeropuerto (MDZ), hoteles u oficina propia en Ciudad." },
+      { "t": "Entrega flexible", "s": "Entrega en el aeropuerto de Mendoza (MDZ), en tu hotel o en nuestra oficina de la Ciudad." },
       { "t": "Vehículo higienizado", "s": "Limpieza profunda y revisión mecánica antes de cada entrega." },
       { "t": "Atención trilingüe", "s": "Te acompañamos en español, inglés y portugués." }
     ]
   },
   "similar": {
     "eyebrow": "También podría interesarte",
-    "title": "Otros vehículos de la flota.",
+    "title": "Otros autos y camionetas para alquilar en Mendoza.",
     "viewAll": "Ver toda la flota",
     "from": "Desde",
     "inquire": "Consultar",
@@ -60,35 +62,35 @@
   "vehicleDescriptions": {
     "honda-accord-2022": {
       "short": "Sedán ejecutivo",
-      "long": "Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso."
+      "long": "Alquilá el sedán ejecutivo Honda Accord 2022 en Mendoza. Es una muy buena opción para viajes de trabajo y reuniones, con espacio y confort para {{passengers}} pasajeros y {{bags}} valijas. Tiene transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te lo entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "kia-rio-2022": {
       "short": "Sedán urbano",
-      "long": "Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología."
+      "long": "Alquilá el sedán Kia Rio 2022 en Mendoza. Es un sedán urbano cómodo para moverte por la ciudad y hacer escapadas por la provincia, con capacidad para {{passengers}} pasajeros y {{bags}} valijas. Tiene transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te lo entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "vw-fox-2022": {
       "short": "Hatchback compacto",
-      "long": "Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones."
+      "long": "Alquilá el auto compacto Volkswagen Fox 2022 en Mendoza. Es un hatchback fácil de manejar y de estacionar en la ciudad, ideal para recorridos cortos y escapadas por la provincia, con capacidad para {{passengers}} pasajeros y {{bags}} valijas. Tiene transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te lo entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "citroen-basalt-shine-2026-a": {
-      "short": "SUV Coupé — Azul Cosmo",
-      "long": "Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes."
+      "short": "Camioneta SUV Coupé — {{color}}",
+      "long": "Alquilá la camioneta Citroën Basalt Shine 2026 {{color}} en Mendoza. Es una SUV Coupé de diseño innovador, con gran espacio interior y una conducción pensada para el confort: perfecta para quienes buscan viajar con estilo, por trabajo o para descubrir nuevos paisajes. Tiene capacidad para {{passengers}} pasajeros y {{bags}} valijas, transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te la entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "citroen-basalt-shine-2026-b": {
-      "short": "SUV Coupé — Blanco Nacarado",
-      "long": "Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes."
+      "short": "Camioneta SUV Coupé — {{color}}",
+      "long": "Alquilá la camioneta Citroën Basalt Shine 2026 {{color}} en Mendoza. Es una SUV Coupé de diseño innovador, con gran espacio interior y una conducción pensada para el confort: perfecta para quienes buscan viajar con estilo, por trabajo o para descubrir nuevos paisajes. Tiene capacidad para {{passengers}} pasajeros y {{bags}} valijas, transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te la entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "citroen-basalt-shine-2026-c": {
-      "short": "SUV Coupé — Sting Grey",
-      "long": "Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes."
+      "short": "Camioneta SUV Coupé — {{color}}",
+      "long": "Alquilá la camioneta Citroën Basalt Shine 2026 {{color}} en Mendoza. Es una SUV Coupé de diseño innovador, con gran espacio interior y una conducción pensada para el confort: perfecta para quienes buscan viajar con estilo, por trabajo o para descubrir nuevos paisajes. Tiene capacidad para {{passengers}} pasajeros y {{bags}} valijas, transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te la entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "chery-tiggo-2-2026-a": {
-      "short": "SUV Compacta — Blanco",
-      "long": "Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino."
+      "short": "Camioneta SUV compacta — {{color}}",
+      "long": "Alquilá la camioneta Chery Tiggo 2 2026 {{color}} en Mendoza. Es una SUV compacta, práctica para moverte por la Ciudad de Mendoza y salir a recorrer la provincia con comodidad. Tiene capacidad para {{passengers}} pasajeros y {{bags}} valijas, transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te la entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     },
     "chery-tiggo-2-2026-b": {
-      "short": "SUV Compacta — Rojo",
-      "long": "Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino."
+      "short": "Camioneta SUV compacta — {{color}}",
+      "long": "Alquilá la camioneta Chery Tiggo 2 2026 {{color}} en Mendoza. Es una SUV compacta, práctica para moverte por la Ciudad de Mendoza y salir a recorrer la provincia con comodidad. Tiene capacidad para {{passengers}} pasajeros y {{bags}} valijas, transmisión {{transmission}}, combustible {{fuel}} y {{climate}}. Te la entregamos en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina, con kilometraje libre dentro de la provincia."
     }
   }
 }

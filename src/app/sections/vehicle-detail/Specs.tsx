@@ -38,7 +38,7 @@ const Specs = ({ vehicle }: Props) => {
             <span className="mono uppercase tracking-widest">{t('vehicle:specs.eyebrow')}</span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-semibold text-navy-900 leading-[1.1]">
-            {t('vehicle:specs.title')}
+            {t('vehicle:specs.title', { name: `${vehicle.brand} ${vehicle.model} ${vehicle.year}` })}
           </h2>
           <span className="block h-[3px] w-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full mt-5" />
         </m.div>

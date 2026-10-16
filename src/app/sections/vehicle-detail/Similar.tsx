@@ -5,6 +5,7 @@ import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { getSimilarVehicles, formatPrice } from '@/data/vehicles';
 import { staggerContainer, slideUpItem, slideFromLeftItem, VIEWPORT_CONFIG } from '@/animations/variants';
+import { vehicleAltBase, vehicleTypeLabel } from '@/seo/altText';
 
 interface Props {
   slug: string;
@@ -58,7 +59,7 @@ const Similar = ({ slug }: Props) => {
               >
                 <div className="relative aspect-[4/3] bg-navy-50">
                   {c.images[0]
-                    ? <img src={c.images[0].src} srcSet={c.images[0].srcSet} sizes={SIMILAR_IMG_SIZES} width={c.images[0].width} height={c.images[0].height} alt={`${c.brand} ${c.model}`} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                    ? <img src={c.images[0].src} srcSet={c.images[0].srcSet} sizes={SIMILAR_IMG_SIZES} width={c.images[0].width} height={c.images[0].height} alt={`${vehicleAltBase(c)}, ${vehicleTypeLabel(c.category)} de alquiler`} className="w-full h-full object-contain" loading="lazy" decoding="async" />
                     : <PlaceholderImg label={c.imageLabels[0]} className="w-full h-full" />
                   }
                   <span className="absolute top-3 right-3 bg-white/95 text-navy-700 text-[11px] font-medium px-2.5 py-1 rounded-full border border-navy-100">

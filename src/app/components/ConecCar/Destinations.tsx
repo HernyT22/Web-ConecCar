@@ -92,7 +92,7 @@ const Destinations = () => {
                 src={d.img.md}
                 srcSet={`${d.img.sm} 480w, ${d.img.md} 800w, ${d.img.lg} 1200w`}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt={name}
+                alt={t('card.imageAlt', { name })}
                 loading="lazy"
                 decoding="async"
                 width="800"
@@ -140,8 +140,8 @@ const Destinations = () => {
                 id={`dest-${d.id}-panel`}
                 aria-hidden={!isOpen}
                 className={cn(
-                  "absolute inset-0 bg-navy-950/95 p-5 z-[2]",
-                  "flex flex-col justify-between text-white",
+                  "absolute inset-0 bg-navy-950/95 p-4 sm:p-5 z-[2]",
+                  "flex flex-col text-white",
                   "transition-transform duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
                   isOpen ? "translate-y-0" : "translate-y-full"
                 )}
@@ -151,12 +151,12 @@ const Destinations = () => {
                   aria-label={t('card.closeAriaLabel')}
                   tabIndex={isOpen ? 0 : -1}
                   onClick={() => closeCard(d.id)}
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer transition-colors"
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer transition-colors shrink-0"
                 >
                   {I.close}
                 </button>
 
-                <div>
+                <div className="flex-1 min-h-0 overflow-y-auto pr-8 pt-1">
                   <p className="font-display text-lg mb-2">{name}</p>
                   <p className="text-sm leading-relaxed text-white/85">
                     {t(`items.${d.id}.description`)}
@@ -168,9 +168,9 @@ const Destinations = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   tabIndex={isOpen ? 0 : -1}
-                  className="self-start inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 text-sm font-medium px-4 py-2 rounded-full mt-4 cursor-pointer transition-colors"
+                  className="self-start shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-navy-950 text-sm font-medium px-4 py-2 rounded-full mt-4 cursor-pointer transition-colors"
                 >
-                  {t('card.ctaMore')}
+                  {t('card.ctaMore', { name })}
                 </a>
               </div>
             </m.article>

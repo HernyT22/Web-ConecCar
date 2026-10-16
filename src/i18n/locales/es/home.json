@@ -1,20 +1,20 @@
 {
   "hero": {
-    "badge": "Movilidad premium en Mendoza",
-    "titleLine1": "Conectados",
-    "titleLine2": "a tu destino.",
-    "subtitle": "Movilidad Inteligente para cada destino",
+    "badge": "Rent a car premium en Mendoza",
+    "titleLine1": "Alquiler de autos en Mendoza,",
+    "titleLine2": "conectados a tu destino.",
+    "subtitle": "Camionetas, sedanes y compactos para recorrer Mendoza con kilometraje libre dentro de la provincia.",
     "ctaPrimary": "Reservar Ahora",
     "ctaSecondary": "Hablar con un asesor",
     "clockBadge": "Atención 24/7",
-    "deliveryText": "Entrega en aeropuerto, hoteles y oficina propia."
+    "deliveryText": "Alquiler de autos con entrega en el aeropuerto de Mendoza, en tu hotel o en nuestra oficina."
   },
   "about": {
     "eyebrow": "SOBRE CONECCAR RENT",
-    "title": "Una rentadora mendocina, pensada para viajar de verdad",
-    "paragraph1": "Coneccar Rent nació en Mendoza con una idea simple: ",
-    "paragraph1Dorado": "Hacer que alquilar un vehículo sea fácil, rápido y confiable.",
-    "paragraph2": "Atención personalizada, vehículos cuidados y una experiencia pensada para que disfrutes el viaje desde el primer momento",
+    "title": "Una rentadora de autos mendocina, pensada para viajar de verdad",
+    "paragraph1": "Coneccar Rent nació en la Ciudad de Mendoza con una idea simple: ",
+    "paragraph1Dorado": "Hacer que alquilar un auto sea fácil, rápido y confiable.",
+    "paragraph2": "Atención personalizada, autos cuidados y una experiencia pensada para que disfrutes el viaje desde el primer momento. Alquilamos autos en Mendoza capital y te entregamos el tuyo donde te quede cómodo: aeropuerto, hotel u oficina.",
     "chips": {
       "localFounded": "Fundada localmente",
       "familyOwned": "Empresa familiar",
@@ -22,10 +22,10 @@
       "carbonOffset": "Totalmente asegurado"
     },
     "benefitsEyebrow": "Beneficios",
-    "benefitsTitle": "Todo lo que incluye tu alquiler.",
+    "benefitsTitle": "Todo lo que incluye tu alquiler de auto en Mendoza.",
     "benefits": {
       "noHiddenCosts": "Sin costos ocultos",
-      "airportDelivery": "Entrega en aeropuerto",
+      "airportDelivery": "Entrega en el aeropuerto de Mendoza",
       "unlimitedMileage": "Kilometraje libre",
       "onlineBooking": "Reserva online en minutos"
     }
@@ -89,11 +89,11 @@
   "features": {
     "totallyInsured": {
       "title": "Totalmente asegurado",
-      "description": "Cobertura todo incluido en cada alquiler, con pólizas claras."
+      "description": "Cobertura todo incluido en cada alquiler de vehículo, con pólizas claras."
     },
     "bilingual": {
       "title": "Equipo trilingüe",
-      "description": "Atención en ES / EN / PT antes, durante y después de tu viaje."
+      "description": "Atención en español, inglés y portugués antes, durante y después de tu viaje."
     },
     "support": {
       "title": "Asistencia 24/7",

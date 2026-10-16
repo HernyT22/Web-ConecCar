@@ -33,7 +33,6 @@ const HELP_LINKS = [
 
 const Footer = () => {
   const { t } = useTranslation();
-  const { t: tFleet } = useTranslation('fleet');
   const days = t('footer.nap.daysRange', {
     from: t(`footer.nap.days.${OFFICE_DAYS[0]}`),
     to: t(`footer.nap.days.${OFFICE_DAYS[OFFICE_DAYS.length - 1]}`),
@@ -108,7 +107,7 @@ const Footer = () => {
             {CATEGORY_IDS.map((id) => (
               <li key={id}>
                 <Link to={`/#fleet?cat=${id}`} className="hover:text-white transition">
-                  {tFleet(`enums.category.${id}`)}
+                  {t(`footer.fleetLinks.${id}`)}
                 </Link>
               </li>
             ))}

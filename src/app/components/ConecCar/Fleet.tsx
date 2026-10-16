@@ -12,6 +12,7 @@ import { CATEGORY_IDS, parseCatFromHash } from "./fleetCategories";
 import { ANIM_DURATION, ANIM_EASE } from "@/animations/variants";
 import { vehicles, formatPrice } from "@/data/vehicles";
 import type { CategoryId, Vehicle } from "@/data/vehicles";
+import { vehicleAltBase, vehicleTypeLabel } from "@/seo/altText";
 
 // El prop `layout` (reacomodo animado al filtrar categoría) requiere domMax,
 // no incluido en el domAnimation que usa el resto de la app (Root.tsx) — se
@@ -45,7 +46,7 @@ const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle
             sizes={CARD_IMG_SIZES}
             width={v.images[0].width}
             height={v.images[0].height}
-            alt={`${v.brand} ${v.model}`}
+            alt={`${vehicleAltBase(v)}, ${vehicleTypeLabel(v.category)} de alquiler`}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-contain"

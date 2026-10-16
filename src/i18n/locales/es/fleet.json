@@ -1,12 +1,12 @@
 {
   "section": {
     "eyebrow": "Flota",
-    "title": "Vehículos para cada Mendoza posible.",
-    "kicker": "City cars, sedans y SUVs preparados para moverte por Mendoza con comodidad y confianza."
+    "title": "Autos y camionetas de alquiler para cada Mendoza posible.",
+    "kicker": "Camionetas SUV, sedanes y compactos preparados para moverte por Mendoza con comodidad y confianza. Compará los precios por día y elegí el tuyo."
   },
   "search": {
     "placeholder": "Buscar por modelo, tipo o característica…",
-    "ariaLabel": "Buscar vehículos"
+    "ariaLabel": "Buscar autos"
   },
   "sort": {
     "label": "Ordenar",
@@ -17,7 +17,7 @@
   "tabs": {
     "all": "Todos"
   },
-  "noResults": "No hay vehículos que coincidan con esos filtros.",
+  "noResults": "No hay autos que coincidan con esos filtros.",
   "card": {
     "seats": "asientos",
     "bags": "valijas",

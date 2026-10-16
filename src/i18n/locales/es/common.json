@@ -6,7 +6,7 @@
     "reviews": "Opiniones",
     "contact": "Contacto",
     "help": "Ayuda",
-    "bookCta": "Reservar vehículo",
+    "bookCta": "Reservar auto",
     "ariaLabel": "Navegación principal",
     "menu": "Menú"
   },
@@ -28,14 +28,20 @@
   "payments": {
     "eyebrow": "Medios de pago",
     "title": "Pagá como prefieras.",
-    "subtitle": "Locales e internacionales. Aceptamos pagos en ARS y USD."
+    "subtitle": "Pagá tu alquiler de auto en pesos o en dólares: tarjetas locales e internacionales, Mercado Pago, transferencia o efectivo."
   },
   "footer": {
-    "tagline": "Alquiler de vehículos en Mendoza,",
+    "tagline": "Alquiler de autos en Mendoza,",
     "taglineAccent": "operado por gente que vive acá.",
     "navigation": "Navegación",
     "fleet": "Flota",
     "help": "Ayuda",
+    "fleetLinks": {
+      "suv-coupe": "Camionetas SUV Coupé",
+      "suv-compacta": "Camionetas SUV compactas",
+      "sedan": "Sedanes",
+      "hatchback-compacto": "Autos compactos (hatchback)"
+    },
     "links": {
       "about": "Nosotros",
       "destinations": "Destinos",

@@ -36,6 +36,8 @@ export interface Vehicle {
   climate: ClimateId;
   description: string;       // ES por ahora — Fase 2.B
   shortDescription: string;  // ES por ahora — Fase 2.B
+  /** Color limpio para copy SEO (solo variantes que comparten brand+model). Fase 2.B. */
+  color?: string;
   images: VehicleImage[];
   imageLabels: string[];     // ES por ahora — Fase 2.B
 }
@@ -58,13 +60,9 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
     shortDescription: 'SUV Coupé — Azul Cosmo',
+    color: 'Azul Cosmo',
     images: [vehicleImage('citroen-azul-lateral'), vehicleImage('citroen-azul-detras'), vehicleImage('citroen-azul-interior')],
-    imageLabels: [
-      'citroën basalt · 3/4 frontal',
-      'citroën basalt · trasera',
-      'citroën basalt · interior',
-      'citroën basalt · tablero',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera', 'interior'],
   },
   {
     slug: 'chery-tiggo-2-2026-a',
@@ -83,13 +81,9 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino.',
     shortDescription: 'SUV Compacta — Blanco',
+    color: 'Blanco',
     images: [vehicleImage('cheri-blanco-lateral'), vehicleImage('cheri-blanco-detras'), vehicleImage('cheri-blanco-interior'), vehicleImage('cheri-blanco-baul')],
-    imageLabels: [
-      'chery tiggo 2 · 3/4 frontal',
-      'chery tiggo 2 · trasera',
-      'chery tiggo 2 · interior',
-      'chery tiggo 2 · baúl',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
   {
     slug: 'citroen-basalt-shine-2026-c',
@@ -108,13 +102,9 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
     shortDescription: 'SUV Coupé — Sting Grey',
+    color: 'Sting Grey',
     images: [vehicleImage('citroen-dark-lateral'), vehicleImage('citroen-dark-detras'), vehicleImage('citroen-dark-interior'), vehicleImage('citroen-dark-baul')],
-    imageLabels: [
-      'citroën basalt dark · 3/4 frontal',
-      'citroën basalt dark · trasera',
-      'citroën basalt dark · interior',
-      'citroën basalt dark · baúl',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
   {
     slug: 'citroen-basalt-shine-2026-b',
@@ -133,13 +123,9 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
     shortDescription: 'SUV Coupé — Blanco Nacarado',
+    color: 'Blanco Nacarado',
     images: [vehicleImage('citroen-blanco-lateral'), vehicleImage('citroen-blanco-detras'), vehicleImage('citroen-blanco-interior'), vehicleImage('citroen-blanco-baul')],
-    imageLabels: [
-      'citroën basalt · 3/4 frontal',
-      'citroën basalt · trasera',
-      'citroën basalt · interior',
-      'citroën basalt · baúl',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
   {
     slug: 'chery-tiggo-2-2026-b',
@@ -158,13 +144,9 @@ export const vehicles: Vehicle[] = [
     climate: 'ac',
     description: 'Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino.', 
     shortDescription: 'SUV Compacta — Rojo',
+    color: 'Rojo',
     images: [vehicleImage('cheri-rojo-lateral'), vehicleImage('cheri-rojo-detras'), vehicleImage('cheri-rojo-interior'), vehicleImage('cheri-rojo-baul')],
-    imageLabels: [
-      'chery tiggo 2 · 3/4 frontal',
-      'chery tiggo 2 · trasera',
-      'chery tiggo 2 · interior',
-      'chery tiggo 2 · baúl',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
   {
     slug: 'honda-accord-2022',
@@ -184,12 +166,7 @@ export const vehicles: Vehicle[] = [
     description: 'Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso.',
     shortDescription: 'Sedán ejecutivo',
     images: [vehicleImage('accord-lateral'), vehicleImage('accord-frontal'), vehicleImage('accord-detras'), vehicleImage('accord-baul')],
-    imageLabels: [
-      'honda accord · 3/4 frontal',
-      'honda accord · perfil lateral',
-      'honda accord · trasera',
-      'honda accord · tablero',
-    ],
+    imageLabels: ['vista lateral', 'vista frontal', 'vista trasera', 'baúl'],
   },
   {
     slug: 'vw-fox-2022',
@@ -209,12 +186,7 @@ export const vehicles: Vehicle[] = [
     description: 'Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones.', 
     shortDescription: 'Hatchback compacto',
     images: [vehicleImage('fox-lateral'), vehicleImage('fox-detras')],
-    imageLabels: [
-      'vw fox · 3/4 frontal',
-      'vw fox · trasera',
-      'vw fox · interior',
-      'vw fox · tablero',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera'],
   },
   {
     slug: 'kia-rio-2022',
@@ -234,12 +206,7 @@ export const vehicles: Vehicle[] = [
     description: 'Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología.', // TODO: confirmar con cliente
     shortDescription: 'Sedán urbano',
     images: [vehicleImage('kia-rio-lateral'), vehicleImage('kia-rio-detras'), vehicleImage('kia-rio-interior'), vehicleImage('kia-rio-baul')],
-    imageLabels: [
-      'kia rio · 3/4 frontal',
-      'kia rio · trasera',
-      'kia rio · interior',
-      'kia rio · baúl',
-    ],
+    imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
 ];
 

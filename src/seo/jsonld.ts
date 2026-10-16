@@ -44,10 +44,11 @@ export const website = (): Json => ({
   publisher: { '@id': ids.organization },
 });
 
-export const autoRental = (): Json => ({
+export const autoRental = (description: string): Json => ({
   '@type': 'AutoRental',
   '@id': ids.business,
   name: BRAND_NAME,
+  description,
   url: `${SITE_URL}/`,
   logo: LOGO_URL,
   image: ogImageUrl(),
@@ -108,12 +109,12 @@ const TRANSMISSIONS: Record<Vehicle['transmission'], string> = {
 
 export const vehicleName = (v: Vehicle) => `${v.brand} ${v.model} ${v.year}`;
 
-export const car = (v: Vehicle, canonical: string): Json => ({
+export const car = (v: Vehicle, canonical: string, description: string): Json => ({
   '@type': 'Car',
   '@id': `${canonical}#vehicle`,
   name: vehicleName(v),
   url: canonical,
-  description: v.description,
+  description,
   brand: { '@type': 'Brand', name: v.brand },
   model: v.model,
   vehicleModelDate: String(v.year),

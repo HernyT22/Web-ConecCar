@@ -11,8 +11,9 @@ const pendingVehicle = (): VehicleSlot => ({ title: PENDING, description: PENDIN
 
 export const SLOTS = {
   home: {
-    title: PENDING,
-    description: PENDING,
+    title: 'Alquiler de autos en Mendoza · Rent a Car | Coneccar Rent',
+    description:
+      'Alquiler de autos en Mendoza: camionetas, sedanes y compactos con seguro y km libre en la provincia. Entrega en el aeropuerto, tu hotel o nuestra oficina.',
     h1: { line1: PENDING, line2: PENDING },
   },
   vehicles: {

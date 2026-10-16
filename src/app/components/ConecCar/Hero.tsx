@@ -24,7 +24,7 @@ const Hero = () => {
           height={HERO_HOME.height}
           loading="eager"
           {...LCP_PRIORITY}
-          alt="Ruta hacia la cordillera de los Andes en Mendoza"
+          alt="Ruta hacia la cordillera de los Andes en Mendoza, un destino para recorrer en auto de alquiler"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/70 to-navy-950/30" />
@@ -39,7 +39,7 @@ const Hero = () => {
               {t('hero.badge')}
             </span>
           </div>
-          <h1 className="font-display text-[42px] sm:text-6xl md:text-7xl font-semibold leading-[1.02] mt-6">
+          <h1 className="font-display text-[32px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.15] mt-6 text-balance">
             {t('hero.titleLine1')}
             {' '}
             <br />
