@@ -1,7 +1,7 @@
 import manifest from '@/imports/vehicles/manifest.json';
 
 /**
- * Variantes WebP (480/800/1200 px) generadas por scripts/optimize-images.ts.
+ * Variantes WebP (480/720/1200 px) generadas por scripts/optimize-images.ts.
  * Los URLs hasheados salen de import.meta.glob; las dimensiones, del manifest.
  */
 const urls = import.meta.glob<string>('/src/imports/vehicles/*.webp', { eager: true, import: 'default' });
@@ -36,7 +36,7 @@ export function vehicleImage(name: string): VehicleImage {
       .join(', ');
     return { entries, srcSet };
   };
-  const main = build([480, 800, 1200]);
+  const main = build([480, 720, 1200]);
   const thumbs = build([240, 480]);
   const largest = main.entries[main.entries.length - 1];
   return {

@@ -1,6 +1,6 @@
 /**
  * scripts/optimize-images.ts
- * Variantes WebP responsive (240, 480, 800 y 1200 px de ANCHO; 240 = miniaturas de la ficha) de las fotos de la flota.
+ * Variantes WebP responsive (240, 480, 720 y 1200 px de ANCHO; 240 = miniaturas de la ficha) de las fotos de la flota.
  * - Entrada: originales en src/imports/ (no se modifican ni se mueven).
  * - Salida: src/imports/vehicles/<nombre>-<ancho>.webp + manifest.json (dimensiones reales).
  * - Sin recorte (las vistas usan object-contain) y sin agrandar (si el original es más
@@ -21,7 +21,7 @@ const SOURCES = [
   'fox-lateral.jpg', 'fox-detras.webp',
   'kia-rio-lateral.webp', 'kia-rio-detras.webp', 'kia-rio-interior.webp', 'kia-rio-baul.jpg',
 ];
-const WIDTHS = [240, 480, 800, 1200] as const;
+const WIDTHS = [240, 480, 720, 1200] as const;
 const START_QUALITY = 78;
 const MAX_1200_BYTES = 200 * 1024;
 
