@@ -26,7 +26,7 @@ const Section = ({
       {(eyebrow || title) && (
         <div className="max-w-3xl mb-12 md:mb-14">
           {eyebrow && (
-            <div className="flex items-center gap-2 text-amber-600 mb-3">
+            <div className="flex items-center gap-2 text-amber-700 mb-3">
               <span className="h-px w-8 bg-amber-500" />
               <span className="mono uppercase tracking-widest">
                 {eyebrow}

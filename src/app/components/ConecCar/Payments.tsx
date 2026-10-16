@@ -124,7 +124,7 @@ const Payments = () => {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center gap-8">
           <div className="md:w-1/4">
-            <div className="mono uppercase text-amber-600 tracking-widest mb-1">
+            <div className="mono uppercase text-amber-700 tracking-widest mb-1">
               {t('payments.eyebrow')}
             </div>
             <h2 id="payments-title" className="font-display text-2xl font-semibold text-navy-900">

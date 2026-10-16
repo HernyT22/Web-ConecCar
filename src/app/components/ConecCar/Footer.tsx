@@ -81,7 +81,7 @@ const Footer = () => {
             <p>{t('footer.nap.office', { days, hours })}</p>
             <p>{t('footer.nap.online', { support: ONLINE_SUPPORT })}</p>
           </address>
-          <div className="mt-5 mono uppercase text-white/40 tracking-widest">
+          <div className="mt-5 mono uppercase text-white/60 tracking-widest">
             {t('footer.copyright', { year: __BUILD_YEAR__ })}
           </div>
         </div>
@@ -130,7 +130,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <div className="flex items-center gap-5">
             <Link to="/ayuda#terminos" className="hover:text-white transition">{t('footer.legal.terms')}</Link>
             <Link to="/ayuda#privacidad" className="hover:text-white transition">{t('footer.legal.privacy')}</Link>
