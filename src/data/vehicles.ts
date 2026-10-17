@@ -35,8 +35,7 @@ export interface Vehicle {
   fuel: FuelId;
   climate: ClimateId;
   description: string;       // ES por ahora — Fase 2.B
-  shortDescription: string;  // ES por ahora — Fase 2.B
-  /** Color limpio para copy SEO (solo variantes que comparten brand+model). Fase 2.B. */
+  /** Clave de color (fleet:colors.<key>), solo variantes que comparten brand+model. */
   color?: string;
   images: VehicleImage[];
   imageLabels: string[];     // ES por ahora — Fase 2.B
@@ -59,8 +58,7 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
-    shortDescription: 'SUV Coupé — Azul Cosmo',
-    color: 'Azul Cosmo',
+    color: 'azulCosmo',
     images: [vehicleImage('citroen-azul-lateral'), vehicleImage('citroen-azul-detras'), vehicleImage('citroen-azul-interior')],
     imageLabels: ['vista lateral', 'vista trasera', 'interior'],
   },
@@ -80,8 +78,7 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'ac',
     description: 'Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino.',
-    shortDescription: 'SUV Compacta — Blanco',
-    color: 'Blanco',
+    color: 'blanco',
     images: [vehicleImage('cheri-blanco-lateral'), vehicleImage('cheri-blanco-detras'), vehicleImage('cheri-blanco-interior'), vehicleImage('cheri-blanco-baul')],
     imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
@@ -101,8 +98,7 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
-    shortDescription: 'SUV Coupé — Sting Grey',
-    color: 'Sting Grey',
+    color: 'stingGrey',
     images: [vehicleImage('citroen-dark-lateral'), vehicleImage('citroen-dark-detras'), vehicleImage('citroen-dark-interior'), vehicleImage('citroen-dark-baul')],
     imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
@@ -122,8 +118,7 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'ac',
     description: 'Diseño innovador, gran espacio interior y una conducción pensada para el confort. Perfecto para quienes buscan viajar con estilo, ya sea por trabajo o para descubrir nuevos paisajes.',
-    shortDescription: 'SUV Coupé — Blanco Nacarado',
-    color: 'Blanco Nacarado',
+    color: 'blancoNacarado',
     images: [vehicleImage('citroen-blanco-lateral'), vehicleImage('citroen-blanco-detras'), vehicleImage('citroen-blanco-interior'), vehicleImage('citroen-blanco-baul')],
     imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
@@ -143,8 +138,7 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'ac',
     description: 'Versátil y aventurero, con una posición de manejo elevada que brinda seguridad y comodidad en cada recorrido. Ideal para explorar Mendoza con más espacio y una vista privilegiada del camino.', 
-    shortDescription: 'SUV Compacta — Rojo',
-    color: 'Rojo',
+    color: 'rojo',
     images: [vehicleImage('cheri-rojo-lateral'), vehicleImage('cheri-rojo-detras'), vehicleImage('cheri-rojo-interior'), vehicleImage('cheri-rojo-baul')],
     imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },
@@ -164,7 +158,6 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'dualClimate',
     description: 'Confort y prestancia para reuniones, traslados de directivos y rutas largas con la cordillera de fondo. Manejo silencioso, butacas amplias y baúl generoso.',
-    shortDescription: 'Sedán ejecutivo',
     images: [vehicleImage('accord-lateral'), vehicleImage('accord-frontal'), vehicleImage('accord-detras'), vehicleImage('accord-baul')],
     imageLabels: ['vista lateral', 'vista frontal', 'vista trasera', 'baúl'],
   },
@@ -183,8 +176,7 @@ export const vehicles: Vehicle[] = [
     transmission: 'manual',
     fuel: 'gasoline',
     climate: 'ac',
-    description: 'Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones.', 
-    shortDescription: 'Hatchback compacto',
+    description: 'Práctico, confiable y cómodo para el día a día. Un compañero ideal para moverse con soltura por la ciudad y disfrutar cada trayecto sin complicaciones.',
     images: [vehicleImage('fox-lateral'), vehicleImage('fox-detras')],
     imageLabels: ['vista lateral', 'vista trasera'],
   },
@@ -204,7 +196,6 @@ export const vehicles: Vehicle[] = [
     fuel: 'gasoline',
     climate: 'ac',
     description: 'Ágil, moderno y eficiente. Ideal para recorrer la ciudad o emprender escapadas por Mendoza con el equilibrio justo entre confort, economía y tecnología.', // TODO: confirmar con cliente
-    shortDescription: 'Sedán urbano',
     images: [vehicleImage('kia-rio-lateral'), vehicleImage('kia-rio-detras'), vehicleImage('kia-rio-interior'), vehicleImage('kia-rio-baul')],
     imageLabels: ['vista lateral', 'vista trasera', 'interior', 'baúl'],
   },

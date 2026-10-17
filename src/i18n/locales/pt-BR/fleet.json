@@ -1,12 +1,12 @@
 {
   "section": {
     "eyebrow": "Frota",
-    "title": "Veículos para cada Mendoza possível.",
-    "kicker": "City cars, sedãs e SUVs prontos para te levar por Mendoza com conforto e confiança."
+    "title": "Carros e SUVs de aluguel para cada Mendoza possível.",
+    "kicker": "SUVs, sedãs e compactos prontos para você se mover por Mendoza com conforto e confiança. Compare os preços por dia e escolha o seu."
   },
   "search": {
     "placeholder": "Buscar por modelo, tipo ou característica…",
-    "ariaLabel": "Buscar veículos"
+    "ariaLabel": "Buscar carros"
   },
   "sort": {
     "label": "Ordenar",
@@ -17,7 +17,30 @@
   "tabs": {
     "all": "Todos"
   },
-  "noResults": "Nenhum veículo corresponde a esses filtros.",
+  "noResults": "Nenhum carro corresponde a esses filtros.",
+  "colors": {
+    "azulCosmo": "Azul Cosmo",
+    "blancoNacarado": "Branco Perolado",
+    "stingGrey": "Sting Grey",
+    "blanco": "Branco",
+    "rojo": "Vermelho"
+  },
+  "cardSubtitle": {
+    "citroen-basalt-shine-2026-a": "SUV Coupé",
+    "citroen-basalt-shine-2026-b": "SUV Coupé",
+    "citroen-basalt-shine-2026-c": "SUV Coupé",
+    "chery-tiggo-2-2026-a": "SUV Compacto",
+    "chery-tiggo-2-2026-b": "SUV Compacto",
+    "honda-accord-2022": "Sedã executivo",
+    "vw-fox-2022": "Hatchback compacto",
+    "kia-rio-2022": "Sedã urbano"
+  },
+  "altType": {
+    "suv-coupe": "SUV Coupé",
+    "suv-compacta": "SUV Compacto",
+    "sedan": "sedã",
+    "hatchback-compacto": "carro compacto"
+  },
   "card": {
     "seats": "lugares",
     "bags": "malas",

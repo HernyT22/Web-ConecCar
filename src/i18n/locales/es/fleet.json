@@ -18,6 +18,29 @@
     "all": "Todos"
   },
   "noResults": "No hay autos que coincidan con esos filtros.",
+  "colors": {
+    "azulCosmo": "Azul Cosmo",
+    "blancoNacarado": "Blanco Nacarado",
+    "stingGrey": "Sting Grey",
+    "blanco": "Blanco",
+    "rojo": "Rojo"
+  },
+  "cardSubtitle": {
+    "citroen-basalt-shine-2026-a": "SUV Coupé",
+    "citroen-basalt-shine-2026-b": "SUV Coupé",
+    "citroen-basalt-shine-2026-c": "SUV Coupé",
+    "chery-tiggo-2-2026-a": "SUV Compacta",
+    "chery-tiggo-2-2026-b": "SUV Compacta",
+    "honda-accord-2022": "Sedán ejecutivo",
+    "vw-fox-2022": "Hatchback compacto",
+    "kia-rio-2022": "Sedán urbano"
+  },
+  "altType": {
+    "suv-coupe": "camioneta SUV Coupé",
+    "suv-compacta": "camioneta SUV Compacta",
+    "sedan": "sedán",
+    "hatchback-compacto": "auto compacto"
+  },
   "card": {
     "seats": "asientos",
     "bags": "valijas",

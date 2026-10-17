@@ -1,13 +1,14 @@
 {
   "section": {
     "eyebrow": "Destinos",
-    "title": "Os destinos que nossos clientes escolhem.",
-    "kicker": "Rotas, paisagens e recomendações para curtir Mendoza de verdade."
+    "title": "Os destinos que nossos clientes percorrem de carro.",
+    "kicker": "Rotas, paisagens e recomendações para curtir Mendoza de verdade, com quilometragem livre no seu carro de aluguel."
   },
   "card": {
     "subregion": "Província de Mendoza",
     "closeAriaLabel": "Fechar",
-    "ctaMore": "Saiba mais"
+    "ctaMore": "Consultar carro para {{name}}",
+    "imageAlt": "Paisagem de {{name}}, província de Mendoza"
   },
   "whatsappTemplate": "Olá, gostaria de saber mais sobre {{name}} e os veículos disponíveis para visitá-lo.",
   "items": {
@@ -15,19 +16,19 @@
       "name": "Vale de Uco",
       "tag": "Região vinícola",
       "distance": "80 km · 1h",
-      "description": "Uma das regiões vinícolas mais prestigiadas do país, com vinícolas de arquitetura impactante, vinhedos aos pés da cordilheira e cozinha autoral. Bate-volta perfeito a partir de Mendoza."
+      "description": "Uma das regiões vinícolas mais prestigiadas do país, com vinícolas de arquitetura impactante, vinhedos aos pés da cordilheira e cozinha autoral. Bate-volta perfeito a partir de Mendoza. Fica a 1 hora da Cidade de Mendoza: ideal para ir e voltar no mesmo dia com seu carro de aluguel."
     },
     "san-rafael": {
       "name": "San Rafael",
       "tag": "Paisagens, espelhos d'água, vinícolas",
       "distance": "250 km · 3h",
-      "description": "Cânion do Atuel, represas, vinícolas históricas e uma cidade tranquila para usar como base. Ideal para escapadas de fim de semana prolongado ou viagens de vários dias."
+      "description": "Cânion do Atuel, represas, vinícolas históricas e uma cidade tranquila para usar como base. Ideal para escapadas de fim de semana prolongado ou viagens de vários dias. Fica a cerca de 3 horas da Cidade de Mendoza por estrada, com quilometragem livre dentro da província."
     },
     "malargue": {
       "name": "Malargüe",
       "tag": "Ar livre e estação de esqui",
       "distance": "330 km · 4h",
-      "description": "Sul profundo da província: Las Leñas para esquiar no inverno, Payunia e Caverna de las Brujas no resto do ano. Natureza imponente e rotas cênicas até chegar."
+      "description": "Sul profundo da província: Las Leñas para esquiar no inverno, Payunia e Caverna de las Brujas no resto do ano. Natureza imponente e rotas cênicas até chegar. É uma viagem de cerca de 4 horas a partir de Mendoza: com quilometragem livre dentro da província, escolha um SUV e vá sem pressa."
     },
     "gran-mendoza": {
       "name": "Grande Mendoza",
@@ -39,13 +40,13 @@
       "name": "Potrerillos",
       "tag": "Lago e montanha",
       "distance": "60 km · 1h",
-      "description": "Represa de águas turquesa cercada por montanhas, com esportes náuticos, cavalgadas e ótimas opções gastronômicas. Uma escapada de meio dia a caminho da alta cordilheira."
+      "description": "Represa de águas turquesa cercada por montanhas, com esportes náuticos, cavalgadas e ótimas opções gastronômicas. Uma escapada de meio dia a caminho da alta cordilheira. Fica a 1 hora da Cidade de Mendoza e é fácil de chegar de carro."
     },
     "canon-del-atuel": {
       "name": "Cânion do Atuel",
       "tag": "Rafting e cânions",
       "distance": "300 km · 3h 30m",
-      "description": "Formações rochosas esculpidas pelo rio Atuel ao longo de milhões de anos. Rafting, caiaque e caminhadas por uma das paisagens mais fotogênicas do sul mendocino."
+      "description": "Formações rochosas esculpidas pelo rio Atuel ao longo de milhões de anos. Rafting, caiaque e caminhadas por uma das paisagens mais fotogênicas do sul mendocino. Fica a cerca de 3 horas e meia de Mendoza: com seu carro de aluguel, você faz no seu próprio ritmo."
     }
   }
 }

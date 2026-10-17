@@ -6,7 +6,7 @@
     "reviews": "Reviews",
     "contact": "Contact",
     "help": "Help",
-    "bookCta": "Book a vehicle",
+    "bookCta": "Book a car",
     "ariaLabel": "Main navigation",
     "menu": "Menu"
   },
@@ -28,14 +28,20 @@
   "payments": {
     "eyebrow": "Payment methods",
     "title": "Pay the way you prefer.",
-    "subtitle": "Local and international. We accept payments in ARS and USD."
+    "subtitle": "Pay for your car rental in pesos or dollars: local and international cards, Mercado Pago, bank transfer, or cash."
   },
   "footer": {
-    "tagline": "Vehicle rental in Mendoza,",
+    "tagline": "Car rental in Mendoza,",
     "taglineAccent": "run by people who live here.",
     "navigation": "Navigation",
     "fleet": "Fleet",
     "help": "Help",
+    "fleetLinks": {
+      "suv-coupe": "Coupe SUVs",
+      "suv-compacta": "Compact SUVs",
+      "sedan": "Sedans",
+      "hatchback-compacto": "Compact cars (hatchback)"
+    },
     "links": {
       "about": "About us",
       "destinations": "Destinations",

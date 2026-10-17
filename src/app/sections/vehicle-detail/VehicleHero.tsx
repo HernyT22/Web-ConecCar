@@ -10,7 +10,7 @@ import { formatPrice } from '@/data/vehicles';
 import type { Vehicle } from '@/data/vehicles';
 import heroBgLite from '@/imports/hero-bg-lite.webp';
 import { VEHICLE_MAIN_SIZES } from '@/seo/lcp';
-import { vehicleAltBase, vehicleTypeLabel } from '@/seo/altText';
+import { vehicleAltBase } from '@/seo/altText';
 import whatsappIcon from '@/imports/whatsapp.png';
 import { fadeIn } from '@/animations/variants';
 
@@ -41,7 +41,8 @@ const VehicleHero = ({ vehicle }: Props) => {
   const transmissionLabel = tDyn(`fleet:enums.transmission.${transmission}`).toLowerCase();
   const fuelLabel = tDyn(`fleet:enums.fuel.${fuel}`).toLowerCase();
   const climateLabel = tDyn(`fleet:enums.climate.${climate}`).toLowerCase();
-  const colorLower = color?.toLowerCase();
+  const colorLabel = color ? tDyn(`fleet:colors.${color}`) : undefined;
+  const colorLower = colorLabel?.toLowerCase();
 
   const descriptionVars = {
     color: colorLower,
@@ -72,8 +73,8 @@ const VehicleHero = ({ vehicle }: Props) => {
     : t('vehicle:hero.consult');
 
   // Alt de imágenes (SEO T4): "{marca} {modelo} {año} {color}, {tipo/vista} de alquiler en Mendoza".
-  const altBase = vehicleAltBase(vehicle);
-  const mainImageAlt = `${altBase}, ${vehicleTypeLabel(category)} de alquiler en Mendoza`;
+  const altBase = vehicleAltBase(vehicle, colorLabel);
+  const mainImageAlt = `${altBase}, ${tDyn(`fleet:altType.${category}`)} de alquiler en Mendoza`;
   const thumbAlt = (i: number) => {
     const vista = imageLabels[i];
     return vista ? `${altBase}, ${vista}` : `${altBase}, foto ${i + 1}`;

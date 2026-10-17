@@ -3,6 +3,13 @@ import { PENDING, SLOTS } from './slots';
 import { BRAND_NAME, DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_HEIGHT, OG_WIDTH, SITE_URL, ogImageUrl } from './site';
 import { heroPreload, vehiclePreload } from './lcp';
 import { autoRental, breadcrumb, car, graph, organization, website } from './jsonld';
+// Metadatos SEO: siempre ES (nunca cambian con el idioma elegido, ver plan de
+// copy SEO). v.color ahora guarda una clave (fleet:colors.<key>, T10); acá se
+// resuelve directo contra el JSON de ES, sin pasar por el runtime de i18next.
+import esFleet from '@/i18n/locales/es/fleet.json';
+
+const esColorText = (colorKey: string): string | undefined =>
+  (esFleet.colors as Record<string, string>)[colorKey];
 
 // Fallback de título/descripción por ficha, generado desde vehicles.ts mientras
 // SLOTS.vehicles[slug] esté PENDING (ver plan de copy SEO, secciones 5-6).
@@ -32,7 +39,8 @@ const isColorVariant = (v: Vehicle): boolean =>
 const vehicleFallbackTitle = (v: Vehicle): string => {
   const base = `${v.brand} ${v.model} ${v.year}`;
   if (isColorVariant(v)) {
-    const withColor = v.color ? `${base} ${v.color.toLowerCase()}: alquiler en Mendoza` : `${base}: alquiler en Mendoza`;
+    const colorText = v.color ? esColorText(v.color) : undefined;
+    const withColor = colorText ? `${base} ${colorText.toLowerCase()}: alquiler en Mendoza` : `${base}: alquiler en Mendoza`;
     return withColor.length <= 60 ? withColor : `${base}: alquiler en Mendoza`;
   }
   return `${base}: alquiler de ${TYPE_LABEL_TITLE[v.category]} en Mendoza`;
@@ -46,8 +54,9 @@ const vehicleFallbackDescription = (v: Vehicle): string => {
 
   // Variantes de color: el color reemplaza a "{pasajeros} pasajeros," para no
   // repetir la misma description entre fichas que comparten marca+modelo.
-  if (isColorVariant(v) && v.color) {
-    const color = v.color.toLowerCase();
+  const colorText = v.color ? esColorText(v.color) : undefined;
+  if (isColorVariant(v) && colorText) {
+    const color = colorText.toLowerCase();
     const full = `Alquilá ${tipo} ${base} ${color} en Mendoza: transmisión ${transmision} y kilometraje libre. Desde ${precio} por día. Entrega en el aeropuerto.`;
     if (full.length <= 160) return full;
     return `Alquilá ${tipo} ${base} ${color} en Mendoza: transmisión ${transmision} y km libre. Desde ${precio} por día. Entrega en el aeropuerto.`;

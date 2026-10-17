@@ -1,20 +1,20 @@
 {
   "hero": {
-    "badge": "Mobilidade premium em Mendoza",
-    "titleLine1": "Conectados",
-    "titleLine2": "ao seu destino.",
-    "subtitle": "Mobilidade inteligente para cada destino",
+    "badge": "Rent a car premium em Mendoza",
+    "titleLine1": "Aluguel de carros em Mendoza,",
+    "titleLine2": "conectados ao seu destino.",
+    "subtitle": "SUVs, sedãs e compactos para percorrer Mendoza com quilometragem livre dentro da província.",
     "ctaPrimary": "Reservar Agora",
     "ctaSecondary": "Falar com um consultor",
     "clockBadge": "Suporte 24/7",
-    "deliveryText": "Entrega no aeroporto, hotéis e escritório próprio."
+    "deliveryText": "Aluguel de carros com entrega no aeroporto de Mendoza, no seu hotel ou no nosso escritório."
   },
   "about": {
     "eyebrow": "SOBRE A CONECCAR RENT",
-    "title": "Uma locadora mendocina, pensada para o jeito que você viaja de verdade.",
-    "paragraph1": "A Coneccar Rent nasceu em Mendoza com uma ideia simples:",
-    "paragraph1Dorado" : " tornar o aluguel de veículos fácil, rápido e confiável.",
-    "paragraph2": "Atendimento personalizado, veículos bem cuidados e uma experiência pensada para você curtir a viagem desde o primeiro momento.",
+    "title": "Uma locadora de carros mendocina, pensada para quem viaja de verdade",
+    "paragraph1": "A Coneccar Rent nasceu na Cidade de Mendoza com uma ideia simples: ",
+    "paragraph1Dorado": "Tornar o aluguel de um carro fácil, rápido e confiável.",
+    "paragraph2": "Atendimento personalizado, carros bem cuidados e uma experiência pensada para você curtir a viagem desde o primeiro momento. Alugamos carros em Mendoza capital e entregamos o seu onde for mais conveniente para você: aeroporto, hotel ou escritório.",
     "chips": {
       "localFounded": "Fundada localmente",
       "familyOwned": "Empresa familiar",
@@ -22,10 +22,10 @@
       "carbonOffset": "Totalmente segurado"
     },
     "benefitsEyebrow": "Benefícios",
-    "benefitsTitle": "Tudo o que está incluído no seu aluguel.",
+    "benefitsTitle": "Tudo o que está incluído no aluguel do seu carro em Mendoza.",
     "benefits": {
       "noHiddenCosts": "Sem custos ocultos",
-      "airportDelivery": "Entrega no aeroporto",
+      "airportDelivery": "Entrega no aeroporto de Mendoza",
       "unlimitedMileage": "Quilometragem livre",
       "onlineBooking": "Reserva online em minutos"
     }
@@ -89,11 +89,11 @@
   "features": {
     "totallyInsured": {
       "title": "Totalmente segurado",
-      "description": "Cobertura completa em cada aluguel, com apólices claras."
+      "description": "Cobertura completa em cada aluguel de carro, com apólices claras."
     },
     "bilingual": {
       "title": "Equipe bilíngue",
-      "description": "Atendimento em ES / EN / PT antes, durante e depois da sua viagem."
+      "description": "Atendimento em espanhol, inglês e português antes, durante e depois da sua viagem."
     },
     "support": {
       "title": "Assistência 24/7",

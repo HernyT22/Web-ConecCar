@@ -5,7 +5,7 @@ import { I } from '@/app/components/ConecCar/Icons';
 import PlaceholderImg from '@/app/components/ConecCar/PlaceholderImg';
 import { getSimilarVehicles, formatPrice } from '@/data/vehicles';
 import { staggerContainer, slideUpItem, slideFromLeftItem, VIEWPORT_CONFIG } from '@/animations/variants';
-import { vehicleAltBase, vehicleTypeLabel } from '@/seo/altText';
+import { vehicleAltBase } from '@/seo/altText';
 
 interface Props {
   slug: string;
@@ -51,15 +51,14 @@ const Similar = ({ slug }: Props) => {
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none"
           variants={staggerContainer}
         >
-          {cars.map((c) => (
+          {cars.map((c) => {
+            const colorLabel = c.color ? tDyn(`fleet:colors.${c.color}`) : undefined;
+            return (
             <m.li key={c.slug} variants={slideFromLeftItem}>
-              <Link
-                to={`/flota/${c.slug}`}
-                className="bg-white rounded-2xl border border-navy-100 overflow-hidden flex flex-col lift"
-              >
+              <article className="relative bg-white rounded-2xl border border-navy-100 overflow-hidden flex flex-col lift focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-amber-500">
                 <div className="relative aspect-[4/3] bg-navy-50">
                   {c.images[0]
-                    ? <img src={c.images[0].src} srcSet={c.images[0].srcSet} sizes={SIMILAR_IMG_SIZES} width={c.images[0].width} height={c.images[0].height} alt={`${vehicleAltBase(c)}, ${vehicleTypeLabel(c.category)} de alquiler`} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                    ? <img src={c.images[0].src} srcSet={c.images[0].srcSet} sizes={SIMILAR_IMG_SIZES} width={c.images[0].width} height={c.images[0].height} alt={`${vehicleAltBase(c, colorLabel)}, ${tDyn(`fleet:altType.${c.category}`)} de alquiler`} className="w-full h-full object-contain" loading="lazy" decoding="async" />
                     : <PlaceholderImg label={c.imageLabels[0]} className="w-full h-full" />
                   }
                   <span className="absolute top-3 right-3 bg-white/95 text-navy-700 text-[11px] font-medium px-2.5 py-1 rounded-full border border-navy-100">
@@ -68,7 +67,9 @@ const Similar = ({ slug }: Props) => {
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
                   <h3 className="font-display text-xl font-semibold text-navy-900">
-                    {c.brand} {c.model} {c.year}
+                    <Link to={`/flota/${c.slug}`} className="after:absolute after:inset-0 focus:outline-none">
+                      {c.brand} {c.model} {c.year}
+                    </Link>
                   </h3>
                   <div className="grid grid-cols-3 gap-2 text-sm text-navy-700/80 mt-4">
                     <span className="inline-flex items-center gap-1.5">
@@ -95,14 +96,15 @@ const Similar = ({ slug }: Props) => {
                         }
                       </div>
                     </div>
-                    <span className="shrink-0 inline-flex items-center gap-1.5 bg-navy-900 hover:bg-amber-500 hover:text-navy-950 text-white text-sm px-4 py-2.5 rounded-full transition-colors duration-300">
+                    <span className="shrink-0 inline-flex items-center gap-1.5 bg-navy-900 hover:bg-amber-500 hover:text-navy-950 text-white text-sm px-4 py-2.5 rounded-full transition-colors duration-300 pointer-events-none">
                       {t('vehicle:similar.view')} {I.arrow}
                     </span>
                   </div>
                 </div>
-              </Link>
+              </article>
             </m.li>
-          ))}
+            );
+          })}
         </m.ul>
       </div>
     </m.section>

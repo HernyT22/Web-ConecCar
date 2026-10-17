@@ -6,11 +6,13 @@
     "ariaLabel": "Trilha de navegação"
   },
   "hero": {
+    "titlePrefix": "Aluguel de",
+    "titleSuffix": "em Mendoza",
     "dailyRate": "Diária",
     "viewImage": "Ver imagem {{n}} de {{total}}",
     "perDay": "/ dia",
-    "book": "Reservar agora",
-    "consult": "Consultar"
+    "book": "Ligar para reservar",
+    "consult": "Consultar pelo WhatsApp"
   },
   "whatsapp": {
     "reserve": "Olá, quero reservar o {{vehicleName}}. Podemos combinar datas e detalhes?",
@@ -18,7 +20,7 @@
   },
   "specs": {
     "eyebrow": "Ficha técnica",
-    "title": "Especificações do veículo.",
+    "title": "Especificações do {{name}}.",
     "labels": {
       "category": "Categoria",
       "year": "Ano",
@@ -36,21 +38,21 @@
   },
   "included": {
     "eyebrow": "Incluído na sua locação",
-    "title": "Tudo resolvido antes de entrar no carro.",
-    "subtitle": "O preço diário já contempla o essencial para que você só precise pensar no caminho.",
+    "title": "O que está incluído no seu aluguel: tudo resolvido antes de entrar no carro.",
+    "subtitle": "A diária do seu aluguel em Mendoza já inclui o essencial para que você só precise se preocupar com o caminho.",
     "requirements": "Requisitos: carteira de habilitação válida, cartão de crédito em nome do condutor e idade mínima de 21 anos.",
     "items": [
       { "t": "Seguro incluído", "s": "Cobertura total com franquia clara, sem surpresas." },
       { "t": "Assistência 24/7", "s": "Uma pessoa de verdade no telefone a qualquer hora da viagem." },
       { "t": "Quilometragem livre", "s": "Explore Mendoza sem limite de quilômetros dentro da província." },
-      { "t": "Entrega flexível", "s": "Aeroporto (MDZ), hotéis ou nossa sede na cidade." },
+      { "t": "Entrega flexível", "s": "Entrega no aeroporto de Mendoza (MDZ), no seu hotel ou no nosso escritório na cidade." },
       { "t": "Veículo higienizado", "s": "Limpeza profunda e revisão mecânica antes de cada entrega." },
       { "t": "Atendimento trilíngue", "s": "Atendemos em espanhol, inglês e português." }
     ]
   },
   "similar": {
     "eyebrow": "Você também pode gostar",
-    "title": "Outros veículos da frota.",
+    "title": "Outros carros e SUVs para alugar em Mendoza.",
     "viewAll": "Ver toda a frota",
     "from": "A partir de",
     "inquire": "Consultar",
@@ -60,35 +62,35 @@
   "vehicleDescriptions": {
     "honda-accord-2022": {
       "short": "Sedã executivo",
-      "long": "Conforto e distinção para reuniões, traslados executivos e percursos longos com a Cordilheira dos Andes ao fundo. Direção silenciosa, bancos espaçosos e porta-malas generoso."
+      "long": "Alugue o sedã executivo Honda Accord 2022 em Mendoza. É uma ótima opção para viagens de trabalho e reuniões, com espaço e conforto para {{passengers}} passageiros e {{bags}} malas. Tem transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "kia-rio-2022": {
       "short": "Sedã urbano",
-      "long": "Ágil, moderno e eficiente. Ideal para explorar a cidade ou embarcar em escapadas por Mendoza com o equilíbrio certo entre conforto, economia e tecnologia."
+      "long": "Alugue o sedã Kia Rio 2022 em Mendoza. É um sedã urbano confortável para se mover pela cidade e fazer escapadas pela província, com capacidade para {{passengers}} passageiros e {{bags}} malas. Tem transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "vw-fox-2022": {
       "short": "Hatchback compacto",
-      "long": "Prático, confiável e confortável para o dia a dia. Um companheiro ideal para se mover com facilidade pela cidade e aproveitar cada trajeto sem complicações."
+      "long": "Alugue o carro compacto Volkswagen Fox 2022 em Mendoza. É um hatchback fácil de dirigir e estacionar na cidade, ideal para trajetos curtos e escapadas pela província, com capacidade para {{passengers}} passageiros e {{bags}} malas. Tem transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "citroen-basalt-shine-2026-a": {
-      "short": "SUV Coupé — Azul Cosmo",
-      "long": "Design inovador, amplo espaço interior e uma condução pensada para o conforto. Perfeito para quem quer viajar com estilo, seja a trabalho ou para descobrir novas paisagens."
+      "short": "SUV Coupé — {{color}}",
+      "long": "Alugue o SUV Citroën Basalt Shine 2026 {{color}} em Mendoza. É um SUV Coupé de design inovador, com amplo espaço interno e uma condução pensada para o conforto: perfeito para quem busca viajar com estilo, a trabalho ou para descobrir novas paisagens. Tem capacidade para {{passengers}} passageiros e {{bags}} malas, transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "citroen-basalt-shine-2026-b": {
-      "short": "SUV Coupé — Branco Nacarado",
-      "long": "Design inovador, amplo espaço interior e uma condução pensada para o conforto. Perfeito para quem quer viajar com estilo, seja a trabalho ou para descobrir novas paisagens."
+      "short": "SUV Coupé — {{color}}",
+      "long": "Alugue o SUV Citroën Basalt Shine 2026 {{color}} em Mendoza. É um SUV Coupé de design inovador, com amplo espaço interno e uma condução pensada para o conforto: perfeito para quem busca viajar com estilo, a trabalho ou para descobrir novas paisagens. Tem capacidade para {{passengers}} passageiros e {{bags}} malas, transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "citroen-basalt-shine-2026-c": {
-      "short": "SUV Coupé — Sting Grey",
-      "long": "Design inovador, amplo espaço interior e uma condução pensada para o conforto. Perfeito para quem quer viajar com estilo, seja a trabalho ou para descobrir novas paisagens."
+      "short": "SUV Coupé — {{color}}",
+      "long": "Alugue o SUV Citroën Basalt Shine 2026 {{color}} em Mendoza. É um SUV Coupé de design inovador, com amplo espaço interno e uma condução pensada para o conforto: perfeito para quem busca viajar com estilo, a trabalho ou para descobrir novas paisagens. Tem capacidade para {{passengers}} passageiros e {{bags}} malas, transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "chery-tiggo-2-2026-a": {
-      "short": "SUV Compacto — Branco",
-      "long": "Versátil e aventureiro, com uma posição de condução elevada que garante segurança e conforto em cada percurso. Ideal para explorar Mendoza com mais espaço e uma visão privilegiada da estrada."
+      "short": "SUV Compacto — {{color}}",
+      "long": "Alugue o SUV Chery Tiggo 2 2026 {{color}} em Mendoza. É um SUV compacto, prático para se mover pela Cidade de Mendoza e sair para percorrer a província com comodidade. Tem capacidade para {{passengers}} passageiros e {{bags}} malas, transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     },
     "chery-tiggo-2-2026-b": {
-      "short": "SUV Compacto — Vermelho",
-      "long": "Versátil e aventureiro, com uma posição de condução elevada que garante segurança e conforto em cada percurso. Ideal para explorar Mendoza com mais espaço e uma visão privilegiada da estrada."
+      "short": "SUV Compacto — {{color}}",
+      "long": "Alugue o SUV Chery Tiggo 2 2026 {{color}} em Mendoza. É um SUV compacto, prático para se mover pela Cidade de Mendoza e sair para percorrer a província com comodidade. Tem capacidade para {{passengers}} passageiros e {{bags}} malas, transmissão {{transmission}}, combustível {{fuel}} e {{climate}}. Entregamos no aeroporto de Mendoza, no seu hotel ou no nosso escritório, com quilometragem livre dentro da província."
     }
   }
 }

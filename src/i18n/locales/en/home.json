@@ -1,20 +1,20 @@
 {
   "hero": {
-    "badge": "Premium mobility in Mendoza",
-    "titleLine1": "Connected",
-    "titleLine2": "to your destination.",
-    "subtitle": "Smart mobility for every destination",
+    "badge": "Premium rent a car in Mendoza",
+    "titleLine1": "Car rental in Mendoza,",
+    "titleLine2": "connected to your destination.",
+    "subtitle": "SUVs, sedans, and compact cars to explore Mendoza with unlimited mileage within the province.",
     "ctaPrimary": "Book Now",
     "ctaSecondary": "Talk to an advisor",
     "clockBadge": "24/7 Support",
-    "deliveryText": "Delivery at airport, hotels and our own office."
+    "deliveryText": "Car rental with delivery at Mendoza airport, your hotel, or our office."
   },
   "about": {
     "eyebrow": "ABOUT CONECCAR RENT",
-    "title": "A Mendoza-based rental company, built for how you actually travel.",
-    "paragraph1": "Coneccar Rent was born in Mendoza with a simple idea: making",
-    "paragraph1Dorado" : " vehicle rental easy, fast, and reliable.",
-    "paragraph2": "Personalized service, well-kept vehicles, and an experience designed so you enjoy the trip from the very first moment.",
+    "title": "A Mendoza-based car rental company, built for how you actually travel",
+    "paragraph1": "Coneccar Rent was born in the City of Mendoza with a simple idea: ",
+    "paragraph1Dorado": "Making car rental easy, fast, and reliable.",
+    "paragraph2": "Personalized service, well-kept cars, and an experience designed so you enjoy the trip from the very first moment. We rent cars in Mendoza city and deliver yours wherever is most convenient: airport, hotel, or office.",
     "chips": {
       "localFounded": "Locally founded",
       "familyOwned": "Family-owned",
@@ -22,10 +22,10 @@
       "carbonOffset": "Fully insured"
     },
     "benefitsEyebrow": "Benefits",
-    "benefitsTitle": "Everything your rental includes.",
+    "benefitsTitle": "Everything your car rental in Mendoza includes.",
     "benefits": {
       "noHiddenCosts": "No hidden costs",
-      "airportDelivery": "Airport delivery",
+      "airportDelivery": "Delivery at Mendoza airport",
       "unlimitedMileage": "Unlimited mileage",
       "onlineBooking": "Online booking in minutes"
     }
@@ -89,11 +89,11 @@
   "features": {
     "totallyInsured": {
       "title": "Fully insured",
-      "description": "All-inclusive coverage on every rental, with clear policies."
+      "description": "All-inclusive coverage on every car rental, with clear policies."
     },
     "bilingual": {
       "title": "Bilingual team",
-      "description": "Support in ES / EN / PT before, during, and after your trip."
+      "description": "Support in Spanish, English, and Portuguese before, during, and after your trip."
     },
     "support": {
       "title": "24/7 assistance",

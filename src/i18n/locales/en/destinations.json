@@ -1,13 +1,14 @@
 {
   "section": {
     "eyebrow": "Destinations",
-    "title": "The places our guests actually go.",
-    "kicker": "Routes, landscapes, and recommendations to experience Mendoza for real."
+    "title": "The destinations our customers explore by car.",
+    "kicker": "Routes, landscapes, and recommendations to truly enjoy Mendoza, with unlimited mileage in your rental car."
   },
   "card": {
     "subregion": "Mendoza Province",
     "closeAriaLabel": "Close",
-    "ctaMore": "Learn more"
+    "ctaMore": "Ask about a car for {{name}}",
+    "imageAlt": "Landscape of {{name}}, Mendoza province"
   },
   "whatsappTemplate": "Hi, I'd like to know more about {{name}} and the vehicles available to get there.",
   "items": {
@@ -15,19 +16,19 @@
       "name": "Uco Valley",
       "tag": "Wine country",
       "distance": "80 km · 1h",
-      "description": "One of the country's most prestigious wine regions, with striking architectural wineries, vineyards at the foot of the Andes, and exceptional cuisine. A perfect day trip from Mendoza city."
+      "description": "One of the country's most prestigious wine regions, with striking architectural wineries, vineyards at the foot of the Andes, and exceptional cuisine. A perfect day trip from Mendoza city. It's just 1 hour from Mendoza City — perfect for going there and back in a day with your rental car."
     },
     "san-rafael": {
       "name": "San Rafael",
       "tag": "Landscapes, reservoirs, wineries",
       "distance": "250 km · 3h",
-      "description": "Atuel Canyon, reservoirs, historic wineries, and a quiet town to use as a base. Ideal for long-weekend getaways or multi-day trips."
+      "description": "Atuel Canyon, reservoirs, historic wineries, and a quiet town to use as a base. Ideal for long-weekend getaways or multi-day trips. It's about a 3-hour drive from Mendoza City, with unlimited mileage within the province."
     },
     "malargue": {
       "name": "Malargüe",
       "tag": "Outdoors and ski resort",
       "distance": "330 km · 4h",
-      "description": "The province's deep south: Las Leñas for winter skiing, Payunia and Caverna de las Brujas the rest of the year. Striking nature and scenic routes all the way in."
+      "description": "The province's deep south: Las Leñas for winter skiing, Payunia and Caverna de las Brujas the rest of the year. Striking nature and scenic routes all the way in. It's about a 4-hour trip from Mendoza — with unlimited mileage within the province, pick an SUV and take your time."
     },
     "gran-mendoza": {
       "name": "Greater Mendoza",
@@ -39,13 +40,13 @@
       "name": "Potrerillos",
       "tag": "Lake and mountains",
       "distance": "60 km · 1h",
-      "description": "A turquoise reservoir surrounded by mountains, with water sports, horseback rides, and excellent dining options. A half-day escape on the way to the high Andes."
+      "description": "A turquoise reservoir surrounded by mountains, with water sports, horseback rides, and excellent dining options. A half-day escape on the way to the high Andes. It's 1 hour from Mendoza City and easy to reach by car."
     },
     "canon-del-atuel": {
       "name": "Atuel Canyon",
       "tag": "Rafting and canyons",
       "distance": "300 km · 3h 30m",
-      "description": "Rock formations sculpted by the Atuel river over millions of years. Rafting, kayaking, and hiking through one of southern Mendoza's most photogenic landscapes."
+      "description": "Rock formations sculpted by the Atuel river over millions of years. Rafting, kayaking, and hiking through one of southern Mendoza's most photogenic landscapes. It's about 3.5 hours from Mendoza — with your rental car, you set the pace."
     }
   }
 }

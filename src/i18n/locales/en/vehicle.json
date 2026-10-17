@@ -6,11 +6,13 @@
     "ariaLabel": "Breadcrumb"
   },
   "hero": {
+    "titlePrefix": "Rent the",
+    "titleSuffix": "in Mendoza",
     "dailyRate": "Daily rate",
     "viewImage": "View image {{n}} of {{total}}",
     "perDay": "/ day",
-    "book": "Book now",
-    "consult": "Inquire"
+    "book": "Call to book",
+    "consult": "Chat on WhatsApp"
   },
   "whatsapp": {
     "reserve": "Hi, I'd like to book the {{vehicleName}}. Can we coordinate dates and details?",
@@ -18,7 +20,7 @@
   },
   "specs": {
     "eyebrow": "Specs",
-    "title": "Vehicle specifications.",
+    "title": "{{name}} specifications.",
     "labels": {
       "category": "Category",
       "year": "Year",
@@ -36,21 +38,21 @@
   },
   "included": {
     "eyebrow": "Included in your rental",
-    "title": "Everything sorted before you get in the car.",
-    "subtitle": "The daily rate already covers what matters so you only have to think about the road.",
+    "title": "What your rental includes: everything sorted before you get in the car.",
+    "subtitle": "The daily rate of your rental in Mendoza already covers the essentials, so all you have to think about is the road.",
     "requirements": "Requirements: valid driver's licence, credit card in the driver's name, and a minimum age of 21.",
     "items": [
       { "t": "Insurance included", "s": "Comprehensive cover with a clear excess — no surprises." },
       { "t": "24/7 assistance", "s": "A real person on the phone at any time during your trip." },
       { "t": "Unlimited mileage", "s": "Explore Mendoza with no kilometre limit within the province." },
-      { "t": "Flexible delivery", "s": "Airport (MDZ), hotels, or our own office in the city." },
+      { "t": "Flexible delivery", "s": "Delivered at Mendoza airport (MDZ), your hotel, or our office in the city." },
       { "t": "Sanitised vehicle", "s": "Deep-cleaned and mechanically checked before every handover." },
       { "t": "Trilingual support", "s": "We assist you in Spanish, English, and Portuguese." }
     ]
   },
   "similar": {
     "eyebrow": "You might also like",
-    "title": "Other vehicles in the fleet.",
+    "title": "Other cars and SUVs for rent in Mendoza.",
     "viewAll": "View all vehicles",
     "from": "From",
     "inquire": "Inquire",
@@ -60,35 +62,35 @@
   "vehicleDescriptions": {
     "honda-accord-2022": {
       "short": "Executive sedan",
-      "long": "Comfort and distinction for meetings, executive transfers, and long drives with the Andes as your backdrop. Quiet ride, spacious seats, and a generous boot."
+      "long": "Rent the Honda Accord 2022 executive sedan in Mendoza. It's a great choice for business trips and meetings, with space and comfort for {{passengers}} passengers and {{bags}} bags. It has {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "kia-rio-2022": {
       "short": "Urban sedan",
-      "long": "Agile, modern, and efficient. Perfect for exploring the city or heading out on Mendoza escapes with the right balance of comfort, economy, and technology."
+      "long": "Rent the Kia Rio 2022 sedan in Mendoza. It's a comfortable urban sedan for getting around the city and heading out on getaways around the province, with room for {{passengers}} passengers and {{bags}} bags. It has {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "vw-fox-2022": {
       "short": "Compact hatchback",
-      "long": "Practical, reliable, and comfortable for everyday use. An ideal companion for getting around the city with ease and making every journey a pleasure."
+      "long": "Rent the Volkswagen Fox 2022 compact car in Mendoza. It's a hatchback that's easy to drive and park in the city, ideal for short trips and getaways around the province, with room for {{passengers}} passengers and {{bags}} bags. It has {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "citroen-basalt-shine-2026-a": {
-      "short": "Coupe SUV — Cosmo Blue",
-      "long": "Innovative design, generous interior space, and ride comfort built in. Perfect for those who want to travel in style, whether for business or to discover new landscapes."
+      "short": "Coupe SUV — {{color}}",
+      "long": "Rent the Citroën Basalt Shine 2026 {{color}} in Mendoza. It's a Coupe SUV with innovative design, generous interior space, and ride comfort built in — perfect for those who want to travel in style, whether for business or to discover new landscapes. It seats {{passengers}} passengers with room for {{bags}} bags, {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "citroen-basalt-shine-2026-b": {
-      "short": "Coupe SUV — Pearlescent White",
-      "long": "Innovative design, generous interior space, and ride comfort built in. Perfect for those who want to travel in style, whether for business or to discover new landscapes."
+      "short": "Coupe SUV — {{color}}",
+      "long": "Rent the Citroën Basalt Shine 2026 {{color}} in Mendoza. It's a Coupe SUV with innovative design, generous interior space, and ride comfort built in — perfect for those who want to travel in style, whether for business or to discover new landscapes. It seats {{passengers}} passengers with room for {{bags}} bags, {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "citroen-basalt-shine-2026-c": {
-      "short": "Coupe SUV — Sting Grey",
-      "long": "Innovative design, generous interior space, and ride comfort built in. Perfect for those who want to travel in style, whether for business or to discover new landscapes."
+      "short": "Coupe SUV — {{color}}",
+      "long": "Rent the Citroën Basalt Shine 2026 {{color}} in Mendoza. It's a Coupe SUV with innovative design, generous interior space, and ride comfort built in — perfect for those who want to travel in style, whether for business or to discover new landscapes. It seats {{passengers}} passengers with room for {{bags}} bags, {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "chery-tiggo-2-2026-a": {
-      "short": "Compact SUV — White",
-      "long": "Versatile and adventurous, with a raised driving position for safety and comfort on every journey. Ideal for exploring Mendoza with extra space and a commanding view of the road."
+      "short": "Compact SUV — {{color}}",
+      "long": "Rent the Chery Tiggo 2 2026 {{color}} in Mendoza. It's a compact SUV, practical for getting around Mendoza city and heading out to explore the province in comfort. It seats {{passengers}} passengers with room for {{bags}} bags, {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     },
     "chery-tiggo-2-2026-b": {
-      "short": "Compact SUV — Red",
-      "long": "Versatile and adventurous, with a raised driving position for safety and comfort on every journey. Ideal for exploring Mendoza with extra space and a commanding view of the road."
+      "short": "Compact SUV — {{color}}",
+      "long": "Rent the Chery Tiggo 2 2026 {{color}} in Mendoza. It's a compact SUV, practical for getting around Mendoza city and heading out to explore the province in comfort. It seats {{passengers}} passengers with room for {{bags}} bags, {{transmission}} transmission, {{fuel}} fuel, and {{climate}}. We deliver it at Mendoza airport, your hotel, or our office, with unlimited mileage within the province."
     }
   }
 }

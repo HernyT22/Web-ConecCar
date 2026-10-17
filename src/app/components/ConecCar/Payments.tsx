@@ -30,7 +30,7 @@ const Payments = () => {
     {
       name: PAYMENT_METHODS[1],
       icon: (
-        <svg viewBox="0 0 48 32" className="h-7 p-0.5">
+        <svg viewBox="0 0 48 32" className="h-7 p-0.5" role="img" aria-label="Mastercard">
           <rect fill="#252525" width="48" height="32" rx="3" />
           <circle cx="18" cy="16" r="9" fill="#EB001B" />
           <circle

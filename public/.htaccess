@@ -22,6 +22,11 @@ Options -Indexes -MultiViews
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
+# --- 1b. Charset por defecto en la cabecera HTTP -------------------------------
+# Sin esto, el servidor puede no declarar el charset en Content-Type y algunos
+# crawlers/navegadores deciden el encoding antes de leer el <meta charset> del HTML.
+AddDefaultCharset UTF-8
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /

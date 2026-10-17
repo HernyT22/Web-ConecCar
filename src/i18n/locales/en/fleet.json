@@ -1,12 +1,12 @@
 {
   "section": {
     "eyebrow": "Fleet",
-    "title": "A car for every Mendoza you have in mind.",
-    "kicker": "City cars, sedans, and SUVs ready to move you through Mendoza with comfort and confidence."
+    "title": "Cars and SUVs for rent, for every Mendoza you have in mind.",
+    "kicker": "SUVs, sedans, and compact cars ready to move you through Mendoza with comfort and confidence. Compare daily rates and pick yours."
   },
   "search": {
     "placeholder": "Search by model, type, or feature…",
-    "ariaLabel": "Search vehicles"
+    "ariaLabel": "Search cars"
   },
   "sort": {
     "label": "Sort",
@@ -17,7 +17,30 @@
   "tabs": {
     "all": "All"
   },
-  "noResults": "No vehicles match those filters.",
+  "noResults": "No cars match those filters.",
+  "colors": {
+    "azulCosmo": "Cosmo Blue",
+    "blancoNacarado": "Pearl White",
+    "stingGrey": "Sting Grey",
+    "blanco": "White",
+    "rojo": "Red"
+  },
+  "cardSubtitle": {
+    "citroen-basalt-shine-2026-a": "Coupe SUV",
+    "citroen-basalt-shine-2026-b": "Coupe SUV",
+    "citroen-basalt-shine-2026-c": "Coupe SUV",
+    "chery-tiggo-2-2026-a": "Compact SUV",
+    "chery-tiggo-2-2026-b": "Compact SUV",
+    "honda-accord-2022": "Executive sedan",
+    "vw-fox-2022": "Compact hatchback",
+    "kia-rio-2022": "Urban sedan"
+  },
+  "altType": {
+    "suv-coupe": "Coupe SUV",
+    "suv-compacta": "Compact SUV",
+    "sedan": "sedan",
+    "hatchback-compacto": "compact car"
+  },
   "card": {
     "seats": "seats",
     "bags": "bags",

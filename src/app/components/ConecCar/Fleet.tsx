@@ -12,7 +12,7 @@ import { CATEGORY_IDS, parseCatFromHash } from "./fleetCategories";
 import { ANIM_DURATION, ANIM_EASE } from "@/animations/variants";
 import { vehicles, formatPrice } from "@/data/vehicles";
 import type { CategoryId, Vehicle } from "@/data/vehicles";
-import { vehicleAltBase, vehicleTypeLabel } from "@/seo/altText";
+import { vehicleAltBase } from "@/seo/altText";
 
 // El prop `layout` (reacomodo animado al filtrar categoría) requiere domMax,
 // no incluido en el domAnimation que usa el resto de la app (Root.tsx) — se
@@ -33,11 +33,11 @@ const CARD_IMG_SIZES =
 
 const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle }) {
   const { t } = useTranslation('fleet');
+  const colorLabel = v.color ? t(`colors.${v.color}`) : undefined;
+  const cardSubtitle = t(`cardSubtitle.${v.slug}`);
+  const subtitle = colorLabel ? `${cardSubtitle} — ${colorLabel}` : cardSubtitle;
   return (
-    <Link
-      to={`/flota/${v.slug}`}
-      className="bg-white rounded-2xl border border-navy-100 overflow-hidden flex flex-col lift"
-    >
+    <article className="relative bg-white rounded-2xl border border-navy-100 overflow-hidden flex flex-col lift focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-amber-500">
       <div className="relative aspect-[4/3] bg-navy-50">
         {v.images[0] ? (
           <ImageWithFallback
@@ -46,7 +46,7 @@ const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle
             sizes={CARD_IMG_SIZES}
             width={v.images[0].width}
             height={v.images[0].height}
-            alt={`${vehicleAltBase(v)}, ${vehicleTypeLabel(v.category)} de alquiler`}
+            alt={`${vehicleAltBase(v, colorLabel)}, ${t(`altType.${v.category}`)} de alquiler`}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-contain"
@@ -65,10 +65,13 @@ const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle
       </div>
       <div className="p-5 flex-1 flex flex-col">
         <h3 className="font-display text-xl font-semibold text-navy-900">
-          {v.brand} {v.model} {v.year}
+          <Link to={`/flota/${v.slug}`} className="after:absolute after:inset-0 focus:outline-none">
+            {v.brand} {v.model} {v.year}
+            {colorLabel && <span className="text-sm font-normal text-navy-500"> · {colorLabel}</span>}
+          </Link>
         </h3>
-        {v.shortDescription && (
-          <span className="block text-xs text-navy-500 mt-0.5">{v.shortDescription}</span>
+        {subtitle && (
+          <span className="block text-xs text-navy-500 mt-0.5">{subtitle}</span>
         )}
         <div className="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-navy-700/80 mt-4">
           <span className="inline-flex items-center gap-2">
@@ -106,12 +109,12 @@ const VehicleCard = memo(function VehicleCard({ vehicle: v }: { vehicle: Vehicle
               )}
             </div>
           </div>
-          <span className="shrink-0 inline-flex items-center gap-1.5 bg-navy-900 hover:bg-amber-500 hover:text-navy-950 text-white text-sm px-4 py-2.5 rounded-full transition-colors duration-300">
+          <span className="shrink-0 inline-flex items-center gap-1.5 bg-navy-900 hover:bg-amber-500 hover:text-navy-950 text-white text-sm px-4 py-2.5 rounded-full transition-colors duration-300 pointer-events-none">
             {t('card.viewDetails')} {I.arrow}
           </span>
         </div>
       </div>
-    </Link>
+    </article>
   );
 });
 
