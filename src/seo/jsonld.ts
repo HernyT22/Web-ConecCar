@@ -30,8 +30,16 @@ export const organization = (): Json => ({
   name: BRAND_NAME,
   url: `${SITE_URL}/`,
   logo: { '@type': 'ImageObject', url: LOGO_URL },
+  image: ogImageUrl(),
   email: EMAIL,
   telephone: TELEPHONE,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: ADDRESS_STRUCTURED.streetAddress,
+    addressLocality: ADDRESS_STRUCTURED.addressLocality,
+    addressRegion: ADDRESS_STRUCTURED.addressRegion,
+    addressCountry: ADDRESS_STRUCTURED.addressCountry,
+  },
   sameAs: [SOCIAL.instagram],
 });
 

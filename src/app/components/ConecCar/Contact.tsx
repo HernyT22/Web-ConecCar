@@ -181,7 +181,7 @@ const Contact = () => {
                 href={ADDRESS_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={t('channels.addressLabel')}
+                aria-label={t('channels.addressAria', { address: ADDRESS })}
                 className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-4 py-2.5 rounded-full text-sm hover:text-amber-500 transition-colors duration-300"
               >
                 <span className="text-amber-500">{I.pin}</span>
@@ -196,7 +196,7 @@ const Contact = () => {
             </span>
             <a
               href={SOCIAL.instagram}
-              aria-label={t('social.instagramAria')}
+              aria-label={`@coneccar.rent ${t('social.instagramAria')}`}
               className="inline-flex items-center gap-2.5 pl-3 pr-4 py-2.5 rounded-full border border-white/20 hover:bg-white/10 transition text-sm"
             >
               <span className="w-5 h-5">{I.instagram}</span>

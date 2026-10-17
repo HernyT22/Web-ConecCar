@@ -12,11 +12,11 @@
   "channels": {
     "emailLabel": "Email",
     "phoneLabel": "Phone",
-    "addressLabel": "Address"
+    "addressAria": "{{address}}, view on map"
   },
   "social": {
     "label": "Follow us",
-    "instagramAria": "Follow us on Instagram",
+    "instagramAria": "on Instagram",
     "facebookAria": "Follow us on Facebook",
     "linkedinAria": "Follow us on LinkedIn"
   },
